@@ -5,5 +5,5 @@
 ![Shannon](Shannon_Lin.jpeg)
 - Shannon Lin
 
-![Zefeng](Zefeng Zhuang.jpg)
+![Zefeng](Zefeng_Zhuang.jpg)
 - Zefeng Zhuang
