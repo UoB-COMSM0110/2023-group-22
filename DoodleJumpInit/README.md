@@ -2,9 +2,19 @@
 
 A foundation of doodler jump.
 
+
+# Twist
+- upside down
+- Collaborative mode
+- hold and create platform 
+
+
 # TODO
 - add start page/menu
-- add twist
+- add character/platform background image
+- platform function
+- add equipment
+- change
 
 
 
