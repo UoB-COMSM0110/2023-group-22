@@ -14,9 +14,6 @@ A foundation of doodler jump.
 - add character/platform background image
 - platform function
 - add equipment
-- change
-
-
 
 # Reference
 - https://codeheir.com/2021/03/13/how-to-code-doodle-jump/
