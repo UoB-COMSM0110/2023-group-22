@@ -61,14 +61,19 @@ void gameOver(){
 }
 
 void keyPressed(){
-  if (key==' '){
-    doodler.jump();
+  if (keyCode==LEFT && doodler.x_velocity > -5){
+    doodler.x_velocity -= 4;
   }
-  if (keyCode==LEFT){
-    doodler.moveLeft();
+  if (keyCode==RIGHT && doodler.x_velocity < 5){
+    doodler.x_velocity += 4;
   }
-  if (keyCode==RIGHT){
-    doodler.moveRight();
+}
+void keyReleased(){
+  if (keyCode == LEFT){
+    doodler.x_velocity = 0;
+  }
+  if (keyCode == RIGHT){
+    doodler.x_velocity = 0;
   }
 }
 

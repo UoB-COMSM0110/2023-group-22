@@ -6,6 +6,7 @@ public class Doodler{
   private int canvasW;
   private int canvasH;
   private float velocity = 0;
+  private float x_velocity = 0;
   private float gravity = 0.1;
   private float jumpForce = 10;
   
@@ -37,7 +38,7 @@ public class Doodler{
         float minX = platform.x - this.width;
         float maxX = platform.x + platform.width;
         
-        if (this.x >= minX && this.x <= maxX) {
+        if (this.x >= minX && this.x <= maxX && this.velocity > 0) {
           this.jump();
         }
       }
