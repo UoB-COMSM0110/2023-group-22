@@ -46,5 +46,6 @@ git push -u origin <branch_name>
 
 - Zefeng Zhuang
 
-- Henry Brooking
 <img src="./static/IMG_20220613_232422_462.jpg" width="200" height=auto>
+- Henry Brooking
+
