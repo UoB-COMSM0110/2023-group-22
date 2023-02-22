@@ -40,6 +40,9 @@ void draw(){
   doodler.update(platforms);
   for (Platform p:platforms){
     p.draw();
+    if(p.equipment != null){
+      p.equipment.draw();
+    }
   }
   if (doodler.y < platforms.get(platforms.size()-1).y + 200) {
     platforms.add(new Platform(random(width), platforms.get(platforms.size()-1).y - gap));
@@ -76,5 +79,4 @@ void keyReleased(){
     doodler.x_velocity = 0;
   }
 }
-
   
