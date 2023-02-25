@@ -16,6 +16,7 @@ public class Doodler{
     this.y = h/2;
   }
   public void draw(){
+    fill(100, 200, 250);
     rect(this.x,this.y,this.width,this.height);
   }
 
@@ -38,7 +39,11 @@ public class Doodler{
         float maxX = platform.x + platform.width;
         
         if (this.x >= minX && this.x <= maxX) {
-          this.jump();
+          if(platform.broken == false){
+            this.jump();
+          }else if (platform.broken == true){
+            platform.disappear = true;
+          } 
         }
       }
     }
