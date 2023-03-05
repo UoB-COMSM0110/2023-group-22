@@ -17,11 +17,12 @@ public class Doodler{
   
   public Doodler(int w,int h){
     this.canvasW = w;
-    this.canvasH = H;
+    this.canvasH = h;
     this.x = w/2;
     this.y = h/2;
   }
   public void draw(){
+    fill(100, 200, 250);
     rect(this.x,this.y,this.width,this.height);
   }
 
@@ -60,10 +61,21 @@ public class Doodler{
                 gravity = -0.1;
               }
             }
-          }
-          this.jump(jumpForce);
+           this.jump(jumpForce);
           // Reset jump height if it has been altered by spring
           jumpForce = jumpConstant;
+          }
+          else if(platform.status == 2){
+            this.jump(jumpForce);
+          }
+          else if (platform.status == 1){
+            this.jump(jumpForce);
+            platform.status = 0;
+            platform.disappear = true;
+          }
+          else if(platform.status == 0){
+            platform.disappear = true;
+          }
         }
       }
       //Reset gravity is it has been altered by rocket
@@ -79,12 +91,10 @@ public class Doodler{
   
   public void moveLeft(){
     this.x -= 30;
-    //this.x = lerp(this.x,this.x-90,1);
   }
   
   public void moveRight(){
     this.x += 30;
-    //this.x = lerp(this.x,this.x+90,1);
   }
   //Boolean to check collision
   public boolean rectRect(float r1x, float r1y, float r1w, float r1h, float r2x, float r2y, float r2w, float r2h) {
