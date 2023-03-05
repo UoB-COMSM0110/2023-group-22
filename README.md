@@ -5,7 +5,8 @@ Welcome to group 22. Our final idea is *Doodle Jump*.
 ## Homework
 - [v] [Paper prototype video](./static/IMG_0837.MOV)
 - [v] [Class diagram](./static/DoodleJump_class_diagram.png)
-- [v] [Egg with face](./EggWithFace.pde)
+- [v] [use case diagram](./static/Basic_Doodle_use_case_diagram.png)
+- [v] [Egg with face](./EggWithFace)
 - [v] Doodle Jump foundation code ([DoodleJumpInit](./DoodleJumpInit/))
   
 ## For Development
@@ -29,6 +30,13 @@ git commit -m <message>
 ```
 git push -u origin <branch_name>
 ```
+
+## Diagrams
+### Use Case Diagram
+<img src="./static/Basic_Doodle_use_case_diagram.png" width="200" height=auto>
+
+### [Class Diagram](https://app.diagrams.net/#G1eO5WRYrhPcYVJps2LNeKAyVoR5l_IiGF)
+<img src="./static/DoodleJump_class_diagram.png" width="200" height=auto>
 
 
 # Team Members
