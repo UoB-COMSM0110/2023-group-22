@@ -40,6 +40,9 @@ void draw(){
   doodler.update(platforms);
   for (Platform p:platforms){
     p.draw();
+    if(p.equipment != null){
+      p.equipment.draw();
+    }
   }
   if (doodler.y < platforms.get(platforms.size()-1).y + 200) {
     platforms.add(new Platform(random(width), platforms.get(platforms.size()-1).y - gap));
@@ -61,15 +64,19 @@ void gameOver(){
 }
 
 void keyPressed(){
-  if (key==' '){
-    doodler.jump();
+  if (keyCode==LEFT && doodler.x_velocity > -5){
+    doodler.x_velocity -= 4;
   }
-  if (keyCode==LEFT){
-    doodler.moveLeft();
-  }
-  if (keyCode==RIGHT){
-    doodler.moveRight();
+  if (keyCode==RIGHT && doodler.x_velocity < 5){
+    doodler.x_velocity += 4;
   }
 }
-
+void keyReleased(){
+  if (keyCode == LEFT){
+    doodler.x_velocity = 0;
+  }
+  if (keyCode == RIGHT){
+    doodler.x_velocity = 0;
+  }
+}
   
