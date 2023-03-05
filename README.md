@@ -33,10 +33,10 @@ git push -u origin <branch_name>
 
 ## Diagrams
 ### Use Case Diagram
-<img src="./static/Basic_Doodle_use_case_diagram.png" width="200" height=auto>
+![Class Diagram](static/Basic_Doodle_use_case_diagram.png)
 
 ### [Class Diagram](https://app.diagrams.net/#G1eO5WRYrhPcYVJps2LNeKAyVoR5l_IiGF)
-<img src="./static/DoodleJump_class_diagram.png" width="200" height=auto>
+![Class Diagram](static/DoodleJump_class_diagram.png)
 
 
 # Team Members
@@ -54,6 +54,7 @@ git push -u origin <branch_name>
 
 - Zefeng Zhuang
 
-<img src="./static/IMG_20220613_232422_462.jpg" width="200" height=auto>
+<img src="./static/Henry.jpg" width="200" height=auto>
+
 - Henry Brooking
 
