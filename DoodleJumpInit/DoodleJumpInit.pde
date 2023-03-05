@@ -39,7 +39,9 @@ void draw(){
   doodler.draw();
   doodler.update(platforms);
   for (Platform p:platforms){
-    p.draw();
+    if (p.disappear==false){
+      p.draw();
+    }
     if(p.equipment != null){
       p.equipment.draw();
     }
