@@ -1,6 +1,6 @@
 //Spawn chance for equipment
-int springChance = 10;
-int rocketChance = 5;
+int springChance = 8;
+int rocketChance = 80;
 
 public class Platform{
   private float x;

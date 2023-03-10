@@ -13,12 +13,10 @@ public class Equipment{
   
   public void draw(){
     if(type == 'S'){
-      fill (230, 230, 250);
-      rect(this.x, this.y, this.width, this.height);
+      image(spring_img, (this.x - width/2), (this.y - height), 20, 20);
     }
     else{
-      fill (210, 190, 100);
-      rect(this.x, this.y, this.width, this.height);
+      image(jetpack_img, (this.x - width/2), (this.y - height), 20, 20);
     }
   }
 }

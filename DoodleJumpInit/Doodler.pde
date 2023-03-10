@@ -1,5 +1,5 @@
 // Added global variables to easily alter how high the spring jumps, how long/fast the rocket goes
-float jumpConstant = -6;
+float jumpConstant = -7;
 float springConstant = -15;
 float maxSpeed = -18;
 
@@ -14,6 +14,7 @@ public class Doodler{
   private float x_velocity = 0;
   private float gravity = 0.1;
   private float jumpForce = jumpConstant;
+  private int img_direction = 1;
   
   public Doodler(int w,int h){
     this.canvasW = w;
@@ -22,8 +23,22 @@ public class Doodler{
     this.y = h/2;
   }
   public void draw(){
-    fill(100, 200, 250);
-    rect(this.x,this.y,this.width,this.height);
+    if(gravity == -0.1){
+      if(img_direction != 1){
+        image(jetpack_img, (this.x + 20), (this.y + 20), 30, 30);
+        image(jetpack_effect_img, (this.x + 30), (this.y + 45), 30, 20);
+      }
+      if(img_direction == 1){
+        image(jetpack_img, (this.x - 10), (this.y + 20), 30, 30);
+        image(jetpack_effect_alt_img, (this.x - 20), (this.y + 45), 30, 20);
+      }
+    }
+    if(img_direction == 1){
+      image(doodler_img, (this.x - width/2), this.y, 100, 70);
+    }
+    if(img_direction != 1){
+      image(doodler_reverse_img, (this.x - width/2), this.y, 100, 70);
+    }
   }
 
   public void update(ArrayList <Platform> platforms){
@@ -40,8 +55,7 @@ public class Doodler{
     if(this.x_velocity != 0){
       this.x += this.x_velocity;
     }
-    
-    
+        
     for (Platform platform:platforms) {
       if (this.y + this.height >= platform.y && this.y + this.height <= platform.y + platform.height){
    
@@ -81,6 +95,7 @@ public class Doodler{
       //Reset gravity is it has been altered by rocket
       if(this.velocity < maxSpeed){
         gravity = 0.1;
+        velocity = -7;
       }
     }
   }
