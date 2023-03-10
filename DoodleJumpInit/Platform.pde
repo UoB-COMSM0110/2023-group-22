@@ -12,6 +12,24 @@ public class Platform{
   private int status = 2;
   public boolean disappear = false;
   
+  public Platform(float x,float y,int type){
+    this.x = x;
+    this.y = y;
+    if (type==0){
+      status = 2;
+    }
+    else if (type==1){
+      status = 2;
+      equipment = new Equipment(random(this.x, (this.x + width)), (this.y - 5), 'S');
+    }
+    else if (type==2){
+      status = 2;
+      equipment = new Equipment(random(this.x, (this.x + width)), (this.y - 5), 'R');
+    }
+    
+  }
+  
+  
   public Platform(float x,float y){
     this.x = x;
     this.y = y;
