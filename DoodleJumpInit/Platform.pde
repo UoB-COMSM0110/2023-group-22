@@ -54,15 +54,18 @@ public class Platform{
     if (status == 2){
       fill (229, 226, 194);
       stroke(0);
-      rect(this.x,this.y,this.width,this.height);
+      strokeWeight(1.2);
+      rect(this.x,this.y,this.width,this.height, 2);
     }else if (status == 0 && !disappear){
       fill(0, 200, 0); 
       stroke(0);
-      rect(this.x,this.y,this.width,this.height);
+      strokeWeight(1.2);
+      rect(this.x,this.y,this.width,this.height, 2);
     }else if (status == 1 && !disappear){
       fill(250, 200, 0); 
       stroke(0);
-      rect(this.x,this.y,this.width,this.height);
+      strokeWeight(1.2);
+      rect(this.x,this.y,this.width,this.height, 2);
     }
     //else if ((status == 0  || status == 1) && disappear){
     //  fill(63, 204, 218, 0);

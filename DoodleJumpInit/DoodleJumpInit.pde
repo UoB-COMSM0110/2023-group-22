@@ -5,6 +5,7 @@ PImage spring_img;
 PImage jetpack_img;
 PImage jetpack_effect_img;
 PImage jetpack_effect_alt_img;
+PFont font;
 int W = 400;
 int H = 600;
 Doodler doodler;
@@ -38,10 +39,12 @@ void setup(){
     platforms.add(new Platform(random(W),H-(gap*i)));
   }
   startPagePlatforms = new ArrayList<>();
-  startPagePlatforms.add(new Platform(170,350,0));
-  startPagePlatforms.add(new Platform(100,305,1));
-  startPagePlatforms.add(new Platform(250,320,2));
+  startPagePlatforms.add(new Platform(165,335,0));
+  startPagePlatforms.add(new Platform(70,250,1));
+  startPagePlatforms.add(new Platform(270,275,2));
+  startPagePlatforms.add(new Platform(230,210,3));
   
+  font = createFont("Comic Sans MS", 25);
 }
 
 void draw(){
