@@ -36,7 +36,7 @@ void setup(){
   gap = H/platformCount;
   platforms = new ArrayList<>();
   for (int i=0;i<platformCount;i++){
-    platforms.add(new Platform(random(W),H-(gap*i)));
+    platforms.add(new Platform(random(W-60),H-(gap*i)));
   }
   startPagePlatforms = new ArrayList<>();
   startPagePlatforms.add(new Platform(165,335,0));
@@ -96,7 +96,7 @@ void draw(){
     }
   }
   if (doodler.y < platforms.get(platforms.size()-1).y + 200) {
-    platforms.add(new Platform(random(width), platforms.get(platforms.size()-1).y - gap));
+    platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
   }
   if (platforms.get(0).y > doodler.y + 400) {
       platforms.remove(0);
