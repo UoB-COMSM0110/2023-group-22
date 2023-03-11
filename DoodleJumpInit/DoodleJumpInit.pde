@@ -60,7 +60,7 @@ void setup(){
 
 void draw(){
   if (state==0){
-    pauseState = pause.pauseState;
+    pauseState = false;
     image(background_img, 0, 0);
     startPage.draw();
     npc=startPage.currentChoice;
@@ -190,8 +190,12 @@ void keyReleased(){
 }
 
 void mouseClicked(){
+  if (state==0){
   startPage.mouseClicked();
-  pause.mouseClicked();
+  }
+  if (state==1){
+    pause.mouseClicked();
+  }
   if ((isGameOver) && (mouseX>=W*0.36) && (mouseX<= W*0.36 + 115) && (mouseY>= H*0.47) && (mouseY<= H*0.47 +45)){
     state = 0;
     loop();
