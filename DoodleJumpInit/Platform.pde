@@ -34,13 +34,16 @@ public class Platform{
     this.x = x;
     this.y = y;
     float rand = random(100);
-    if(rand >= 0 && rand < 10){
+    if(prevBrokenPlatform==0 && rand >= 0 && rand < 10){
       status = 0;
+      prevBrokenPlatform=1;
     }
     else if(rand >= 10 && rand < 25){
       status = 1;
+      prevBrokenPlatform=0;
     }else{
       status = 2;
+      prevBrokenPlatform=0;
       if (rand >=30 && rand<40){
         equipment = new Equipment(random(this.x, (this.x + width)), (this.y - 5), 'S');
       }

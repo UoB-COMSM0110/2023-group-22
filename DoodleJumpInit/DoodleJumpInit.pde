@@ -5,7 +5,7 @@ PImage spring_img;
 PImage jetpack_img;
 PImage jetpack_effect_img;
 PImage jetpack_effect_alt_img;
-//PImage backImg;
+PImage backImg;
 PImage pauseButton;
 PFont font;
 int W = 400;
@@ -23,6 +23,7 @@ int npc=0;
 boolean pauseState=false;
 int platformCount;
 boolean isGameOver = false;
+int prevBrokenPlatform=0;
 
 void settings(){
   size(W, H);
@@ -39,7 +40,7 @@ void setup(){
   jetpack_img = loadImage("jetpack.png");
   jetpack_effect_img = loadImage("jetpack_effect.png");
   jetpack_effect_alt_img = loadImage("jetpack_effect_alt.png");
-  //backImg = loadImage("black.jpg");
+  backImg = loadImage("black.jpg");
   pauseButton = loadImage("pause-button.png");
   platformCount = 6;
   gap = H/platformCount;
@@ -82,7 +83,8 @@ void draw(){
   }
   else if (pauseState){
     startPage.gameStart=false;
-    //tint(255,255);
+    //image(background_img, 0, 0);
+    //tint(255,128);
     //image(backImg, 0, 0);
     //noTint();
     pause.draw(width/2, 100);
@@ -91,7 +93,6 @@ void draw(){
   }
   else{
     image(background_img, 0, 0);
-    
     pushMatrix();
     if (doodler.velocity > 10) {
       noLoop();
@@ -120,9 +121,6 @@ void draw(){
       }
     }
     popMatrix();
-
-    // TODO
-    //System.out.println("doodler.y"+doodler.y);
     if (doodler.y < platforms.get(platforms.size()-1).y + 200) {
       platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
     }
@@ -130,6 +128,11 @@ void draw(){
         platforms.remove(0);
         score++;
       }
+      if (pauseState){
+        tint(255,128);
+        image(backImg, 0, 0);
+        noTint();
+    }
   }
 }
 

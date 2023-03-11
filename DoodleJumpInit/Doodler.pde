@@ -15,6 +15,14 @@ public class Doodler{
   public float gravity = 0.1;
   public float jumpForce = jumpConstant;
   public int img_direction = 1;
+  //PImage npc10;
+  PImage npc10 = loadImage("doodle.png");
+  PImage npc11 = loadImage("astronaut_doodle.png");
+  PImage npc12 = loadImage("ninja_doodle.png");
+  PImage npc20 = loadImage("doodle_alternate.png");
+  PImage npc21 = loadImage("astronaut_doodle_alternate.png");
+  PImage npc22 = loadImage("ninja_doodle_alternate.png");
+  
   
   
   public Doodler(int w,int h){
@@ -43,30 +51,24 @@ public class Doodler{
     }
     if(img_direction == 1){
       if (npc==0){
-        doodler_img = loadImage("doodle.png");
-        image(doodler_img, (this.x - width/2), this.y, 100, 70);
+        image(npc10, (this.x - width/2), this.y, 100, 70);
       }
       if (npc==1){
-        doodler_img = loadImage("astronaut_doodle.png");
-        image(doodler_img, (this.x - width/2), this.y, 100, 70);
+        image(npc11, (this.x - width/2), this.y, 100, 70);
       }
       if (npc==2){
-        doodler_img = loadImage("ninja_doodle.png");
-        image(doodler_img, (this.x - width/2), this.y, 100, 70);
+        image(npc12, (this.x - width/2), this.y, 100, 70);
       }
     }
     if(img_direction != 1){
       if (npc==0){
-        doodler_reverse_img = loadImage("doodle_alternate.png");
-        image(doodler_reverse_img, (this.x - width/2), this.y, 100, 70);
+        image(npc20, (this.x - width/2), this.y, 100, 70);
       }
       if (npc==1){
-        doodler_reverse_img = loadImage("astronaut_doodle_alternate.png");
-        image(doodler_reverse_img, (this.x - width/2), this.y, 100, 70);
+        image(npc21, (this.x - width/2), this.y, 100, 70);
       }
       if (npc==2){
-        doodler_reverse_img = loadImage("ninja_doodle_alternate.png");
-        image(doodler_reverse_img, (this.x - width/2), this.y, 100, 70);
+        image(npc22, (this.x - width/2), this.y, 100, 70);
       }
     }
   }
