@@ -14,16 +14,18 @@ Doodler startPageDoodler;
 ArrayList <Platform> platforms;
 ArrayList <Platform> startPagePlatforms;
 float gap;
-int score=0;
+int score;
 int state=0;
 int npc=0;
+int platformCount = 6;
+boolean isGameOver = false;
 
 void settings(){
   size(W, H);
 }
 
 void setup(){
-  background(63, 204, 218);
+  background(255);
   doodler = new Doodler(W,H);
   startPage = new StartPage(W,H);
   startPageDoodler = new Doodler(W,H,180,280);
@@ -32,7 +34,6 @@ void setup(){
   jetpack_img = loadImage("jetpack.png");
   jetpack_effect_img = loadImage("jetpack_effect.png");
   jetpack_effect_alt_img = loadImage("jetpack_effect_alt.png");
-  int platformCount = 6;
   gap = H/platformCount;
   platforms = new ArrayList<>();
   for (int i=0;i<platformCount;i++){
@@ -45,6 +46,7 @@ void setup(){
   startPagePlatforms.add(new Platform(230,210,3));
   
   font = createFont("Comic Sans MS", 25);
+  score = 0;
 }
 
 void draw(){
@@ -106,13 +108,28 @@ void draw(){
 }
 
 void gameOver(){
-  image(background_img, 0, 0);;
+  //image(background_img, 0, 0);
+  isGameOver = true;
+  for (int i = platforms.size()-2; i >= 0; i--){
+    platforms.remove(i);
+  }
   textSize(30);
   textAlign(CENTER);
   fill(0);
-  text("You scored "+score, W/2, W/2);
+  text("You Scored "+ score, W/2, H * 0.3);
+  textSize(22);
+  text("Hit space to play again", W/2, H * 0.36);
+  
+  fill(229, 226, 194);
+  stroke(0);
+  strokeWeight(1.2);
+  rect(W*0.36, H*0.47, 115, 45, 10);
+    
+  fill(80, 50, 0);
+  textFont(font);
   textSize(25);
-  text("Hit space to play again", W/2, H/ 2 + 100);
+  textAlign(CENTER, CENTER);
+  text("HOME", W*0.505, H*0.5);
 }
 
 void keyPressed(){
@@ -128,7 +145,8 @@ void keyPressed(){
       doodler.img_direction = doodler.img_direction * -1;
     }
   }
-  if (keyCode==' '){
+  if (keyCode==' ' && isGameOver == true){
+    isGameOver = false;
     loop();
     setup();
   }
@@ -144,5 +162,10 @@ void keyReleased(){
 
 void mouseClicked(){
   startPage.mouseClicked();
+  if ((mouseX>=W*0.36) && (mouseX<= W*0.36 + 115) && (mouseY>= H*0.47) && (mouseY<= H*0.47 +45)){
+    state = 0;
+    loop();
+    setup();
+  }  
 }
   
