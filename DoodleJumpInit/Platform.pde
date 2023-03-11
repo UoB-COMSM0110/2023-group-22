@@ -34,10 +34,10 @@ public class Platform{
     this.x = x;
     this.y = y;
     float rand = random(100);
-    if(rand >= 0 && rand < 5){
-      status = 1;
+    if(rand >= 0 && rand < 10){
+      status = 0;
     }
-    else if(rand >= 5 && rand < 15){
+    else if(rand >= 10 && rand < 25){
       status = 1;
     }else{
       status = 2;
@@ -67,10 +67,10 @@ public class Platform{
       strokeWeight(1.2);
       rect(this.x,this.y,this.width,this.height, 2);
     }
-    //else if ((status == 0  || status == 1) && disappear){
-    //  fill(63, 204, 218, 0);
-    //  stroke(63, 204, 218, 0);
-    //  rect(this.x,this.y,this.width,this.height);
-    //}
+    else if ((status == 0  || status == 1) && disappear){
+      fill(63, 204, 218, 0);
+      stroke(63, 204, 218, 0);
+      rect(this.x,this.y,this.width,this.height);
+    }
   }
 }
