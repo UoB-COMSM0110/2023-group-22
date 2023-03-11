@@ -5,18 +5,23 @@ PImage spring_img;
 PImage jetpack_img;
 PImage jetpack_effect_img;
 PImage jetpack_effect_alt_img;
+//PImage backImg;
+PImage pauseButton;
 PFont font;
 int W = 400;
 int H = 600;
 Doodler doodler;
 StartPage startPage;
 Doodler startPageDoodler;
+PauseWindow pause;
 ArrayList <Platform> platforms;
 ArrayList <Platform> startPagePlatforms;
 float gap;
 int score=0;
 int state=0;
 int npc=0;
+boolean pauseState=false;
+int platformCount;
 
 void settings(){
   size(W, H);
@@ -27,12 +32,15 @@ void setup(){
   doodler = new Doodler(W,H);
   startPage = new StartPage(W,H);
   startPageDoodler = new Doodler(W,H,180,280);
+  pause = new PauseWindow();
   background_img = loadImage("background.jpg");
   spring_img = loadImage("spring.png");
   jetpack_img = loadImage("jetpack.png");
   jetpack_effect_img = loadImage("jetpack_effect.png");
   jetpack_effect_alt_img = loadImage("jetpack_effect_alt.png");
-  int platformCount = 6;
+  //backImg = loadImage("black.jpg");
+  pauseButton = loadImage("pause-button.png");
+  platformCount = 6;
   gap = H/platformCount;
   platforms = new ArrayList<>();
   for (int i=0;i<platformCount;i++){
@@ -49,6 +57,7 @@ void setup(){
 
 void draw(){
   if (state==0){
+    pauseState = pause.pauseState;
     image(background_img, 0, 0);
     startPage.draw();
     npc=startPage.currentChoice;
@@ -69,39 +78,56 @@ void draw(){
     }
     }
   }
+  else if (pauseState){
+    startPage.gameStart=false;
+    //tint(255,255);
+    //image(backImg, 0, 0);
+    //noTint();
+    pause.draw(width/2, 100);
+    pauseState = pause.pauseState;
+    //state = pause.stateUpdate;
+  }
   else{
     image(background_img, 0, 0);
-  if (doodler.velocity > 10) {
-    noLoop();
-    gameOver();
-  }
-  else{
-    translate(0, H/ 2 - doodler.y);
-  }
-  push();
-  fill(0);
-  textSize(30);
-  textAlign(CENTER);
-  text(score, width/2, doodler.y - 250);
-  pop();
+    
+    pushMatrix();
+    if (doodler.velocity > 10) {
+      noLoop();
+      gameOver();
+    }
+    else{
+      translate(0, H/ 2 - doodler.y);
+    }
+    push();
+    fill(0);
+    textSize(30);
+    textAlign(CENTER);
+    text(score, width/2, doodler.y - 250);
+    pause.pauseButton(width-60, doodler.y - 280);
+    pauseState = pause.pauseState;
+    pop();
+  
+    doodler.draw(npc);
+    doodler.update(platforms);
+    for (Platform p:platforms){
+      if (p.disappear==false){
+        p.draw();
+      }
+      if(p.equipment != null){
+        p.equipment.draw();
+      }
+    }
+    popMatrix();
 
-  doodler.draw(npc);
-  doodler.update(platforms);
-  for (Platform p:platforms){
-    if (p.disappear==false){
-      p.draw();
+    // TODO
+    //System.out.println("doodler.y"+doodler.y);
+    if (doodler.y < platforms.get(platforms.size()-1).y + 200) {
+      platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
     }
-    if(p.equipment != null){
-      p.equipment.draw();
-    }
-  }
-  if (doodler.y < platforms.get(platforms.size()-1).y + 200) {
-    platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
-  }
-  if (platforms.get(0).y > doodler.y + 400) {
-      platforms.remove(0);
-      score++;
-    }
+    if (platforms.get(0).y > doodler.y + 400) {
+        platforms.remove(0);
+        score++;
+      }
   }
 }
 
@@ -144,5 +170,6 @@ void keyReleased(){
 
 void mouseClicked(){
   startPage.mouseClicked();
+  pause.mouseClicked();
 }
   

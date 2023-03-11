@@ -92,13 +92,9 @@ public class StartPage{
    
    void mouseClicked(){
     if ((mouseX>=W*1/6-imageWidth/3) && (mouseX<=(W*1/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
-      System.out.println("c1");
-      System.out.println("c1");
       currentChoice=1;
     }
     else if ((mouseX>=W*5/6-imageWidth/1.5) && (mouseX<=(W*5/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
-      System.out.println("c2");
-      System.out.println("c2");
       currentChoice=2;
     }
     else if ((mouseX>=W*3/6-imageWidth/2) && (mouseX<=(W*3/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
