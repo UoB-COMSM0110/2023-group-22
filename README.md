@@ -30,6 +30,8 @@ git commit -m <message>
 ```
 git push -u origin <branch_name>
 ```
+## Prototype
+![Paper Prototype](static/DoodleJump_prototype.gif)
 
 ## Diagrams
 ### Use Case Diagram
