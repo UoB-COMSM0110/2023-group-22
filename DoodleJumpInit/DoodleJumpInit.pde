@@ -59,70 +59,6 @@ void setup(){
 }
 
 void draw(){
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-  background(63, 204, 218);
-=======
-  //start_page show
-  if (state==0){
-    image(background_img, 0, 0);
-
-
-    if(startPage.isDoublePlayer == false){
-      startPage.draw();
-
-      npc=startPage.currentChoice;
-      startPageDoodler.draw(npc);
-      startPageDoodler.jumpForce= -8;
-      startPageDoodler.gravity= 0.5;
-      startPageDoodler.img_direction=-1;
-      startPageDoodler.update(startPagePlatforms);    
-    }else{
-      startPage.currentChoice = 3;
-      startPage.draw();
-      startPageDoodler.draw(3);
-      startPageDoodler.jumpForce= -8;
-      startPageDoodler.gravity= 0.5;
-      startPageDoodler.img_direction=-1;
-      startPageDoodler.update(startPagePlatforms);
-    }
-
-
-    for (Platform p:startPagePlatforms){
-      if (p.disappear==false){
-        p.draw();
-        if(p.equipment != null){
-          p.equipment.draw();
-        }
-      }
-      if (startPage.gameStart==true){
-        //swtich to live game mode.
-        state=1;
-      }
-    }
-  }
-  else{
-    image(background_img, 0, 0);
->>>>>>> Stashed changes
-  if (doodler.velocity > 10) {
-    noLoop();
-    gameOver();
-  }
-  else{
-    translate(0, H/ 2 - doodler.y);
-  }
-  push();
-  fill(255, 255, 255);
-  textSize(30);
-  textAlign(CENTER);
-  text(score, width/2, doodler.y - 250);
-  pop();
-
-  doodler.draw();
-  doodler.update(platforms);
-  for (Platform p:platforms){
-    p.draw();
-=======
   if (state==0){
     pauseState = false;
     image(background_img, 0, 0);
@@ -144,7 +80,6 @@ void draw(){
       state=1;
     }
     }
->>>>>>> 744058936ac09bb0716c6a25ef9f6420916c9c00
   }
   else if (pauseState){
     startPage.gameStart=false;
