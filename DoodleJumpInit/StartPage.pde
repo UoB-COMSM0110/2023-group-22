@@ -4,8 +4,11 @@ public class StartPage{
   PImage char0Img;
   PImage char1Img;
   PImage char2Img;
+<<<<<<< HEAD
   PImage char3Img;
   PImage char4Img;
+=======
+>>>>>>> 744058936ac09bb0716c6a25ef9f6420916c9c00
   PImage title0Img;
   PImage title1Img;
   PImage startButtonImg;
@@ -14,7 +17,10 @@ public class StartPage{
   private float imageWidth = 150;
   private float imageHeight = 105;
   public boolean gameStart = false;
+<<<<<<< HEAD
   public boolean isDoublePlayer = true;
+=======
+>>>>>>> 744058936ac09bb0716c6a25ef9f6420916c9c00
   
   public StartPage(int w,int h){
     this.W=w;
@@ -32,20 +38,33 @@ public class StartPage{
     settingIconImg = loadImage("setting.png");
     image(settingIconImg,315,-10,100,100);
   }
+<<<<<<< HEAD
 
   private void char0(){
     char0Img = loadImage("doodle.png");
     image(char0Img, W*3/6-imageWidth/2, H*0.62, imageWidth, imageHeight);
   }
+=======
+  
+>>>>>>> 744058936ac09bb0716c6a25ef9f6420916c9c00
   private void char1(){
     char1Img = loadImage("astronaut_doodle.png");
     image(char1Img, W*1/6-imageWidth/3, H*0.62, imageWidth, imageHeight);
   }
   
+<<<<<<< HEAD
+=======
+  private void char0(){
+    char0Img = loadImage("doodle.png");
+    image(char0Img, W*3/6-imageWidth/2, H*0.62, imageWidth, imageHeight);
+  }
+  
+>>>>>>> 744058936ac09bb0716c6a25ef9f6420916c9c00
   private void char2(){
     char2Img = loadImage("ninja_doodle_alternate.png");
     image(char2Img, W*5/6-imageWidth/1.5, H*0.62, imageWidth, imageHeight);
   }
+<<<<<<< HEAD
   private void char3(){
     char4Img = loadImage("astronaut_doodle.png");
     image(char4Img, W*5/6-imageWidth/1.5, H*0.6, imageWidth, imageHeight);
@@ -53,6 +72,9 @@ public class StartPage{
     image(char3Img, W*2/6-imageWidth/1.5, H*0.6, imageWidth, imageHeight);
     
   }
+=======
+  
+>>>>>>> 744058936ac09bb0716c6a25ef9f6420916c9c00
   private void startButton(){
     startButtonImg = loadImage("start_button.png");
     image(startButtonImg, W*3/6-imageWidth/2, H*5/6, imageWidth, imageHeight);
@@ -81,12 +103,18 @@ public class StartPage{
       char2();
       noTint();
       currentChoice=1;
+<<<<<<< HEAD
     }else if(currentChoice == 2){
+=======
+    }
+    else if(currentChoice == 2){
+>>>>>>> 744058936ac09bb0716c6a25ef9f6420916c9c00
       char2();
       tint(255,128);
       char0();
       char1();
       noTint();
+<<<<<<< HEAD
     }else if(currentChoice == 3){
       char3();
       tint(255,128);
@@ -94,6 +122,10 @@ public class StartPage{
       // char1();
       noTint();
     }else{
+=======
+    }
+    else{
+>>>>>>> 744058936ac09bb0716c6a25ef9f6420916c9c00
       char0();
       tint(255,128);
       char1();
@@ -104,6 +136,7 @@ public class StartPage{
    
    void mouseClicked(){
     if ((mouseX>=W*1/6-imageWidth/3) && (mouseX<=(W*1/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
+<<<<<<< HEAD
       System.out.println("c1");
       System.out.println("c1");
       currentChoice=1;
@@ -111,6 +144,11 @@ public class StartPage{
     else if ((mouseX>=W*5/6-imageWidth/1.5) && (mouseX<=(W*5/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
       System.out.println("c2");
       System.out.println("c2");
+=======
+      currentChoice=1;
+    }
+    else if ((mouseX>=W*5/6-imageWidth/1.5) && (mouseX<=(W*5/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
+>>>>>>> 744058936ac09bb0716c6a25ef9f6420916c9c00
       currentChoice=2;
     }
     else if ((mouseX>=W*3/6-imageWidth/2) && (mouseX<=(W*3/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
@@ -121,4 +159,8 @@ public class StartPage{
     }   
  }
     
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 744058936ac09bb0716c6a25ef9f6420916c9c00
