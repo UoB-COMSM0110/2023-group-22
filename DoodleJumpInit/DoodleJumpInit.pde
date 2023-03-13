@@ -59,26 +59,45 @@ void setup(){
 }
 
 void draw(){
-  if (state==0){
+  if (state==0){  //start meanu
     pauseState = false;
     image(background_img, 0, 0);
     startPage.draw();
-    npc=startPage.currentChoice;
-    startPageDoodler.draw(npc);
-    startPageDoodler.jumpForce= -8;
-    startPageDoodler.gravity= 0.5;
-    startPageDoodler.img_direction=-1;
-    startPageDoodler.update(startPagePlatforms);
+    if(startPage.isDoublePlayer){
+      //in this case, we should create two npc, left and right
+      //everytime touch coresponding section, currentChoice will change 
+      // but i want to chage leftNpc or RightNpc,
+      //
+      int npc1= startPage.npcLeft;
+      startPageDoodler.draw_left(npc1);
+      startPageDoodler.jumpForce= -8;
+      startPageDoodler.gravity= 0.8;
+      startPageDoodler.img_direction= -1;
+
+      int npc2 = startPage.npcRight;
+      startPageDoodler.draw_right(npc2);
+      startPageDoodler.jumpForce= -8;
+      startPageDoodler.gravity= 0.8;
+      startPageDoodler.img_direction= -1;
+      startPageDoodler.update(startPagePlatforms);
+    }else{
+      npc=startPage.currentChoice;
+      startPageDoodler.draw(npc);
+      startPageDoodler.jumpForce= -8;
+      startPageDoodler.gravity= 0.5;
+      startPageDoodler.img_direction=-1;
+      startPageDoodler.update(startPagePlatforms);
+    }
     for (Platform p:startPagePlatforms){
       if (p.disappear==false){
         p.draw();
-      if(p.equipment != null){
-        p.equipment.draw();
-    }
-    }
-    if (startPage.gameStart==true){
-      state=1;
-    }
+        if(p.equipment != null){
+          p.equipment.draw();
+        }
+      }
+      if (startPage.gameStart==true){
+        state=1;
+      }
     }
   }
   else if (pauseState){
@@ -90,8 +109,7 @@ void draw(){
     pause.draw(width/2, 100);
     pauseState = pause.pauseState;
     //state = pause.stateUpdate;
-  }
-  else{
+  }else{
     image(background_img, 0, 0);
     pushMatrix();
     if (doodler.velocity > 10) {

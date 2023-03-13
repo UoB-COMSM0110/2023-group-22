@@ -38,6 +38,32 @@ public class Doodler{
     this.x = x;
     this.y = y;
   }
+  public void draw_left(int npc){
+    int offsetx = 100;
+    int offsety = 120;
+    if (npc==0){
+      image(npc20, (this.x - width/2) - offsetx, this.y + offsety, 100, 70);
+    }
+    if (npc==1){
+      image(npc21, (this.x - width/2)- offsetx, this.y + offsety, 100, 70);
+    }
+    if (npc==2){
+      image(npc22, (this.x - width/2) - offsetx, this.y + offsety, 100, 70);
+    }
+  }
+  public void draw_right(int npc){
+    int offsetx = -120;
+    int offsety = 120;
+    if (npc==0){
+      image(npc20, (this.x - width/2) - offsetx, this.y + offsety, 100, 70);
+    }
+    if (npc==1){
+      image(npc21, (this.x - width/2)- offsetx, this.y + offsety, 100, 70);
+    }
+    if (npc==2){
+      image(npc22, (this.x - width/2) - offsetx, this.y + offsety, 100, 70);
+    }
+  }
   public void draw(int npc){
     if(gravity == -0.1){
       if(img_direction != 1){
@@ -61,16 +87,17 @@ public class Doodler{
       }
     }
     if(img_direction != 1){
-      if (npc==0){
-        image(npc20, (this.x - width/2), this.y, 100, 70);
+        if (npc==0){
+          image(npc20, (this.x - width/2), this.y, 100, 70);
+        }
+        if (npc==1){
+          image(npc21, (this.x - width/2), this.y, 100, 70);
+        }
+        if (npc==2){
+          image(npc22, (this.x - width/2), this.y, 100, 70);
+        }
       }
-      if (npc==1){
-        image(npc21, (this.x - width/2), this.y, 100, 70);
-      }
-      if (npc==2){
-        image(npc22, (this.x - width/2), this.y, 100, 70);
-      }
-    }
+
   }
 
   public void update(ArrayList <Platform> platforms){

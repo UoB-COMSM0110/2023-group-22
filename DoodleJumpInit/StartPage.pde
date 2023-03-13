@@ -9,15 +9,18 @@ public class StartPage{
   PImage startButtonImg;
   private int W;
   private int H;
+  private int npcLeft = 0;
+  private int npcRight = 2;
   private float imageWidth = 150;
   private float imageHeight = 105;
   public boolean gameStart = false;
+  public boolean isDoublePlayer = true; //new flag
   
   public StartPage(int w,int h){
     this.W=w;
     this.H=h;
   }
-  
+
   
   private void title(){
     title0Img = loadImage("0_Doodle.png");
@@ -45,7 +48,21 @@ public class StartPage{
     char2Img = loadImage("ninja_doodle_alternate.png");
     image(char2Img, W*5/6-imageWidth/1.5, H*0.62, imageWidth, imageHeight);
   }
-  
+  private void singlePlayerChoose(){
+    char1();
+    tint(255,128);
+    char0();
+    char2();
+    noTint();
+  }
+  private void doublePlayerChoose(){
+    textFont(font);
+    textSize(25);
+    textAlign(CENTER, CENTER);
+    text("Player2", W*0.8, H*0.80);
+    text("Player1", W*0.2, H*0.80);
+
+  }
   private void startButton(){
     startButtonImg = loadImage("start_button.png");
     image(startButtonImg, W*3/6-imageWidth/2, H*5/6, imageWidth, imageHeight);
@@ -58,6 +75,7 @@ public class StartPage{
     strokeWeight(1.2);
     rect(W*0.36, H*0.85, 115, 45, 10);
     
+    //START text 
     fill(80, 50, 0);
     textFont(font);
     textSize(25);
@@ -67,43 +85,40 @@ public class StartPage{
     //startButton();
     settingIcon();
     title();
-    if (currentChoice == 1){
-      char1();
-      tint(255,128);
-      char0();
-      char2();
-      noTint();
-      currentChoice=1;
+    //FIXME
+    if(isDoublePlayer){
+      doublePlayerChoose();
+    }else{
+      singlePlayerChoose();
     }
-    else if(currentChoice == 2){
-      char2();
-      tint(255,128);
-      char0();
-      char1();
-      noTint();
-    }
-    else{
-      char0();
-      tint(255,128);
-      char1();
-      char2();
-      noTint();
-    }
+
   }
    
    void mouseClicked(){
-    if ((mouseX>=W*1/6-imageWidth/3) && (mouseX<=(W*1/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
-      currentChoice=1;
+    if(isDoublePlayer){
+      if ((mouseX>=W*1/6-imageWidth/3) && (mouseX<=(W*1/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
+        npcLeft = (npcLeft + 1) % 3;
+      }
+      else if ((mouseX>=W*5/6-imageWidth/1.5) && (mouseX<=(W*5/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
+        npcRight = (npcRight + 1) % 3;
+      }
+      else if ((mouseX>=W*0.36) && (mouseX<= W*0.36 + 120) && (mouseY>= H*0.85) && (mouseY<= H*0.85 +45)){
+        gameStart=true;
+      }
+    }else{
+      if ((mouseX>=W*1/6-imageWidth/3) && (mouseX<=(W*1/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
+        currentChoice=1;
+      }
+      else if ((mouseX>=W*5/6-imageWidth/1.5) && (mouseX<=(W*5/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
+        currentChoice=2;
+      }
+      else if ((mouseX>=W*3/6-imageWidth/2) && (mouseX<=(W*3/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
+        currentChoice=0;
+      }
+      else if ((mouseX>=W*0.36) && (mouseX<= W*0.36 + 120) && (mouseY>= H*0.85) && (mouseY<= H*0.85 +45)){
+        gameStart=true;
+      }
     }
-    else if ((mouseX>=W*5/6-imageWidth/1.5) && (mouseX<=(W*5/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
-      currentChoice=2;
-    }
-    else if ((mouseX>=W*3/6-imageWidth/2) && (mouseX<=(W*3/6-imageWidth/2+imageWidth)) && (mouseY>= H*4/6) && (mouseY<= H*4/6+imageHeight)){
-      currentChoice=0;
-    }
-    if ((mouseX>=W*0.36) && (mouseX<= W*0.36 + 120) && (mouseY>= H*0.85) && (mouseY<= H*0.85 +45)){
-      gameStart=true;
-    }   
  }
     
 }
