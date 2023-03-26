@@ -62,7 +62,7 @@ public class PauseWindow{
         this.pauseState=false;
       }
       if ((mouseX>=this.recX-80)&&(mouseX<=this.recX+80)&&(mouseY>=this.recY+110)&&(mouseY<=this.recY+160)){
-        state=0;
+        gameState=0;
         this.pauseState=false;
         doodler = new Doodler(W,H);
         platformCount = 6;

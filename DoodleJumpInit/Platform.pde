@@ -1,8 +1,5 @@
-//Spawn chance for equipment
-int springChance = 8;
-int rocketChance = 80;
-
 public class Platform{
+  
   private float x;
   private float y;
   private float width=60;
@@ -11,7 +8,16 @@ public class Platform{
   //0: broken, 1: jump once, , 2: always can jump
   private int status = 2;
   public boolean disappear = false;
+
+  //Spawn chance for equipment
+  private int minSpringChance = 30;
+  private int maxSpringChance = 40;
+
+  private int minRocketChance = 40;
+  private int maxRocketChance = 45;
+
   
+  //for start page
   public Platform(float x,float y,int type){
     this.x = x;
     this.y = y;
@@ -26,9 +32,7 @@ public class Platform{
       status = 2;
       equipment = new Equipment(random(this.x, (this.x + width)), (this.y - 5), 'R');
     }
-    
   }
-  
   
   public Platform(float x,float y){
     this.x = x;
@@ -44,10 +48,10 @@ public class Platform{
     }else{
       status = 2;
       prevBrokenPlatform=0;
-      if (rand >=30 && rand<40){
+      if (rand >=minSpringChance && rand<maxSpringChance){
         equipment = new Equipment(random(this.x, (this.x + width)), (this.y - 5), 'S');
       }
-      else if (rand >=40 && rand<45){
+      else if (rand >=minRocketChance && rand<maxRocketChance){
         equipment = new Equipment(random(this.x, (this.x + width)), (this.y - 5), 'R');
       }
     }
@@ -69,11 +73,6 @@ public class Platform{
       stroke(0);
       strokeWeight(1.2);
       rect(this.x,this.y,this.width,this.height, 2);
-    }
-    else if ((status == 0  || status == 1) && disappear){
-      fill(63, 204, 218, 0);
-      stroke(63, 204, 218, 0);
-      rect(this.x,this.y,this.width,this.height);
     }
   }
 }

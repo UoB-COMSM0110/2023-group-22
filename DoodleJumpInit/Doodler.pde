@@ -22,6 +22,10 @@ public class Doodler{
   PImage npc20 = loadImage("doodle_alternate.png");
   PImage npc21 = loadImage("astronaut_doodle_alternate.png");
   PImage npc22 = loadImage("ninja_doodle_alternate.png");
+  PImage jetpack_img = loadImage("jetpack.png");
+  PImage jetpack_effect_img = loadImage("jetpack_effect.png");
+  PImage jetpack_effect_alt_img = loadImage("jetpack_effect_alt.png");
+
   
   
   
@@ -136,13 +140,13 @@ public class Doodler{
     this.velocity = jumpForce;
   }
   
-  public void moveLeft(){
-    this.x -= 30;
-  }
+  // public void moveLeft(){
+  //   this.x -= 30;
+  // }
   
-  public void moveRight(){
-    this.x += 30;
-  }
+  // public void moveRight(){
+  //   this.x += 30;
+  // }
   //Boolean to check collision
   public boolean rectRect(float r1x, float r1y, float r1w, float r1h, float r2x, float r2y, float r2w, float r2h) {
     if (r1x + r1w >= r2x &&    // r1 right edge past r2 left

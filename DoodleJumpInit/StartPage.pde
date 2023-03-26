@@ -1,11 +1,12 @@
 public class StartPage{
+
   public int currentChoice;
-  PImage settingIconImg;
-  PImage char0Img;
-  PImage char1Img;
-  PImage char2Img;
-  PImage title0Img;
-  PImage title1Img;
+  PImage settingIconImg = loadImage("setting.png");
+  PImage char0Img = loadImage("doodle.png");
+  PImage char1Img = loadImage("astronaut_doodle.png");
+  PImage char2Img = loadImage("ninja_doodle_alternate.png");
+  PImage title0Img = loadImage("0_Doodle.png");
+  PImage title1Img = loadImage("1_Jump.png");
   PImage startButtonImg;
   private int W;
   private int H;
@@ -16,42 +17,35 @@ public class StartPage{
   public StartPage(int w,int h){
     this.W=w;
     this.H=h;
+    // startButtonImg = loadImage("start_button.png");
+  }
+
+  public int getCurrentChoice(){
+    return currentChoice;
   }
   
   private void title(){
-    title0Img = loadImage("0_Doodle.png");
     image(title0Img,W/2-175/2,60,175,47); 
-    title0Img = loadImage("1_Jump.png");
-    image(title0Img,125,110,132,47);
+    image(title1Img,125,110,132,47);
   }
 
   private void settingIcon(){
-    settingIconImg = loadImage("setting.png");
     image(settingIconImg,315,-10,100,100);
   }
-  
-  private void char1(){
-    char1Img = loadImage("astronaut_doodle.png");
-    image(char1Img, W*1/6-imageWidth/3, H*0.62, imageWidth, imageHeight);
-  }
-  
+
   private void char0(){
-    char0Img = loadImage("doodle.png");
     image(char0Img, W*3/6-imageWidth/2, H*0.62, imageWidth, imageHeight);
   }
   
+  private void char1(){
+    image(char1Img, W*1/6-imageWidth/3, H*0.62, imageWidth, imageHeight);
+  }
+  
   private void char2(){
-    char2Img = loadImage("ninja_doodle_alternate.png");
     image(char2Img, W*5/6-imageWidth/1.5, H*0.62, imageWidth, imageHeight);
   }
   
   private void startButton(){
-    startButtonImg = loadImage("start_button.png");
-    image(startButtonImg, W*3/6-imageWidth/2, H*5/6, imageWidth, imageHeight);
-  }
-  
-  
-  public void draw(){
     fill(229, 226, 194);
     stroke(0);
     strokeWeight(1.2);
@@ -62,8 +56,12 @@ public class StartPage{
     textSize(25);
     textAlign(CENTER, CENTER);
     text("START", W*0.505, H*0.88);
-    
-    //startButton();
+    // image(startButtonImg, W*3/6-imageWidth/2, H*5/6, imageWidth, imageHeight);
+  }
+  
+  
+  public void draw(){
+    startButton();
     settingIcon();
     title();
     if (currentChoice == 1){
@@ -72,7 +70,6 @@ public class StartPage{
       char0();
       char2();
       noTint();
-      currentChoice=1;
     }
     else if(currentChoice == 2){
       char2();

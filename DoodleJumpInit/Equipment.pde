@@ -1,9 +1,14 @@
 public class Equipment{
+
   private float x;
   private float y;
   private float width=15;
   private float height=15;
   private char type;
+  private PImage spring_img = loadImage("spring.png");
+  private PImage jetpack_img = loadImage("jetpack.png");
+
+
   
   public Equipment(float x, float y, char type){
     this.x = x;
