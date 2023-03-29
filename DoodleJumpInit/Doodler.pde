@@ -77,6 +77,48 @@ public class Doodler{
     }
   }
 
+  public void update(ArrayList <Platform> platforms,boolean down){
+    int state = 0;
+    if ((this.x + this.width)<0){
+      this.x = this.canvasW;
+    }
+    if (this.x > this.canvasW){
+      this.x = -this.width;
+    }
+
+    if(this.x_velocity != 0){
+      this.x += this.x_velocity;
+    }
+
+    for (Platform platform:platforms){
+        platform.y -=2;
+    }
+
+    for (Platform platform:platforms) {
+      if (this.y + this.height >= platform.y && this.y + this.height <= platform.y + platform.height) {
+        
+        float minX = platform.x - (this.width/2);
+        float maxX = platform.x + platform.width;
+        
+        if (this.x >= minX && this.x <= maxX) {
+            this.y = platform.y-this.height;
+            this.gravity = 0;
+            this.velocity = 0;
+            state = 1;
+        }
+      }
+    }
+    if (state==0){
+        this.gravity = 0.1;
+        this.velocity += this.gravity;
+        this.y += this.velocity;
+    }
+
+  }
+
+
+
+
   public void update(ArrayList <Platform> platforms){
     if ((this.x + this.width)<0){
       this.x = this.canvasW;

@@ -1,17 +1,21 @@
 PImage background_img;
 PImage pauseBackgroundImg;
 PImage pauseButton;
+PImage spike;
 PFont font;
 int W = 400;
 int H = 600;
 
 Doodler doodler;
+Doodler doodler_down;
+
 StartPage startPage;
 Doodler startPageDoodler;
 PauseWindow pause;
 GameOver gameOver;
 
 ArrayList <Platform> platforms;
+ArrayList <Platform> platforms_down;
 ArrayList <Platform> startPagePlatforms;
 float gap;
 int score;
@@ -32,6 +36,7 @@ void setup(){
   font = createFont("Comic Sans MS", 25);
 
   doodler = new Doodler(W,H);
+  doodler_down = new Doodler(W,H);
   startPage = new StartPage(W,H);
   startPageDoodler = new Doodler(W,H,180,280);
   pause = new PauseWindow();
@@ -40,19 +45,25 @@ void setup(){
   background_img = loadImage("background.jpg");
   pauseBackgroundImg = loadImage("black.jpg");
   pauseButton = loadImage("pause-button.png");
+  spike = loadImage("top.png");
 
   score = 0;
   platformCount = 6;
   gap = H/platformCount;
   platforms = new ArrayList<>();
+  platforms_down = new ArrayList<>();
   //To prevent Doodler fall immediately when game started
   platforms.add(new Platform(W/2,(float) H/2+100,0));
+  platforms_down.add(new Platform(W/2,(float) H/2+100,0));
+
 
   for (int i=0;i<platformCount-1;i++){
     if ((H/2+100)==H-(gap*i)){
       continue;
     }
     platforms.add(new Platform(random(W-60),H-(gap*i)));
+    platforms_down.add(new Platform(random(W-60),H-(gap*i)));
+
   }
 
   //Platforms for start page
@@ -93,6 +104,42 @@ void draw(){
     pause.draw(width/2, 100);
     pauseState = pause.pauseState;
   }
+  else if (gameState==2){
+    image(background_img, 0, 0);
+    image(spike,0,0,600,30);
+    pushMatrix();
+    if (doodler_down.y>600 || doodler_down.y<10) {
+      noLoop();
+      isGameOver = true;
+      gameOver.draw();
+      return;
+    }
+    doodler_down.draw(npc);
+    doodler_down.update(platforms_down,true);
+    platforms_down.add(0,new Platform(random(W-60),(float) platforms_down.get(0).y+gap));
+    for (Platform p:platforms_down){
+      p.draw();
+    }
+    push();
+    fill(0);
+    textSize(30);
+    textAlign(CENTER);
+    text(score, width-45, 80);
+    pause.pauseButton(width-60, 20);
+    pauseState = pause.pauseState;
+    pop();
+    popMatrix();
+    if (platforms_down.get(platforms_down.size()-1).y < -100) {
+        platforms_down.remove(platforms_down.size()-1);
+        score++;
+    }
+    if (pauseState){
+      tint(255,128);
+      image(pauseBackgroundImg, 0, 0);
+      noTint();
+    }
+
+  }
   else{
     //main game
     image(background_img, 0, 0);
@@ -101,6 +148,7 @@ void draw(){
       noLoop();
       isGameOver = true;
       gameOver.draw();
+      return;
     }
     else{
       translate(0, H/ 2 - doodler.y);
@@ -131,11 +179,11 @@ void draw(){
     if (platforms.get(0).y > doodler.y + 400) {
         platforms.remove(0);
         score++;
-      }
-      if (pauseState){
-        tint(255,128);
-        image(pauseBackgroundImg, 0, 0);
-        noTint();
+    }
+    if (pauseState){
+      tint(255,128);
+      image(pauseBackgroundImg, 0, 0);
+      noTint();
     }
   }
 }
@@ -143,15 +191,41 @@ void draw(){
 
 void keyPressed(){
   if (keyCode==LEFT && doodler.x_velocity > -5){
-    doodler.x_velocity -= 4;
-    if(doodler.img_direction != -1){
-      doodler.img_direction = doodler.img_direction * -1;
+    if (gameState==1){
+      doodler.x_velocity -= 4;
+      if(doodler.img_direction != -1){
+        doodler.img_direction = doodler.img_direction * -1;
+      }
     }
+    if (gameState==2){
+      doodler_down.x_velocity -= 4;
+      if(doodler_down.img_direction != -1){
+        doodler_down.img_direction = doodler_down.img_direction * -1;
+      }
+    }
+    
   }
   if (keyCode==RIGHT && doodler.x_velocity < 5){
-    doodler.x_velocity += 4;
-    if(doodler.img_direction != 1){
-      doodler.img_direction = doodler.img_direction * -1;
+    if (gameState==1){
+      doodler.x_velocity += 4;
+      if(doodler.img_direction != -1){
+        doodler.img_direction = doodler.img_direction * -1;
+      }
+    }
+    if (gameState==2){
+      doodler_down.x_velocity += 4;
+      if(doodler_down.img_direction != -1){
+        doodler_down.img_direction = doodler_down.img_direction * -1;
+      }
+    }
+  }
+  if (keyCode==ENTER){
+    System.out.println("gameState "+gameState);
+    if(gameState==1){
+      gameState=2;
+    }
+    else{
+      gameState=1;
     }
   }
   if (keyCode==' ' && isGameOver == true){
@@ -163,10 +237,20 @@ void keyPressed(){
 
 void keyReleased(){
   if (keyCode == LEFT){
-    doodler.x_velocity = 0;
+    if (gameState==1){
+      doodler.x_velocity = 0;
+    }
+    else if (gameState==2){
+      doodler_down.x_velocity = 0;
+    }
   }
   if (keyCode == RIGHT){
-    doodler.x_velocity = 0;
+    if (gameState==1){
+      doodler.x_velocity = 0;
+    }
+    else if (gameState==2){
+      doodler_down.x_velocity = 0;
+    }
   }
 }
 
@@ -174,11 +258,12 @@ void mouseClicked(){
   if (gameState==0){
   startPage.mouseClicked();
   }
-  if (gameState==1){
+  if (gameState==1 || gameState==2){
     pause.mouseClicked();
   }
   if ((isGameOver) && (mouseX>=W*0.36) && (mouseX<= W*0.36 + 115) && (mouseY>= H*0.47) && (mouseY<= H*0.47 +45)){
     gameState = 0;
+    isGameOver = false;
     loop();
     setup();
   }  

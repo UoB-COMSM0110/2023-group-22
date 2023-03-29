@@ -57,6 +57,10 @@ public class PauseWindow{
       this.pauseState = true;
       //this.pauseState = !this.pauseState;
     }
+    if ((mouseX>=width-60)&&(mouseX<=width-30)&&(mouseY>=20)&&(mouseY<=50)){
+      this.pauseState = true;
+      //this.pauseState = !this.pauseState;
+    }
     if (this.pauseState){
       if ((mouseX>=this.recX-80)&&(mouseX<=this.recX+80)&&(mouseY>=this.recY+30)&&(mouseY<=this.recY+80)){
         this.pauseState=false;
