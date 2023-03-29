@@ -58,7 +58,7 @@ void setup(){
 
 
   for (int i=0;i<platformCount-1;i++){
-    if ((H/2+100)==H-(gap*i)){
+    if (Math.abs(H/2+100)-(H-(gap*i))<0.0001){
       continue;
     }
     platforms.add(new Platform(random(W-60),H-(gap*i)));
@@ -86,9 +86,7 @@ void draw(){
     startPageDoodler.img_direction = -1;
     startPageDoodler.update(startPagePlatforms);
     for (Platform p:startPagePlatforms){
-      if (p.disappear==false){
-        p.draw();
-      }
+      p.draw();
       if(p.equipment != null){
         p.equipment.draw();
       }
@@ -104,6 +102,7 @@ void draw(){
     pause.draw(width/2, 100);
     pauseState = pause.pauseState;
   }
+  //down stairs mode
   else if (gameState==2){
     image(background_img, 0, 0);
     image(spike,0,0,600,30);
@@ -116,10 +115,16 @@ void draw(){
     }
     doodler_down.draw(npc);
     doodler_down.update(platforms_down,true);
-    platforms_down.add(0,new Platform(random(W-60),(float) platforms_down.get(0).y+gap));
+    if (frameCount%15==0){
+      platforms_down.add(0,new Platform(random(W-60),(float) platforms_down.get(0).y+gap));
+    }
+    System.out.println("====================================");
     for (Platform p:platforms_down){
+      System.out.println(p.y);
       p.draw();
     }
+    System.out.println("====================================");
+
     push();
     fill(0);
     textSize(30);
