@@ -1,0 +1,90 @@
+class Settings {
+  
+  private String[] levels = {"Easy", "Medium", "Hard"}; // list of three options
+  private int level = 0; // index of the currently selected option
+  private String[] playerNumbers = {"1 Player", "2 Players"};
+  private int playerNumber = 0;
+
+  
+  public Settings() {
+    // constructor
+  }
+
+  private void difficulty() {
+    
+    fill(229, 226, 194);
+    stroke(0);
+    strokeWeight(1.2);
+    rect(width/2-57.5, height/10, 115, 45, 10);  
+        
+    fill(80, 50, 0);
+    textSize(24);
+    text(levels[level], width/2, height/10 +16);
+
+    fill(229, 226, 194);
+    stroke(0);
+    strokeWeight(1.2);
+    triangle(width/2-70, height/10 + 5, width/2-70, height/10 + 40, width/2-90, height/10 + 22.5);
+
+    fill(229, 226, 194);
+    stroke(0);
+    strokeWeight(1.2);
+    triangle(width/2+70, height/10 + 5, width/2+70, height/10 + 40, width/2+90, height/10 + 22.5);
+    }
+
+  private void players(){
+    fill(229, 226, 194);
+    stroke(0);
+    strokeWeight(1.2);
+    rect(width/2-57.5, height/5, 115, 45, 10); 
+
+    fill(80, 50, 0);
+    textSize(24);
+    text(playerNumbers[playerNumber], width/2, height/5 +16);
+
+    fill(229, 226, 194);
+    stroke(0);
+    strokeWeight(1.2);
+    triangle(width/2-70, height/5 + 5, width/2-70, height/5 + 40, width/2-90, height/5 + 22.5);
+
+    fill(229, 226, 194);
+    stroke(0);
+    strokeWeight(1.2);
+    triangle(width/2+70, height/5 + 5, width/2+70, height/5 + 40, width/2+90, height/5 + 22.5);
+
+  }
+  
+  void draw() {
+    difficulty();
+    players();
+  }
+  
+  void mouseClicked() {
+    if (mouseX >= width/2-90 && mouseX <= width/2-70 && mouseY >= height/10 + 5 && mouseY <= height/10 + 40) {
+      if (level > 0){
+        level--;
+      }
+    }
+    if (mouseX >= width/2 + 70 && mouseX <= width/2 + 90 && mouseY >= height/10 + 5 && mouseY <= height/10 + 40){
+      if (level < 2){
+        level++;
+      }
+    }
+
+    if (mouseX >= width/2-90 && mouseX <= width/2-70 && mouseY >= height/5 + 5 && mouseY <= height/5 + 40) {
+      if (playerNumber == 1){
+        playerNumber--;
+      }
+    }
+    if (mouseX >= width/2 + 70 && mouseX <= width/2 + 90 && mouseY >= height/5 + 5 && mouseY <= height/5 + 40){
+      if (playerNumber == 0){
+        playerNumber++;
+      }
+    }
+  }
+  
+  public int getDifficulty(){
+    return level;
+  }
+  
+}

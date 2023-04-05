@@ -13,6 +13,7 @@ StartPage startPage;
 Doodler startPageDoodler;
 PauseWindow pause;
 GameOver gameOver;
+Settings setting;
 
 ArrayList <Platform> platforms;
 ArrayList <Platform> platforms_down;
@@ -22,6 +23,7 @@ int score;
 int gameState=0;
 int npc=0;
 boolean pauseState=false;
+boolean settingState = false;
 int platformCount;
 boolean isGameOver = false;
 //To prevent two continuous broken platform
@@ -72,6 +74,10 @@ void setup(){
   startPagePlatforms.add(new Platform(70,250,1));
   startPagePlatforms.add(new Platform(270,275,2));
   startPagePlatforms.add(new Platform(230,210,3));
+
+  //settings
+  setting = new Settings();
+
 }
 
 void draw(){
@@ -91,10 +97,15 @@ void draw(){
         p.equipment.draw();
       }
     }
+    if (settingState == true){
+      tint(255,128);
+      image(pauseBackgroundImg, 0, 0);
+      noTint();
+      setting.draw();  
+    }
     if (startPage.gameStart==true){
         gameState=1;
     }
-
   }
   //pause window
   else if (pauseState){
@@ -261,7 +272,8 @@ void keyReleased(){
 
 void mouseClicked(){
   if (gameState==0){
-  startPage.mouseClicked();
+    setting.mouseClicked();
+    startPage.mouseClicked();
   }
   if (gameState==1 || gameState==2){
     pause.mouseClicked();
@@ -271,6 +283,6 @@ void mouseClicked(){
     isGameOver = false;
     loop();
     setup();
-  }  
+  }
 }
   
