@@ -31,7 +31,7 @@ public class StartPage{
         }
     
     private void settingIcon() {
-        image(settingIconImg,315, -10,100,100);
+        image(settingIconImg,315, -10, 100, 100);
         }
     
     private void char0() {
@@ -59,11 +59,18 @@ public class StartPage{
         text("START", W * 0.505, H * 0.88);
         // image(startButtonImg, W*3/6-imageWidth/2, H*5/6, imageWidth, imageHeight);
         }
+
+    private void helpButton(){ 
+        fill(0);
+        textSize(35);
+        text("\u24d8", 35, 33);
+    }
     
     
     public void draw() {
         startButton();
         settingIcon();
+        helpButton();
         title();
         if (currentChoice == 1) {
             char1();
@@ -101,8 +108,11 @@ public class StartPage{
         if ((mouseX >=  W * 0.36) && (mouseX<= W * 0.36 + 120) && (mouseY>= H * 0.85) && (mouseY<= H * 0.85 + 45)) {
             gameStart = true;
             }
-        if ((mouseX >=  315) && (mouseX<= 315 + 100) && (mouseY>= -10) && (mouseY<= -10 + 100)) {
+        if ((mouseX >= 315) && (mouseX<= 315 + 100) && (mouseY>= - 10) && (mouseY<= -10 + 100)) {
             settingState = true;
             }
-        }  
+        if ((mouseX >= 35 - 20) && (mouseX<= 35 + 20) && (mouseY>= 33 - 20) && (mouseY<= 33 + 20)) {
+            helpState = true;
+            }
     }
+}
