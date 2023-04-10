@@ -290,8 +290,9 @@ void mouseClicked(){
     pause.mouseClicked();
   }
   if ((isGameOver) && (mouseX>=W*0.36) && (mouseX<= W*0.36 + 115) && (mouseY>= H*0.47) && (mouseY<= H*0.47 +45)){
-    gameState = 0;
+    startPage.gameStart = false;
     isGameOver = false;
+    gameState = 0;
     loop();
     setup();
   }
