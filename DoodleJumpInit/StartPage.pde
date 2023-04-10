@@ -66,11 +66,30 @@ public class StartPage{
         text("\u24d8", 35, 33);
     }
     
+    private void chooseMe(){
+        // Draw the dialog icon
+        fill(229, 226, 194);
+        ellipse(60, 335, 90, 40);
+        ellipse(35, 370, 25, 20);
+        ellipse(45, 390, 10, 10);
+
+        //text
+        fill(80, 50, 0);
+        textFont(font);
+        textSize(15);
+        textAlign(CENTER, CENTER);
+        if (currentChoice == 1){
+            text("Great!", 60, 332);
+        }else{
+            text("Choose Me!", 60, 332);
+        } 
+    }
     
     public void draw() {
         startButton();
         settingIcon();
         helpButton();
+        chooseMe();
         title();
         if (currentChoice == 1) {
             char1();
