@@ -14,7 +14,9 @@ public class StartPage{
     private float imageHeight = 105;
     public boolean gameStart = false;
     public boolean settingPage = false;
-    
+    public int playerNumber = 0;
+    public int player1 = 2;
+    public int player2 = 3;
     public StartPage(int w,int h) {
         this.W = w;
         this.H = h;
@@ -91,6 +93,7 @@ public class StartPage{
         helpButton();
         chooseMe();
         title();
+        if (playerNumber == 0){
         if (currentChoice == 1) {
             char1();
             tint(255,128);
@@ -112,26 +115,190 @@ public class StartPage{
             char2();
             noTint();
             }
+        }else if (playerNumber == 1){
+            fill(80, 50, 0);
+            textFont(font);
+            textSize(15);
+            textAlign(CENTER, CENTER);
+            if (player1 == 0 && player2 == 0) {
+            tint(255,128);
+            char1();
+            char2();
+            char0();
+            noTint();
+            }
+        else if (player1 == 1 && player2 == 0) {
+            char2();
+            text("player1", 305, 480);
+            tint(255,128);
+            char0();
+            char1();
+            noTint();
+            }
+        else if (player1 == 2 && player2 == 0) {
+            char1();
+            text("player1", 95, 485);
+            tint(255,128);
+            char0();
+            char2();
+            noTint();
+            }
+        else if (player1 == 3 && player2 == 0) {
+            char0();
+            text("player1", 200, 485);
+            tint(255,128);
+            char1();
+            char2();
+            noTint();
+            }
+        else if (player1 == 0 && player2 == 1) {
+            char2();
+            text("player2", 305, 482);
+            tint(255,128);
+            char0();
+            char1();
+            noTint();
+            }
+        else if (player1 == 0 && player2 == 2) {
+            char1();
+            text("player2", 95, 485);
+            tint(255,128);
+            char0();
+            char2();
+            noTint();
+            }
+        else if (player1 == 0 && player2 == 3) {
+            char0();
+            text("player2", 200, 485);
+            tint(255,128);
+            char1();
+            char2();
+            noTint();
+            }
+        else if (player1 == 1 && player2 == 2) {
+            char1();
+            text("player1", 305, 482);
+            char2();
+            text("player2", 95, 485);
+            tint(255,128);
+            char0();
+            noTint();
+            }
+        else if (player1 == 2 && player2 == 1) {
+            char1();
+            text("player2", 305, 482);
+            char2();
+            tint(255,128);
+            text("player1", 95, 485);
+            char0();
+            noTint();
+            }
+        else if (player1 == 1 && player2 == 3) {
+            char0();
+            text("player2", 200, 485);
+            char2();
+            text("player1", 305, 482);
+            tint(255,128);
+            char1();
+            noTint();
+            }
+        else if (player1 == 3 && player2 == 1) {
+            char0();
+            text("player1", 200, 485);
+            char2();
+            text("player2", 305, 482);
+            tint(255,128);
+            char1();
+            noTint();
+            }
+        else if (player1 == 2 && player2 == 3) {
+            char0();
+            text("player1", 95, 485);
+            char1();
+            text("player2", 200, 485);
+            tint(255,128);
+            char2();
+            noTint();
+            }
+        else if (player1 == 3 && player2 == 2) {
+            char0();
+            text("player2", 95, 485);
+            char1();
+            text("player1", 200, 485);
+            tint(255,128);
+            char2();
+            noTint();
+            }
         }
+    }
     
     void mouseClicked() {
-        if ((mouseX >=  W * 1 / 6 - imageWidth / 3) && (mouseX<= (W * 1 / 6 - imageWidth / 2 + imageWidth)) && (mouseY>= H * 4 / 6) && (mouseY<= H * 4 / 6 + imageHeight)) {
-            currentChoice = 1;
+        if (playerNumber == 0){
+            if ((mouseX >=  W * 1 / 6 - imageWidth / 3) && (mouseX<= (W * 1 / 6 - imageWidth / 2 + imageWidth)) && (mouseY>= H * 4 / 6) && (mouseY<= H * 4 / 6 + imageHeight)) {
+                currentChoice = 1;
+                }
+            else if ((mouseX >=  W * 5 / 6 - imageWidth / 1.5) &&  (mouseX<= (W * 5 / 6 - imageWidth / 2 + imageWidth)) && (mouseY>= H * 4 / 6) && (mouseY<= H * 4 / 6 + imageHeight)) {
+                currentChoice = 2;
+                }
+            else if ((mouseX >=  W * 3 / 6 - imageWidth / 2) && (mouseX<= (W * 3 / 6 - imageWidth / 2 + imageWidth)) && (mouseY>= H * 4 / 6) && (mouseY<= H * 4 / 6 + imageHeight)) {
+                currentChoice = 0;
+                }
+            if ((mouseX >=  W * 0.36) && (mouseX<= W * 0.36 + 120) && (mouseY>= H * 0.85) && (mouseY<= H * 0.85 + 45)) {
+                gameStart = true;
+                }
+            if ((mouseX >= 315) && (mouseX<= 315 + 100) && (mouseY>= - 10) && (mouseY<= -10 + 100)) {
+                settingState = true;
+                }
+            if ((mouseX >= 35 - 20) && (mouseX<= 35 + 20) && (mouseY>= 33 - 20) && (mouseY<= 33 + 20)) {
+                helpState = true;
+                }
+        }
+        else if (playerNumber == 1){
+            if ((mouseX >=  W * 1 / 6 - imageWidth / 3) && (mouseX<= (W * 1 / 6 - imageWidth / 2 + imageWidth)) && (mouseY>= H * 4 / 6) && (mouseY<= H * 4 / 6 + imageHeight)) {
+                if (player1 == 2){
+                    player1 = 0;
+                }else if (player1 == 0 && player2 != 2){
+                    player1 = 2;
+                }
+                else if (player2 == 2){
+                    player2 = 0;
+                }else{
+                    player2 = 2;
+                }
             }
-        else if ((mouseX >=  W * 5 / 6 - imageWidth / 1.5) &&  (mouseX<= (W * 5 / 6 - imageWidth / 2 + imageWidth)) && (mouseY>= H * 4 / 6) && (mouseY<= H * 4 / 6 + imageHeight)) {
-            currentChoice = 2;
+            else if ((mouseX >=  W * 5 / 6 - imageWidth / 1.5) &&  (mouseX<= (W * 5 / 6 - imageWidth / 2 + imageWidth)) && (mouseY>= H * 4 / 6) && (mouseY<= H * 4 / 6 + imageHeight)) {
+                if (player1 == 1){
+                    player1 = 0;
+                }else if (player1 == 0 && player2 != 1){
+                    player1 = 1;
+                }
+                else if (player2 == 1){
+                    player2 = 0;
+                }else{
+                    player2 = 1;
+                }
             }
-        else if ((mouseX >=  W * 3 / 6 - imageWidth / 2) && (mouseX<= (W * 3 / 6 - imageWidth / 2 + imageWidth)) && (mouseY>= H * 4 / 6) && (mouseY<= H * 4 / 6 + imageHeight)) {
-            currentChoice = 0;
+            else if ((mouseX >=  W * 3 / 6 - imageWidth / 2) && (mouseX<= (W * 3 / 6 - imageWidth / 2 + imageWidth)) && (mouseY>= H * 4 / 6) && (mouseY<= H * 4 / 6 + imageHeight)) {
+                if (player1 == 3){
+                    player1 = 0;
+                }else if (player1 == 0 && player2 != 3){
+                    player1 = 3;
+                }
+                else if (player2 == 3){
+                    player2 = 0;
+                }else{
+                    player2 = 3;
+                }
             }
-        if ((mouseX >=  W * 0.36) && (mouseX<= W * 0.36 + 120) && (mouseY>= H * 0.85) && (mouseY<= H * 0.85 + 45)) {
-            gameStart = true;
-            }
-        if ((mouseX >= 315) && (mouseX<= 315 + 100) && (mouseY>= - 10) && (mouseY<= -10 + 100)) {
-            settingState = true;
-            }
-        if ((mouseX >= 35 - 20) && (mouseX<= 35 + 20) && (mouseY>= 33 - 20) && (mouseY<= 33 + 20)) {
-            helpState = true;
-            }
+            if ((mouseX >=  W * 0.36) && (mouseX<= W * 0.36 + 120) && (mouseY>= H * 0.85) && (mouseY<= H * 0.85 + 45)) {
+                gameStart = true;
+                }
+            if ((mouseX >= 315) && (mouseX<= 315 + 100) && (mouseY>= - 10) && (mouseY<= -10 + 100)) {
+                settingState = true;
+                }
+            if ((mouseX >= 35 - 20) && (mouseX<= 35 + 20) && (mouseY>= 33 - 20) && (mouseY<= 33 + 20)) {
+                helpState = true;
+                }
+        }
     }
 }
