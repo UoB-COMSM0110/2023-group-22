@@ -49,18 +49,17 @@ public class StartPage{
         }
     
     private void startButton() {
-        fill(250, 213, 207);
-        stroke(0);
-        strokeWeight(1.2);
-        rect(W * 0.36, H * 0.85, 115, 45, 10);
+            fill(250, 213, 207);
+            stroke(0);
+            strokeWeight(1.2);
+            rect(W * 0.36, H * 0.85, 115, 45, 10);
         
-        fill(80, 50, 0);
-        textFont(font);
-        textSize(25);
-        textAlign(CENTER, CENTER);
-        text("START", W * 0.505, H * 0.88);
-        // image(startButtonImg, W*3/6-imageWidth/2, H*5/6, imageWidth, imageHeight);
-        }
+            fill(80, 50, 0);
+            textFont(font);
+            textSize(25);
+            textAlign(CENTER, CENTER);
+            text("START", W * 0.505, H * 0.88);
+    }
 
     private void helpButton(){ 
         fill(0);
@@ -80,11 +79,7 @@ public class StartPage{
         textFont(font);
         textSize(15);
         textAlign(CENTER, CENTER);
-        // if (currentChoice == 1){
-        //     text("Great!", 60, 332);
-        // }else{
-        text("Click to choose!", 60, 332);
-        // } 
+        text("Click to choose!", 60, 332);    
     }
     
     public void draw() {
@@ -121,6 +116,7 @@ public class StartPage{
             textSize(15);
             textAlign(CENTER, CENTER);
             if (player1 == 0 && player2 == 0) {
+            text("Choose two players to start!", width/2, 565);
             tint(255,128);
             char1();
             char2();
@@ -128,6 +124,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 1 && player2 == 0) {
+            text("Choose two players to start!", width/2, 565);
             char2();
             text("player1", 305, 480);
             tint(255,128);
@@ -136,6 +133,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 2 && player2 == 0) {
+            text("Choose two players to start!", width/2, 565);
             char1();
             text("player1", 95, 485);
             tint(255,128);
@@ -144,6 +142,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 3 && player2 == 0) {
+            text("Choose two players to start!", width/2, 565);
             char0();
             text("player1", 200, 485);
             tint(255,128);
@@ -152,6 +151,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 0 && player2 == 1) {
+            text("Choose two players to start!", width/2, 565);
             char2();
             text("player2", 305, 482);
             tint(255,128);
@@ -160,6 +160,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 0 && player2 == 2) {
+            text("Choose two players to start!", width/2, 565);
             char1();
             text("player2", 95, 485);
             tint(255,128);
@@ -168,6 +169,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 0 && player2 == 3) {
+            text("Choose two players to start!", width/2, 565);
             char0();
             text("player2", 200, 485);
             tint(255,128);
@@ -291,14 +293,16 @@ public class StartPage{
                 }
             }
             if ((mouseX >=  W * 0.36) && (mouseX<= W * 0.36 + 120) && (mouseY>= H * 0.85) && (mouseY<= H * 0.85 + 45)) {
-                gameStart = true;
+                if (player1 > 0 && player2 > 0){
+                    gameStart = true;
                 }
+            }
             if ((mouseX >= 315) && (mouseX<= 315 + 100) && (mouseY>= - 10) && (mouseY<= -10 + 100)) {
                 settingState = true;
-                }
+            }
             if ((mouseX >= 35 - 20) && (mouseX<= 35 + 20) && (mouseY>= 33 - 20) && (mouseY<= 33 + 20)) {
                 helpState = true;
-                }
+            }
         }
     }
 }
