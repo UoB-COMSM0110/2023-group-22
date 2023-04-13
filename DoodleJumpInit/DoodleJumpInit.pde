@@ -114,15 +114,15 @@ void setup(){
   //instructions
   help = new Help();
 
-  int prevBrokenPlatform=0;
-  int sosPlatformCount=0;
-  int addedScore=0;
+  prevBrokenPlatform=0;
+  sosPlatformCount=0;
+  addedScore=0;
 
   //Downstairs usage
-  int downFrameStart=0;
-  int downGameFrameStart=0;
-  int downScore=0;
-  boolean countDownState=false;
+  downFrameStart=0;
+  downGameFrameStart=0;
+  downScore=0;
+  countDownState=false;
 
 }
 
@@ -477,19 +477,19 @@ void keyPressed(){
     }
   }
 
-  if (keyCode==ENTER){
-    System.out.println("gameState "+gameState);
-    if(gameState==1){
-      gameState=2;
-    }
-    else{
-      gameState=1;
-    }
-  }
+  // if (keyCode==ENTER){
+  //   System.out.println("gameState "+gameState);
+  //   if(gameState==1){
+  //     gameState=2;
+  //   }
+  //   else{
+  //     gameState=1;
+  //   }
+  // }
   if (keyCode==' ' && isGameOver == true){
     isGameOver = false;
-    loop();
     setup();
+    loop();
   }
 }
 
@@ -542,8 +542,8 @@ void mouseClicked(){
     startPage.gameStart = false;
     isGameOver = false;
     gameState = 0;
-    loop();
     setup();
+    loop();
   }
 }
   

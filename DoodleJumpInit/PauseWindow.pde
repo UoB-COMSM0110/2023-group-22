@@ -70,8 +70,8 @@ public class PauseWindow{
         startPage.gameStart = false;
         isGameOver = false;
         gameState = 0;
-        loop();
         setup();
+        loop();
         // this.pauseState=false;
         // doodler = new ArrayList<>();
         // doodler.add(new Doodler(W,H));
