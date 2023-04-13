@@ -52,6 +52,7 @@ int downFrameStart=0;
 int downGameFrameStart=0;
 int downScore=0;
 boolean countDownState=false;
+int moveSpeed;
 
 int winner;
 
@@ -123,6 +124,7 @@ void setup(){
   downGameFrameStart=0;
   downScore=0;
   countDownState=false;
+  moveSpeed = 0;
 
 }
 
@@ -179,6 +181,7 @@ void draw(){
     if (frameCount-downFrameStart>=45){
       if (gameState==1){
         gameState=2;
+        moveSpeed += 2;
         downGameFrameStart = frameCount;
         doodler_down = new Doodler(W,H);
         platforms_down = new ArrayList<>();
