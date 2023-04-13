@@ -24,6 +24,7 @@ ArrayList <Monster> monsters;
 
 float gap;
 int score;
+// 0:start page , 1:one player main game , 2: down stairs, 3: 2 players mode
 int gameState=0;
 
 int npc=0;
@@ -193,7 +194,7 @@ void draw(){
   else if (gameState==3){
     image(background_img, 0, 0);
     pushMatrix();
-    if (doodler.get(0).velocity > 10 || doodler.get(1).velocity > 10) {
+    if (doodler.get(0).velocity > 10 || doodler.get(1).velocity > 10 || doodler.get(0).doodler_dissapear || doodler.get(1).doodler_dissapear) {
       noLoop();
       isGameOver = true;
       gameOver.draw();
@@ -221,11 +222,17 @@ void draw(){
       pauseState = pause.pauseState;
     }
     pop();
-  
-    doodler.get(0).draw(npc);
-    doodler.get(1).draw(npc2);
+
+    if (!doodler.get(0).doodler_dissapear){
+      doodler.get(0).draw(npc);
+    }
+    if (!doodler.get(1).doodler_dissapear){
+      doodler.get(1).draw(npc2);
+    }
     doodler.get(0).update(platforms);
+    doodler.get(0).updateMonster(monsters);
     doodler.get(1).update(platforms);
+    doodler.get(1).updateMonster(monsters);
     
     for (Platform p:platforms){
       if (p.disappear==false){
@@ -233,6 +240,12 @@ void draw(){
       }
       if(p.equipment != null){
         p.equipment.draw();
+      }
+    }
+
+    if(monsters.size() != 0){
+      for(Monster m:monsters){
+        m.draw();
       }
     }
     popMatrix();
@@ -256,14 +269,23 @@ void draw(){
       }
 
     }
-
-    
+    if (millis() - initialTime > interval){
+      if(monsters.size() > 0){
+        monsters.remove(0);
+      }
+      if (doodler.get(0).y<=doodler.get(1).y){
+        monsters.add(new Monster(random(W-60), doodler.get(0).y - 400));
+      }
+      else{
+        monsters.add(new Monster(random(W-60), doodler.get(1).y - 400));
+      }
+      initialTime = millis();
+    }
     if (pauseState){
       tint(255,128);
       image(pauseBackgroundImg, 0, 0);
       noTint();
     }
-
   }
   else{
     //one player main game
