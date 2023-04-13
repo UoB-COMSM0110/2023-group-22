@@ -3,7 +3,6 @@ PImage pauseBackgroundImg;
 PImage pauseButton;
 PImage spike;
 PImage doodleFallWord;
-PImage doodleJumpWord;
 PFont font;
 int W = 400;
 int H = 600;
@@ -79,7 +78,7 @@ void setup(){
   pauseBackgroundImg = loadImage("black.jpg");
   pauseButton = loadImage("pause-button.png");
   spike = loadImage("top.png");
-  doodleFallWord = loadImage("doodleFall.jpg");
+  doodleFallWord = loadImage("watchout.jpg");
 
   initialTime = millis();
   monsters = new ArrayList<>();
@@ -173,9 +172,10 @@ void draw(){
   }
   else if (countDownState){
     image(background_img, 0, 0);
-    tint(255,128);
-    image(doodleFallWord, 0, 0);
+    tint(255,200);
+    image(pauseBackgroundImg,0,0);
     noTint();
+    image(doodleFallWord, 0, 100);
     if (frameCount-downFrameStart>=45){
       if (gameState==1){
         gameState=2;
@@ -200,7 +200,7 @@ void draw(){
   else if (gameState==2){
     image(background_img, 0, 0);
     image(spike,0,0,600,30);
-    if (frameCount-downGameFrameStart>=1800){
+    if (frameCount-downGameFrameStart>=180){
       countDownState = true;
       downFrameStart = frameCount;
     }
@@ -216,12 +216,12 @@ void draw(){
     if (frameCount%15==0){
       platforms_down.add(0,new Platform(random(W-60),(float) platforms_down.get(0).y+gap));
     }
-    System.out.println("====================================");
+    // System.out.println("====================================");
     for (Platform p:platforms_down){
-      System.out.println(p.y);
+      // System.out.println(p.y);
       p.draw();
     }
-    System.out.println("====================================");
+    // System.out.println("====================================");
 
     push();
     fill(0);
@@ -354,7 +354,7 @@ void draw(){
   else{
     //one player main game
     image(background_img, 0, 0);
-    if (setting.getDifficulty()==2 && score%100==0 && score!=downScore){
+    if (setting.getDifficulty()==2 && score%10==0 && score!=downScore){
       countDownState = true;
       downFrameStart = frameCount;
       return;
