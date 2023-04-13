@@ -68,9 +68,13 @@ public class PauseWindow{
       if ((mouseX>=this.recX-80)&&(mouseX<=this.recX+80)&&(mouseY>=this.recY+110)&&(mouseY<=this.recY+160)){
         // gameState=0;
         startPage.gameStart = false;
-        isGameOver = false;
         gameState = 0;
+        int tmpDiff = setting.getDifficulty();
+        int tmpPlayers = setting.getPlayerNumber();
+        isGameOver = false;
         setup();
+        setting.setDifficulty(tmpDiff);
+        setting.setPlayerNumber(tmpPlayers);
         loop();
         // this.pauseState=false;
         // doodler = new ArrayList<>();

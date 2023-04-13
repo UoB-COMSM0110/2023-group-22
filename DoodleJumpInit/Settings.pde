@@ -108,5 +108,13 @@ class Settings {
   public int getPlayerNumber(){
     return playerNumber;
   }
+
+  public int setDifficulty(int level){
+    return this.level = level;
+  }
+
+  public int setPlayerNumber(int playerNumber){
+    return this.playerNumber = playerNumber;
+  }
   
 }

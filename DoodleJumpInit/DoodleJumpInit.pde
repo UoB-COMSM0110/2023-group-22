@@ -483,8 +483,12 @@ void keyPressed(){
   //   }
   // }
   if (keyCode==' ' && isGameOver == true){
+    int tmpDiff = setting.getDifficulty();
+    int tmpPlayers = setting.getPlayerNumber();
     isGameOver = false;
     setup();
+    setting.setDifficulty(tmpDiff);
+    setting.setPlayerNumber(tmpPlayers);
     loop();
   }
 }
@@ -536,9 +540,13 @@ void mouseClicked(){
   }
   if ((isGameOver) && (mouseX>=W*0.36) && (mouseX<= W*0.36 + 115) && (mouseY>= H*0.47) && (mouseY<= H*0.47 +45)){
     startPage.gameStart = false;
-    isGameOver = false;
     gameState = 0;
+    int tmpDiff = setting.getDifficulty();
+    int tmpPlayers = setting.getPlayerNumber();
+    isGameOver = false;
     setup();
+    setting.setDifficulty(tmpDiff);
+    setting.setPlayerNumber(tmpPlayers);
     loop();
   }
 }
