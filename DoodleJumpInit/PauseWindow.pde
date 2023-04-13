@@ -66,16 +66,23 @@ public class PauseWindow{
         this.pauseState=false;
       }
       if ((mouseX>=this.recX-80)&&(mouseX<=this.recX+80)&&(mouseY>=this.recY+110)&&(mouseY<=this.recY+160)){
-        gameState=0;
-        this.pauseState=false;
-        doodler = new Doodler(W,H);
-        platformCount = 6;
-        gap = H/platformCount;
-        platforms = new ArrayList<>();
-        for (int i=0;i<platformCount;i++){
-          platforms.add(new Platform(random(W-60),H-(gap*i)));
-         }
-         score=0;
+        // gameState=0;
+        startPage.gameStart = false;
+        isGameOver = false;
+        gameState = 0;
+        loop();
+        setup();
+        // this.pauseState=false;
+        // doodler = new ArrayList<>();
+        // doodler.add(new Doodler(W,H));
+        // doodler.add(new Doodler(W,H));
+        // platformCount = 6;
+        // gap = H/platformCount;
+        // platforms = new ArrayList<>();
+        // for (int i=0;i<platformCount;i++){
+        //   platforms.add(new Platform(random(W-60),H-(gap*i)));
+        //  }
+        //  score=0;
       }
     }
     

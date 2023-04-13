@@ -6,7 +6,8 @@ PFont font;
 int W = 400;
 int H = 600;
 
-Doodler doodler;
+// Doodler doodler.get(0);
+ArrayList <Doodler> doodler;
 Doodler doodler_down;
 
 StartPage startPage;
@@ -19,15 +20,26 @@ Help help;
 ArrayList <Platform> platforms;
 ArrayList <Platform> platforms_down;
 ArrayList <Platform> startPagePlatforms;
+ArrayList <Monster> monsters;
+
 float gap;
 int score;
 int gameState=0;
+
 int npc=0;
+int npc2=0;
+
 boolean pauseState=false;
 boolean settingState = false;
 boolean helpState = false;
 int platformCount;
 boolean isGameOver = false;
+
+//monster usage
+boolean addNewMonster = true;
+int initialTime;
+int interval = 10000;
+
 //To prevent two continuous broken platform
 int prevBrokenPlatform=0;
 
@@ -39,7 +51,10 @@ void setup(){
   background(255);
   font = createFont("Comic Sans MS", 25);
 
-  doodler = new Doodler(W,H);
+  // doodler = new Doodler(W,H);
+  doodler = new ArrayList<>();
+  doodler.add(new Doodler(W,H));
+  doodler.add(new Doodler(W,H));
   doodler_down = new Doodler(W,H);
   startPage = new StartPage(W,H);
   startPageDoodler = new Doodler(W,H,180,280);
@@ -50,6 +65,9 @@ void setup(){
   pauseBackgroundImg = loadImage("black.jpg");
   pauseButton = loadImage("pause-button.png");
   spike = loadImage("top.png");
+
+  initialTime = millis();
+  monsters = new ArrayList<>();
 
   score = 0;
   platformCount = 6;
@@ -90,6 +108,11 @@ void draw(){
     image(background_img, 0, 0);
     startPage.draw();
     npc = startPage.currentChoice;
+    //TODO 
+    if(npc != 2){
+      npc2 = npc + 1;
+    }
+
     startPageDoodler.draw(npc);
     startPageDoodler.jumpForce= -5;
     startPageDoodler.gravity = 0.2;
@@ -114,7 +137,7 @@ void draw(){
       help.draw(); 
     }
     if (startPage.gameStart == true){
-        gameState = 1;
+        gameState = setting.getPlayerNumber()==0?1:3;
     }
   }
   //pause window
@@ -166,30 +189,44 @@ void draw(){
     }
 
   }
-  else{
-    //main game
+  //two player mode
+  else if (gameState==3){
     image(background_img, 0, 0);
     pushMatrix();
-    if (doodler.velocity > 10) {
+    if (doodler.get(0).velocity > 10 || doodler.get(1).velocity > 10) {
       noLoop();
       isGameOver = true;
       gameOver.draw();
       return;
     }
     else{
-      translate(0, H/ 2 - doodler.y);
+      if (doodler.get(0).y<=doodler.get(1).y){
+        translate(0, H/ 2 - doodler.get(0).y);
+      }
+      else{
+        translate(0, H/ 2 - doodler.get(1).y);
+      }
     }
     push();
-    fill(0);
-    textSize(30);
-    textAlign(CENTER);
-    text(score, width/2, doodler.y - 250);
-    pause.pauseButton(width-60, doodler.y - 280);
-    pauseState = pause.pauseState;
+    // fill(0);
+    // textSize(30);
+    // textAlign(CENTER);
+    // text(score, width/2, doodler.get(0).y - 250);
+    if (doodler.get(0).y<=doodler.get(1).y){
+      pause.pauseButton(width-60, doodler.get(0).y - 280);
+      pauseState = pause.pauseState;
+    }
+    else{
+      pause.pauseButton(width-60, doodler.get(1).y - 280);
+      pauseState = pause.pauseState;
+    }
     pop();
   
-    doodler.draw(npc);
-    doodler.update(platforms);
+    doodler.get(0).draw(npc);
+    doodler.get(1).draw(npc2);
+    doodler.get(0).update(platforms);
+    doodler.get(1).update(platforms);
+    
     for (Platform p:platforms){
       if (p.disappear==false){
         p.draw();
@@ -199,10 +236,73 @@ void draw(){
       }
     }
     popMatrix();
-    if (doodler.y < platforms.get(platforms.size()-1).y + 200) {
+
+    if (doodler.get(0).y<=doodler.get(1).y){
+      if (doodler.get(0).y < platforms.get(platforms.size()-1).y + 200) {
+        platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
+      }
+      if (platforms.get(0).y > doodler.get(0).y + 400) {
+        platforms.remove(0);
+        // score++;
+      }
+    }
+    else{
+      if (doodler.get(1).y < platforms.get(platforms.size()-1).y + 200) {
+        platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
+      }
+      if (platforms.get(1).y > doodler.get(1).y + 400) {
+        platforms.remove(1);
+        // score++;
+      }
+
+    }
+
+    
+    if (pauseState){
+      tint(255,128);
+      image(pauseBackgroundImg, 0, 0);
+      noTint();
+    }
+
+  }
+  else{
+    //one player main game
+    image(background_img, 0, 0);
+    pushMatrix();
+    if (doodler.get(0).velocity > 10) {
+      noLoop();
+      isGameOver = true;
+      gameOver.draw();
+      return;
+    }
+    else{
+      translate(0, H/ 2 - doodler.get(0).y);
+    }
+    push();
+    fill(0);
+    textSize(30);
+    textAlign(CENTER);
+    text(score, width/2, doodler.get(0).y - 250);
+    pause.pauseButton(width-60, doodler.get(0).y - 280);
+    pauseState = pause.pauseState;
+    pop();
+  
+    doodler.get(0).draw(npc);
+    doodler.get(0).update(platforms);
+    
+    for (Platform p:platforms){
+      if (p.disappear==false){
+        p.draw();
+      }
+      if(p.equipment != null){
+        p.equipment.draw();
+      }
+    }
+    popMatrix();
+    if (doodler.get(0).y < platforms.get(platforms.size()-1).y + 200) {
       platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
     }
-    if (platforms.get(0).y > doodler.y + 400) {
+    if (platforms.get(0).y > doodler.get(0).y + 400) {
         platforms.remove(0);
         score++;
     }
@@ -216,11 +316,11 @@ void draw(){
 
 
 void keyPressed(){
-  if (keyCode==LEFT && doodler.x_velocity > -5){
-    if (gameState==1){
-      doodler.x_velocity -= 4;
-      if(doodler.img_direction != -1){
-        doodler.img_direction = doodler.img_direction * -1;
+  if (keyCode==LEFT && doodler.get(0).x_velocity > -5){
+    if (gameState==1 || gameState==3 || gameState==3){
+      doodler.get(0).x_velocity -= 4;
+      if(doodler.get(0).img_direction != -1){
+        doodler.get(0).img_direction = doodler.get(0).img_direction * -1;
       }
     }
     if (gameState==2){
@@ -231,11 +331,11 @@ void keyPressed(){
     }
     
   }
-  if (keyCode==RIGHT && doodler.x_velocity < 5){
-    if (gameState==1){
-      doodler.x_velocity += 4;
-      if(doodler.img_direction != 1){
-        doodler.img_direction = doodler.img_direction * -1;
+  if (keyCode==RIGHT && doodler.get(0).x_velocity < 5){
+    if (gameState==1 || gameState==3){
+      doodler.get(0).x_velocity += 4;
+      if(doodler.get(0).img_direction != 1){
+        doodler.get(0).img_direction = doodler.get(0).img_direction * -1;
       }
     }
     if (gameState==2){
@@ -245,6 +345,23 @@ void keyPressed(){
       }
     }
   }
+
+  //two players mode
+  if (gameState==3){
+    if(key == 'a' && doodler.get(1).x_velocity > -5){
+      doodler.get(1).x_velocity -= 4;
+      if(doodler.get(1).img_direction != -1){
+        doodler.get(1).img_direction = doodler.get(1).img_direction * -1;
+      }
+    }
+    if (key == 'd' && doodler.get(1).x_velocity < 5){
+      doodler.get(1).x_velocity += 4;
+      if(doodler.get(1).img_direction != 1){
+        doodler.get(1).img_direction = doodler.get(1).img_direction * -1;
+      }
+    }
+  }
+
   if (keyCode==ENTER){
     System.out.println("gameState "+gameState);
     if(gameState==1){
@@ -263,21 +380,30 @@ void keyPressed(){
 
 void keyReleased(){
   if (keyCode == LEFT){
-    if (gameState==1){
-      doodler.x_velocity = 0;
+    if (gameState==1 || gameState==3){
+      doodler.get(0).x_velocity = 0;
     }
     else if (gameState==2){
       doodler_down.x_velocity = 0;
     }
   }
   if (keyCode == RIGHT){
-    if (gameState==1){
-      doodler.x_velocity = 0;
+    if (gameState==1 || gameState==3){
+      doodler.get(0).x_velocity = 0;
     }
     else if (gameState==2){
       doodler_down.x_velocity = 0;
     }
   }
+  if (gameState==3){
+    if (key == 'a'){
+    doodler.get(1).x_velocity = 0;
+    }
+    if (key == 'd'){
+      doodler.get(1).x_velocity = 0;
+    }
+  }
+  
 }
 
 void mouseClicked(){
@@ -286,7 +412,7 @@ void mouseClicked(){
     startPage.mouseClicked();
     help.mouseClicked();
   }
-  if (gameState==1 || gameState==2){
+  if (gameState==1 || gameState==2 || gameState==3){
     pause.mouseClicked();
   }
   if ((isGameOver) && (mouseX>=W*0.36) && (mouseX<= W*0.36 + 115) && (mouseY>= H*0.47) && (mouseY<= H*0.47 +45)){

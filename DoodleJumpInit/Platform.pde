@@ -8,6 +8,7 @@ public class Platform{
   //0: broken, 1: jump once, , 2: always can jump
   private int status = 2;
   public boolean disappear = false;
+  public int jump_chances=1;
 
   //Spawn chance for equipment
   private int minSpringChance = 30;
@@ -64,7 +65,7 @@ public class Platform{
       strokeWeight(1.2);
       rect(this.x,this.y,this.width,this.height, 2);
     }else if (status == 0 && !disappear){
-      fill(0, 200, 0); 
+      fill(200, 0, 0); 
       stroke(0);
       strokeWeight(1.2);
       rect(this.x,this.y,this.width,this.height, 2);
