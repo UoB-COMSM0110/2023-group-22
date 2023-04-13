@@ -47,7 +47,7 @@ public class StartPage{
         }
     
     private void startButton() {
-        fill(229, 226, 194);
+        fill(250, 213, 207);
         stroke(0);
         strokeWeight(1.2);
         rect(W * 0.36, H * 0.85, 115, 45, 10);
@@ -68,8 +68,8 @@ public class StartPage{
     
     private void chooseMe(){
         // Draw the dialog icon
-        fill(229, 226, 194);
-        ellipse(60, 335, 90, 40);
+        fill(242, 227, 143);
+        ellipse(60, 335, 120, 40);
         ellipse(35, 370, 25, 20);
         ellipse(45, 390, 10, 10);
 
@@ -78,11 +78,11 @@ public class StartPage{
         textFont(font);
         textSize(15);
         textAlign(CENTER, CENTER);
-        if (currentChoice == 1){
-            text("Great!", 60, 332);
-        }else{
-            text("Choose Me!", 60, 332);
-        } 
+        // if (currentChoice == 1){
+        //     text("Great!", 60, 332);
+        // }else{
+        text("Click to choose!", 60, 332);
+        // } 
     }
     
     public void draw() {

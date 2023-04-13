@@ -91,8 +91,8 @@ void draw(){
     startPage.draw();
     npc = startPage.currentChoice;
     startPageDoodler.draw(npc);
-    startPageDoodler.jumpForce= -8;
-    startPageDoodler.gravity = 0.5;
+    startPageDoodler.jumpForce= -5;
+    startPageDoodler.gravity = 0.2;
     startPageDoodler.img_direction = -1;
     startPageDoodler.update(startPagePlatforms);
     for (Platform p:startPagePlatforms){
@@ -234,13 +234,13 @@ void keyPressed(){
   if (keyCode==RIGHT && doodler.x_velocity < 5){
     if (gameState==1){
       doodler.x_velocity += 4;
-      if(doodler.img_direction != -1){
+      if(doodler.img_direction != 1){
         doodler.img_direction = doodler.img_direction * -1;
       }
     }
     if (gameState==2){
       doodler_down.x_velocity += 4;
-      if(doodler_down.img_direction != -1){
+      if(doodler_down.img_direction != 1){
         doodler_down.img_direction = doodler_down.img_direction * -1;
       }
     }
