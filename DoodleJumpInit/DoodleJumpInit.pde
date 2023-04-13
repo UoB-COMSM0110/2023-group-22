@@ -14,6 +14,7 @@ Doodler doodler_down;
 
 StartPage startPage;
 Doodler startPageDoodler;
+Doodler startPageDoodler1;
 Doodler startPageDoodler2;
 PauseWindow pause;
 GameOver gameOver;
@@ -71,8 +72,9 @@ void setup(){
   doodler.add(new Doodler(W,H));
   doodler_down = new Doodler(W,H);
   startPage = new StartPage(W,H);
-  startPageDoodler = new Doodler(W,H,205,280);
-  startPageDoodler2 = new Doodler(W,H,155,280);
+  startPageDoodler = new Doodler(W, H, 180, 280);
+  startPageDoodler1 = new Doodler(W, H, 205, 280);
+  startPageDoodler2 = new Doodler(W, H, 155, 280);
   pause = new PauseWindow();
   gameOver = new GameOver();
 
@@ -157,11 +159,11 @@ void draw(){
       else {
         npc = -1;
       }
-      startPageDoodler.draw(npc);
-      startPageDoodler.jumpForce= -5;
-      startPageDoodler.gravity = 0.2;
-      startPageDoodler.img_direction = -1;
-      startPageDoodler.update(startPagePlatforms);
+      startPageDoodler1.draw(npc);
+      startPageDoodler1.jumpForce= -5;
+      startPageDoodler1.gravity = 0.2;
+      startPageDoodler1.img_direction = -1;
+      startPageDoodler1.update(startPagePlatforms);
 
       if (startPage.player2 == 1){
         npc2 = 2;

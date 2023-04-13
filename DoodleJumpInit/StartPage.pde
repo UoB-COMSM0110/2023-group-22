@@ -15,8 +15,8 @@ public class StartPage{
     public boolean gameStart = false;
     public boolean settingPage = false;
     public int playerNumber = 0;
-    public int player1 = 2;
-    public int player2 = 3;
+    public int player1 = 0;
+    public int player2 = 0;
     public StartPage(int w,int h) {
         this.W = w;
         this.H = h;
