@@ -54,6 +54,7 @@ int downGameFrameStart=0;
 int downScore=0;
 boolean countDownState=false;
 
+int winner;
 
 
 void settings(){
@@ -252,6 +253,12 @@ void draw(){
     pushMatrix();
     if (doodler.get(0).velocity > 10 || doodler.get(1).velocity > 10 || doodler.get(0).doodler_dissapear || doodler.get(1).doodler_dissapear) {
       noLoop();
+      if (doodler.get(0).velocity > 10 || doodler.get(0).doodler_dissapear){
+        winner = 1;
+      }
+      else{
+        winner = 0;
+      }
       isGameOver = true;
       gameOver.draw();
       return;

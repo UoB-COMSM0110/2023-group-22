@@ -10,7 +10,13 @@ void draw(){
   textSize(30);
   textAlign(CENTER);
   fill(0);
-  text("You Scored "+ score, W/2, H * 0.3);
+  if (setting.getPlayerNumber()==1){
+    String[] player = {"Player 1", "Player 2"};
+    text("Winner: "+ player[winner], W/2, H * 0.3);
+  }
+  else{
+    text("You Scored "+ score, W/2, H * 0.3);
+  }
   textSize(22);
   text("Hit space to play again", W/2, H * 0.36);
   
