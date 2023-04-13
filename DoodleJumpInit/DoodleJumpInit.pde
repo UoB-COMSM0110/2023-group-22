@@ -2,11 +2,13 @@ PImage background_img;
 PImage pauseBackgroundImg;
 PImage pauseButton;
 PImage spike;
+PImage doodleFallWord;
+PImage doodleJumpWord;
 PFont font;
 int W = 400;
 int H = 600;
 
-// Doodler doodler.get(0);
+// Doodler doodler;
 ArrayList <Doodler> doodler;
 Doodler doodler_down;
 
@@ -39,10 +41,20 @@ boolean isGameOver = false;
 //monster usage
 boolean addNewMonster = true;
 int initialTime;
-int interval = 10000;
+int interval = 5000;
 
 //To prevent two continuous broken platform
 int prevBrokenPlatform=0;
+int sosPlatformCount=0;
+int addedScore=0;
+
+//Downstairs usage
+int downFrameStart=0;
+int downGameFrameStart=0;
+int downScore=0;
+boolean countDownState=false;
+
+
 
 void settings(){
   size(W, H);
@@ -66,6 +78,7 @@ void setup(){
   pauseBackgroundImg = loadImage("black.jpg");
   pauseButton = loadImage("pause-button.png");
   spike = loadImage("top.png");
+  doodleFallWord = loadImage("doodleFall.jpg");
 
   initialTime = millis();
   monsters = new ArrayList<>();
@@ -94,12 +107,22 @@ void setup(){
   startPagePlatforms.add(new Platform(165,335,0));
   startPagePlatforms.add(new Platform(70,250,1));
   startPagePlatforms.add(new Platform(270,275,2));
-  startPagePlatforms.add(new Platform(230,210,3));
+  startPagePlatforms.add(new Platform(230,210,0));
 
   //settings
   setting = new Settings();
   //instructions
   help = new Help();
+
+  int prevBrokenPlatform=0;
+  int sosPlatformCount=0;
+  int addedScore=0;
+
+  //Downstairs usage
+  int downFrameStart=0;
+  int downGameFrameStart=0;
+  int downScore=0;
+  boolean countDownState=false;
 
 }
 
@@ -147,10 +170,39 @@ void draw(){
     pause.draw(width/2, 100);
     pauseState = pause.pauseState;
   }
+  else if (countDownState){
+    image(background_img, 0, 0);
+    tint(255,128);
+    image(doodleFallWord, 0, 0);
+    noTint();
+    if (frameCount-downFrameStart>=45){
+      if (gameState==1){
+        gameState=2;
+        downGameFrameStart = frameCount;
+        doodler_down = new Doodler(W,H);
+        platforms_down = new ArrayList<>();
+        platforms_down.add(new Platform(W/2,(float) H/2+100,0));
+        for (int i=0;i<platformCount-1;i++){
+          if (Math.abs(H/2+100)-(H-(gap*i))<0.0001){
+            continue;
+          }
+          platforms_down.add(new Platform(random(W-60),H-(gap*i)));
+        }
+      }
+      else{
+        gameState=1;
+      }
+      countDownState = false;
+    }
+  }
   //down stairs mode
   else if (gameState==2){
     image(background_img, 0, 0);
     image(spike,0,0,600,30);
+    if (frameCount-downGameFrameStart>=1800){
+      countDownState = true;
+      downFrameStart = frameCount;
+    }
     pushMatrix();
     if (doodler_down.y>600 || doodler_down.y<10) {
       noLoop();
@@ -182,6 +234,10 @@ void draw(){
     if (platforms_down.get(platforms_down.size()-1).y < -100) {
         platforms_down.remove(platforms_down.size()-1);
         score++;
+    }
+    if (score%30==0 && score!=addedScore){
+      sosPlatformCount+=1;
+      addedScore=score;
     }
     if (pauseState){
       tint(255,128);
@@ -280,6 +336,7 @@ void draw(){
         monsters.add(new Monster(random(W-60), doodler.get(1).y - 400));
       }
       initialTime = millis();
+      interval = (int) random(3000,10000);
     }
     if (pauseState){
       tint(255,128);
@@ -290,8 +347,17 @@ void draw(){
   else{
     //one player main game
     image(background_img, 0, 0);
+    if (score%100==0 && score!=downScore){
+      // gameState=2;
+      countDownState = true;
+      downFrameStart = frameCount;
+      // tint(255,128);
+      // image(pauseBackgroundImg, 0, 0);
+      // noTint();
+      return;
+    }
     pushMatrix();
-    if (doodler.get(0).velocity > 10) {
+    if (doodler.get(0).velocity > 10 || doodler.get(0).doodler_dissapear) {
       noLoop();
       isGameOver = true;
       gameOver.draw();
@@ -305,12 +371,28 @@ void draw(){
     textSize(30);
     textAlign(CENTER);
     text(score, width/2, doodler.get(0).y - 250);
+    text("x", 90, doodler.get(0).y - 250);
+    text(sosPlatformCount, 110, doodler.get(0).y - 250);
+    push();
+    fill (195, 180, 212);
+    stroke(0);
+    strokeWeight(1.2);
+    rect(25,doodler.get(0).y - 270,50,20, 2);
+    pop();
     pause.pauseButton(width-60, doodler.get(0).y - 280);
     pauseState = pause.pauseState;
     pop();
   
     doodler.get(0).draw(npc);
     doodler.get(0).update(platforms);
+    if (setting.getDifficulty()!=0){
+      doodler.get(0).updateMonster(monsters);
+      if(monsters.size() != 0){
+        for(Monster m:monsters){
+          m.draw();
+        }
+      }
+    }
     
     for (Platform p:platforms){
       if (p.disappear==false){
@@ -328,6 +410,18 @@ void draw(){
         platforms.remove(0);
         score++;
     }
+    if (score%30==0 && score!=addedScore){
+      sosPlatformCount+=1;
+      addedScore=score;
+    }
+    if (setting.getDifficulty()!=0 && (millis() - initialTime > interval)){
+      if(monsters.size() > 0){
+        monsters.remove(0);
+      }
+      monsters.add(new Monster(random(W-60), doodler.get(0).y - 400));
+      initialTime = millis();
+      interval = (int) random(3000,10000);
+    }
     if (pauseState){
       tint(255,128);
       image(pauseBackgroundImg, 0, 0);
@@ -339,7 +433,7 @@ void draw(){
 
 void keyPressed(){
   if (keyCode==LEFT && doodler.get(0).x_velocity > -5){
-    if (gameState==1 || gameState==3 || gameState==3){
+    if (gameState==1 || gameState==3){
       doodler.get(0).x_velocity -= 4;
       if(doodler.get(0).img_direction != -1){
         doodler.get(0).img_direction = doodler.get(0).img_direction * -1;
@@ -367,7 +461,6 @@ void keyPressed(){
       }
     }
   }
-
   //two players mode
   if (gameState==3){
     if(key == 'a' && doodler.get(1).x_velocity > -5){
@@ -425,7 +518,15 @@ void keyReleased(){
       doodler.get(1).x_velocity = 0;
     }
   }
-  
+  if (gameState==1){
+    if (keyCode=='Z'){
+      if (sosPlatformCount > 0){
+        platforms.add(0,new Platform(doodler.get(0).x, doodler.get(0).y+60,3));
+        sosPlatformCount--;
+      }
+    }
+  }
+
 }
 
 void mouseClicked(){

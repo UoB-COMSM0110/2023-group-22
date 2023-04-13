@@ -33,6 +33,9 @@ public class Platform{
       status = 2;
       equipment = new Equipment(random(this.x, (this.x + width)), (this.y - 5), 'R');
     }
+    else if (type==3){
+      status = 3;
+    }
   }
   
   public Platform(float x,float y){
@@ -71,6 +74,12 @@ public class Platform{
       rect(this.x,this.y,this.width,this.height, 2);
     }else if (status == 1 && !disappear){
       fill(250, 200, 0); 
+      stroke(0);
+      strokeWeight(1.2);
+      rect(this.x,this.y,this.width,this.height, 2);
+    }
+    else if (status == 3){
+      fill (195, 180, 212);
       stroke(0);
       strokeWeight(1.2);
       rect(this.x,this.y,this.width,this.height, 2);

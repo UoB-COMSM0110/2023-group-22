@@ -158,7 +158,7 @@ public class Doodler{
           // Reset jump height if it has been altered by spring
           jumpForce = jumpConstant;
           }
-          else if(platform.status == 2){
+          else if(platform.status == 2 || platform.status == 3){
             this.jump(jumpForce);
           }
           else if (platform.status == 1){
