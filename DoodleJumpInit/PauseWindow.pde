@@ -28,6 +28,7 @@ public class PauseWindow{
     strokeWeight(1.2);
     rect(x-80,y+30,160,50, 2);
     fill(0);
+    textFont(font);
     text("CONTINUE", x, y+55);
     textAlign(CENTER, CENTER);
     pop();
@@ -35,6 +36,7 @@ public class PauseWindow{
     fill(233, 233, 111); 
     rect(x-80,y+110,160,50, 2);
     fill(0);
+    textFont(font);
     text("EXIT", x, y+135);
     textAlign(CENTER, CENTER);
     pop();
