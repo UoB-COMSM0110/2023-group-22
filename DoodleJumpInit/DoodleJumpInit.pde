@@ -13,6 +13,8 @@ Doodler doodler_down;
 
 StartPage startPage;
 Doodler startPageDoodler;
+Doodler startPageDoodler1;
+Doodler startPageDoodler2;
 PauseWindow pause;
 GameOver gameOver;
 Settings setting;
@@ -71,7 +73,9 @@ void setup(){
   doodler.add(new Doodler(W,H));
   doodler_down = new Doodler(W,H);
   startPage = new StartPage(W,H);
-  startPageDoodler = new Doodler(W,H,180,280);
+  startPageDoodler = new Doodler(W, H, 180, 280);
+  startPageDoodler1 = new Doodler(W, H, 205, 280);
+  startPageDoodler2 = new Doodler(W, H, 155, 280);
   pause = new PauseWindow();
   gameOver = new GameOver();
 
@@ -132,18 +136,65 @@ void draw(){
   if (gameState==0){
     pauseState = false;
     image(background_img, 0, 0);
-    startPage.draw();
-    npc = startPage.currentChoice;
-    //TODO 
-    if(npc != 2){
-      npc2 = npc + 1;
+    if (setting.getPlayerNumber() == 0){
+      startPage.playerNumber = 0;
+      startPage.draw();
+    }else if (setting.getPlayerNumber() == 1){
+      startPage.playerNumber = 1;
+      startPage.draw();
     }
+    
+    
+    //TODO
+    // if(npc != 2){
+    //   npc2 = npc + 1;
+    // }
+    if (setting.getPlayerNumber() == 1){
+      if (startPage.player1 == 1){
+        npc = 2;
+      }
+      else if (startPage.player1 == 2){
+        npc = 1;
+      }
+      else if (startPage.player1 == 3){
+        npc = 0;
+      }
+      else {
+        npc = -1;
+      }
+      startPageDoodler1.draw(npc);
+      startPageDoodler1.jumpForce= -5;
+      startPageDoodler1.gravity = 0.2;
+      startPageDoodler1.img_direction = -1;
+      startPageDoodler1.update(startPagePlatforms);
 
-    startPageDoodler.draw(npc);
-    startPageDoodler.jumpForce= -5;
-    startPageDoodler.gravity = 0.2;
-    startPageDoodler.img_direction = -1;
-    startPageDoodler.update(startPagePlatforms);
+      if (startPage.player2 == 1){
+        npc2 = 2;
+      }
+      else if (startPage.player2 == 2){
+        npc2 = 1;
+      }
+      else if (startPage.player2 == 3){
+        npc2 = 0;
+      }
+      else {
+        npc2 = -1;
+      }
+      startPageDoodler2.draw(npc2);
+      startPageDoodler2.jumpForce= -5;
+      startPageDoodler2.gravity = 0.2;
+      startPageDoodler2.img_direction = -1;
+      startPageDoodler2.update(startPagePlatforms);
+
+    }else if (setting.getPlayerNumber() == 0){
+      npc = startPage.currentChoice;
+      startPageDoodler.draw(npc);
+      startPageDoodler.jumpForce= -5;
+      startPageDoodler.gravity = 0.2;
+      startPageDoodler.img_direction = -1;
+      startPageDoodler.update(startPagePlatforms);
+    }
+    
     for (Platform p:startPagePlatforms){
       p.draw();
       if(p.equipment != null){
@@ -251,7 +302,7 @@ void draw(){
 
   }
   //two player mode
-  else if (gameState==3){
+  else if (gameState == 3){
     image(background_img, 0, 0);
     pushMatrix();
     if (doodler.get(0).velocity > 10 || doodler.get(1).velocity > 10 || doodler.get(0).doodler_dissapear || doodler.get(1).doodler_dissapear) {
