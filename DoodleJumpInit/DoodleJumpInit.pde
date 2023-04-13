@@ -102,7 +102,7 @@ void setup(){
     if (Math.abs(H/2+100)-(H-(gap*i))<0.0001){
       continue;
     }
-    platforms.add(new Platform(random(W-60),H-(gap*i)));
+    platforms.add(new Platform(random(W-60),H-(gap*i),true));
     platforms_down.add(new Platform(random(W-60),H-(gap*i)));
 
   }
@@ -129,7 +129,6 @@ void setup(){
   downScore=0;
   countDownState=false;
   moveSpeed = 0;
-
 }
 
 void draw(){
@@ -143,12 +142,6 @@ void draw(){
       startPage.playerNumber = 1;
       startPage.draw();
     }
-    
-    
-    //TODO
-    // if(npc != 2){
-    //   npc2 = npc + 1;
-    // }
     if (setting.getPlayerNumber() == 1){
       if (startPage.player1 == 1){
         npc = 2;
@@ -347,10 +340,17 @@ void draw(){
       doodler.get(1).draw(npc2);
     }
     doodler.get(0).update(platforms);
-    doodler.get(0).updateMonster(monsters);
     doodler.get(1).update(platforms);
-    doodler.get(1).updateMonster(monsters);
-    
+
+    if (setting.getDifficulty()!=0){
+      doodler.get(0).updateMonster(monsters);
+      doodler.get(1).updateMonster(monsters);
+      if(monsters.size() != 0){
+      for(Monster m:monsters){
+        m.draw();
+      }
+    }
+    }
     for (Platform p:platforms){
       if (p.disappear==false){
         p.draw();
@@ -359,17 +359,16 @@ void draw(){
         p.equipment.draw();
       }
     }
-
-    if(monsters.size() != 0){
-      for(Monster m:monsters){
-        m.draw();
-      }
-    }
     popMatrix();
 
     if (doodler.get(0).y<=doodler.get(1).y){
       if (doodler.get(0).y < platforms.get(platforms.size()-1).y + 200) {
-        platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
+        if (setting.getDifficulty()==2){
+          platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
+        }
+        else{
+          platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap,true));
+        }
       }
       if (platforms.get(0).y > doodler.get(0).y + 400) {
         platforms.remove(0);
@@ -378,15 +377,20 @@ void draw(){
     }
     else{
       if (doodler.get(1).y < platforms.get(platforms.size()-1).y + 200) {
-        platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
+        if (setting.getDifficulty()==2){
+          platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
+        }
+        else{
+          platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap,true));
+        }
       }
-      if (platforms.get(1).y > doodler.get(1).y + 400) {
-        platforms.remove(1);
+      if (platforms.get(1).y > doodler.get(0).y + 400) {
+        platforms.remove(0);
         // score++;
       }
 
     }
-    if (millis() - initialTime > interval){
+    if (setting.getDifficulty()!=0 && millis() - initialTime > interval){
       if(monsters.size() > 0){
         monsters.remove(0);
       }
