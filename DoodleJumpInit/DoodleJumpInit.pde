@@ -347,13 +347,9 @@ void draw(){
   else{
     //one player main game
     image(background_img, 0, 0);
-    if (score%100==0 && score!=downScore){
-      // gameState=2;
+    if (setting.getDifficulty()==2 && score%100==0 && score!=downScore){
       countDownState = true;
       downFrameStart = frameCount;
-      // tint(255,128);
-      // image(pauseBackgroundImg, 0, 0);
-      // noTint();
       return;
     }
     pushMatrix();
