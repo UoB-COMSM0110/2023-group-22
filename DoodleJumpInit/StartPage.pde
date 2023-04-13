@@ -49,17 +49,35 @@ public class StartPage{
         }
     
     private void startButton() {
-            fill(250, 213, 207);
-            stroke(0);
-            strokeWeight(1.2);
-            rect(W * 0.36, H * 0.85, 115, 45, 10);
-        
-            fill(80, 50, 0);
-            textFont(font);
-            textSize(25);
-            textAlign(CENTER, CENTER);
-            text("START", W * 0.505, H * 0.88);
+        push();
+        fill(250, 213, 207);
+        stroke(0);
+        strokeWeight(1.2);
+        rect(W * 0.36, H * 0.85, 115, 45, 10);
+    
+        fill(80, 50, 0);
+        textFont(font);
+        textSize(25);
+        textAlign(CENTER, CENTER);
+        text("START", W * 0.505, H * 0.88);
+        pop();
     }
+
+    private void startButton(boolean twoPlayers) {
+        push();
+        fill(250, 213, 207,128);
+        stroke(0);
+        strokeWeight(1.2);
+        rect(W * 0.36, H * 0.85, 115, 45, 10);
+    
+        fill(80, 50, 0,128);
+        textFont(font);
+        textSize(25);
+        textAlign(CENTER, CENTER);
+        text("START", W * 0.505, H * 0.88);
+        pop();
+    }
+
 
     private void helpButton(){ 
         fill(0);
@@ -83,12 +101,13 @@ public class StartPage{
     }
     
     public void draw() {
-        startButton();
+        // startButton();
         settingIcon();
         helpButton();
         chooseMe();
         title();
         if (playerNumber == 0){
+            startButton();
         if (currentChoice == 1) {
             char1();
             tint(255,128);
@@ -116,6 +135,7 @@ public class StartPage{
             textSize(15);
             textAlign(CENTER, CENTER);
             if (player1 == 0 && player2 == 0) {
+            startButton(true);
             text("Choose two players to start!", width/2, 565);
             tint(255,128);
             char1();
@@ -124,6 +144,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 1 && player2 == 0) {
+            startButton(true);
             text("Choose two players to start!", width/2, 565);
             char2();
             text("player1", 305, 480);
@@ -133,6 +154,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 2 && player2 == 0) {
+            startButton(true);
             text("Choose two players to start!", width/2, 565);
             char1();
             text("player1", 95, 485);
@@ -142,6 +164,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 3 && player2 == 0) {
+            startButton(true);
             text("Choose two players to start!", width/2, 565);
             char0();
             text("player1", 200, 485);
@@ -151,6 +174,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 0 && player2 == 1) {
+            startButton(true);
             text("Choose two players to start!", width/2, 565);
             char2();
             text("player2", 305, 482);
@@ -160,6 +184,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 0 && player2 == 2) {
+            startButton(true);
             text("Choose two players to start!", width/2, 565);
             char1();
             text("player2", 95, 485);
@@ -169,6 +194,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 0 && player2 == 3) {
+            startButton(true);
             text("Choose two players to start!", width/2, 565);
             char0();
             text("player2", 200, 485);
@@ -178,6 +204,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 1 && player2 == 2) {
+            startButton();
             char1();
             text("player1", 305, 482);
             char2();
@@ -187,6 +214,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 2 && player2 == 1) {
+            startButton();
             char1();
             text("player2", 305, 482);
             char2();
@@ -196,6 +224,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 1 && player2 == 3) {
+            startButton();
             char0();
             text("player2", 200, 485);
             char2();
@@ -205,6 +234,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 3 && player2 == 1) {
+            startButton();
             char0();
             text("player1", 200, 485);
             char2();
@@ -214,6 +244,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 2 && player2 == 3) {
+            startButton();
             char0();
             text("player1", 95, 485);
             char1();
@@ -223,6 +254,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 3 && player2 == 2) {
+            startButton();
             char0();
             text("player2", 95, 485);
             char1();
