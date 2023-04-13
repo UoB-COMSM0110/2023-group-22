@@ -200,7 +200,7 @@ void draw(){
   else if (gameState==2){
     image(background_img, 0, 0);
     image(spike,0,0,600,30);
-    if (frameCount-downGameFrameStart>=180){
+    if (frameCount-downGameFrameStart>=1800){
       countDownState = true;
       downFrameStart = frameCount;
     }
@@ -354,7 +354,7 @@ void draw(){
   else{
     //one player main game
     image(background_img, 0, 0);
-    if (setting.getDifficulty()==2 && score%10==0 && score!=downScore){
+    if (setting.getDifficulty()==2 && score%100==0 && score!=downScore){
       countDownState = true;
       downFrameStart = frameCount;
       return;
