@@ -28,7 +28,7 @@ ArrayList <Monster> monsters;
 float gap;
 int score;
 // 0:start page , 1:one player main game , 2: down stairs, 3: 2 players mode
-int gameState=0;
+int gameState;
 
 int npc=0;
 int npc2=0;
@@ -129,6 +129,8 @@ void setup(){
   downScore=0;
   countDownState=false;
   moveSpeed = 0;
+
+  gameState=0;
 }
 
 void draw(){
@@ -550,8 +552,15 @@ void keyPressed(){
   if (keyCode==' ' && isGameOver == true){
     int tmpDiff = setting.getDifficulty();
     int tmpPlayers = setting.getPlayerNumber();
+    int tmpGameState = gameState;
     isGameOver = false;
     setup();
+    if (tmpGameState==3){
+      gameState = 3;
+    }
+    else{
+      gameState = 1;
+    }
     setting.setDifficulty(tmpDiff);
     setting.setPlayerNumber(tmpPlayers);
     loop();
