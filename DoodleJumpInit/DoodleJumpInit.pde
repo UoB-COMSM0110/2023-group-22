@@ -386,7 +386,7 @@ void draw(){
           platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap,true));
         }
       }
-      if (platforms.get(1).y > doodler.get(0).y + 400) {
+      if (platforms.get(0).y > doodler.get(1).y + 400) {
         platforms.remove(0);
         // score++;
       }
