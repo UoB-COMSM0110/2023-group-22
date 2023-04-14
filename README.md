@@ -43,13 +43,9 @@ One of the key challenges we faced during the early stages of design was balanci
 
 Overall, the early stages of design were crucial in helping us to refine our game concept and identify the key features and functionality required for our game. By developing a use case diagram and a paper prototype, we were able to visualize the game mechanics and iterate on our design ideas. This process helped us to create a solid foundation for the development of our game.
 
-
-## Diagrams
-### Use Case Diagram
-![Class Diagram](static/Basic_Doodle_use_case_diagram.png)
-
+# Design
 ### [Class Diagram](https://app.diagrams.net/#G1eO5WRYrhPcYVJps2LNeKAyVoR5l_IiGF)
-![Class Diagram](static/DoodleJump_class_diagram.png)
+![Class Diagram](static/DoodleJump_class_diagram_2.jpg)
 
 
 # Team Members
