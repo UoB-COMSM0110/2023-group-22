@@ -21,9 +21,9 @@ class Help{
         text("* Click start to play", width/2 - 135, height/4 + 55);
         text("* Press left and right to", width/2 - 135, height/4 + 75);
         text("  control your character", width/2 - 135, height/4 + 90);
-        text("* Press 'Z' to make a ", width/2 - 135, height/4 + 110);
-        text("  platform, you can get 1", width/2 - 135, height/4 + 125);
-        text("  every 30 points", width/2 - 135, height/4 + 140);
+        text("* Press 'Z' to spawn a ", width/2 - 135, height/4 + 110);
+        text("  platform under you, you", width/2 - 135, height/4 + 125);
+        text("  get 1 every 30 points", width/2 - 135, height/4 + 140);
 
     }
 
@@ -54,7 +54,7 @@ class Help{
         text("* Medium: Broken platform", width/2 - 135, height/4 + 258);
         text("  and monster added, you", width/2 - 135, height/4 + 271);
         text("  have to avoid them", width/2 - 135, height/4 + 284);
-        text("* Hard: The gravity migth", width/2 - 135, height/4 + 304);
+        text("* Hard: The gravity might", width/2 - 135, height/4 + 304);
         text("  reverse! Try to challenge", width/2 - 135, height/4 + 317);
         text("  it!", width/2 - 135, height/4 + 330);
     }
@@ -69,8 +69,10 @@ class Help{
         textSize(10);
         text("* Stay alive before your", width/2 + 15, height/4 + 225);
         text("  opponent is out!", width/2 + 15, height/4 + 238);
-        text("* Second Player: Press 'A'", width/2 + 15, height/4 + 258);
-        text("  and 'D' to control", width/2 + 15, height/4 + 271);
+        text("* First Player: Press left", width/2 + 15, height/4 + 258);
+        text("  and right to control", width/2 + 15, height/4 + 271);
+        text("* Second Player: Press 'A'", width/2 + 15, height/4 + 291);
+        text("  and 'D' to control", width/2 + 15, height/4 + 304);
     }
 
     private void closeButton(){ 
