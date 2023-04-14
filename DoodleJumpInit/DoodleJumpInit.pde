@@ -79,7 +79,7 @@ void setup(){
   pause = new PauseWindow();
   gameOver = new GameOver();
 
-  background_img = loadImage("background.jpg");
+  background_img = loadImage("background.png");
   pauseBackgroundImg = loadImage("black.jpg");
   pauseButton = loadImage("pause-button.png");
   spike = loadImage("top.png");
