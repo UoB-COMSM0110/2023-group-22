@@ -3,7 +3,6 @@ PImage pauseBackgroundImg;
 PImage pauseButton;
 PImage spike;
 PImage doodleFallWord;
-PImage doodleJumpWord;
 PFont font;
 int W = 400;
 int H = 600;
@@ -29,7 +28,7 @@ ArrayList <Monster> monsters;
 float gap;
 int score;
 // 0:start page , 1:one player main game , 2: down stairs, 3: 2 players mode
-int gameState=0;
+int gameState;
 
 int npc=0;
 int npc2=0;
@@ -55,7 +54,9 @@ int downFrameStart=0;
 int downGameFrameStart=0;
 int downScore=0;
 boolean countDownState=false;
+int moveSpeed;
 
+int winner;
 
 
 void settings(){
@@ -82,7 +83,7 @@ void setup(){
   pauseBackgroundImg = loadImage("black.jpg");
   pauseButton = loadImage("pause-button.png");
   spike = loadImage("top.png");
-  doodleFallWord = loadImage("doodleFall.jpg");
+  doodleFallWord = loadImage("watchout.jpg");
 
   initialTime = millis();
   monsters = new ArrayList<>();
@@ -101,7 +102,7 @@ void setup(){
     if (Math.abs(H/2+100)-(H-(gap*i))<0.0001){
       continue;
     }
-    platforms.add(new Platform(random(W-60),H-(gap*i)));
+    platforms.add(new Platform(random(W-60),H-(gap*i),true));
     platforms_down.add(new Platform(random(W-60),H-(gap*i)));
 
   }
@@ -127,6 +128,9 @@ void setup(){
   downGameFrameStart=0;
   downScore=0;
   countDownState=false;
+  moveSpeed = 0;
+
+  gameState=0;
 }
 
 void draw(){
@@ -140,12 +144,6 @@ void draw(){
       startPage.playerNumber = 1;
       startPage.draw();
     }
-    
-    
-    //TODO
-    // if(npc != 2){
-    //   npc2 = npc + 1;
-    // }
     if (setting.getPlayerNumber() == 1){
       if (startPage.player1 == 1){
         npc = 2;
@@ -222,12 +220,14 @@ void draw(){
   }
   else if (countDownState){
     image(background_img, 0, 0);
-    tint(255,128);
-    image(doodleFallWord, 0, 0);
+    tint(255,200);
+    image(pauseBackgroundImg,0,0);
     noTint();
+    image(doodleFallWord, 0, 100);
     if (frameCount-downFrameStart>=45){
       if (gameState==1){
         gameState=2;
+        moveSpeed += 2;
         downGameFrameStart = frameCount;
         doodler_down = new Doodler(W,H);
         platforms_down = new ArrayList<>();
@@ -265,12 +265,12 @@ void draw(){
     if (frameCount%15==0){
       platforms_down.add(0,new Platform(random(W-60),(float) platforms_down.get(0).y+gap));
     }
-    System.out.println("====================================");
+    // System.out.println("====================================");
     for (Platform p:platforms_down){
-      System.out.println(p.y);
+      // System.out.println(p.y);
       p.draw();
     }
-    System.out.println("====================================");
+    // System.out.println("====================================");
 
     push();
     fill(0);
@@ -302,6 +302,12 @@ void draw(){
     pushMatrix();
     if (doodler.get(0).velocity > 10 || doodler.get(1).velocity > 10 || doodler.get(0).doodler_dissapear || doodler.get(1).doodler_dissapear) {
       noLoop();
+      if (doodler.get(0).velocity > 10 || doodler.get(0).doodler_dissapear){
+        winner = 1;
+      }
+      else{
+        winner = 0;
+      }
       isGameOver = true;
       gameOver.draw();
       return;
@@ -336,10 +342,17 @@ void draw(){
       doodler.get(1).draw(npc2);
     }
     doodler.get(0).update(platforms);
-    doodler.get(0).updateMonster(monsters);
     doodler.get(1).update(platforms);
-    doodler.get(1).updateMonster(monsters);
-    
+
+    if (setting.getDifficulty()!=0){
+      doodler.get(0).updateMonster(monsters);
+      doodler.get(1).updateMonster(monsters);
+      if(monsters.size() != 0){
+      for(Monster m:monsters){
+        m.draw();
+      }
+    }
+    }
     for (Platform p:platforms){
       if (p.disappear==false){
         p.draw();
@@ -348,17 +361,16 @@ void draw(){
         p.equipment.draw();
       }
     }
-
-    if(monsters.size() != 0){
-      for(Monster m:monsters){
-        m.draw();
-      }
-    }
     popMatrix();
 
     if (doodler.get(0).y<=doodler.get(1).y){
       if (doodler.get(0).y < platforms.get(platforms.size()-1).y + 200) {
-        platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
+        if (setting.getDifficulty()==2){
+          platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
+        }
+        else{
+          platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap,true));
+        }
       }
       if (platforms.get(0).y > doodler.get(0).y + 400) {
         platforms.remove(0);
@@ -367,15 +379,20 @@ void draw(){
     }
     else{
       if (doodler.get(1).y < platforms.get(platforms.size()-1).y + 200) {
-        platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
+        if (setting.getDifficulty()==2){
+          platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap));
+        }
+        else{
+          platforms.add(new Platform(random(W-60), platforms.get(platforms.size()-1).y - gap,true));
+        }
       }
-      if (platforms.get(1).y > doodler.get(1).y + 400) {
-        platforms.remove(1);
+      if (platforms.get(1).y > doodler.get(0).y + 400) {
+        platforms.remove(0);
         // score++;
       }
 
     }
-    if (millis() - initialTime > interval){
+    if (setting.getDifficulty()!=0 && millis() - initialTime > interval){
       if(monsters.size() > 0){
         monsters.remove(0);
       }
@@ -535,8 +552,15 @@ void keyPressed(){
   if (keyCode==' ' && isGameOver == true){
     int tmpDiff = setting.getDifficulty();
     int tmpPlayers = setting.getPlayerNumber();
+    int tmpGameState = gameState;
     isGameOver = false;
     setup();
+    if (tmpGameState==3){
+      gameState = 3;
+    }
+    else{
+      gameState = 1;
+    }
     setting.setDifficulty(tmpDiff);
     setting.setPlayerNumber(tmpPlayers);
     loop();

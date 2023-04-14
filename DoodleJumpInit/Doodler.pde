@@ -92,7 +92,7 @@ public class Doodler{
     }
 
     for (Platform platform:platforms){
-        platform.y -=2;
+        platform.y -= moveSpeed;
     }
 
     for (Platform platform:platforms) {
