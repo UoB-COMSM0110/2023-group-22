@@ -22,8 +22,8 @@ class Help{
         text("* Press left and right to", width/2 - 135, height/4 + 75);
         text("  control your character", width/2 - 135, height/4 + 90);
         text("* Press 'Z' to spawn a ", width/2 - 135, height/4 + 110);
-        text("  platform under you, you", width/2 - 135, height/4 + 125);
-        text("  get 1 every 30 points", width/2 - 135, height/4 + 140);
+        text("  platform under doodler,", width/2 - 135, height/4 + 125);
+        text("  you get 1 every 30 points", width/2 - 135, height/4 + 140);
 
     }
 
@@ -51,12 +51,11 @@ class Help{
         textSize(10);
         text("* Easy: Only platforms and", width/2 - 135, height/4 + 225);
         text("  equipments", width/2 - 135, height/4 + 238);
-        text("* Medium: Broken platform", width/2 - 135, height/4 + 258);
-        text("  and monster added, you", width/2 - 135, height/4 + 271);
-        text("  have to avoid them", width/2 - 135, height/4 + 284);
-        text("* Hard: The gravity might", width/2 - 135, height/4 + 304);
-        text("  reverse! Try to challenge", width/2 - 135, height/4 + 317);
-        text("  it!", width/2 - 135, height/4 + 330);
+        text("* Medium: monster added,", width/2 - 135, height/4 + 258);
+        text("  you have to avoid them", width/2 - 135, height/4 + 271);
+        text("* Hard: The gravity might", width/2 - 135, height/4 + 291);
+        text("  reverse! Try to challenge", width/2 - 135, height/4 + 304);
+        text("  it!", width/2 - 135, height/4 + 317);
     }
 
     private void twoPlayer(){
