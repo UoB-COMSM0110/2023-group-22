@@ -116,7 +116,7 @@ public class StartPage{
             textSize(15);
             textAlign(CENTER, CENTER);
             if (player1 == 0 && player2 == 0) {
-            text("Choose two players to start!", width/2, 565);
+            text("Choose 2 players to start!", width/2, 565);
             tint(255,128);
             char1();
             char2();
@@ -124,7 +124,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 1 && player2 == 0) {
-            text("Choose two players to start!", width/2, 565);
+            text("Choose 2 players to start!", width/2, 565);
             char2();
             text("player1", 305, 480);
             tint(255,128);
@@ -133,7 +133,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 2 && player2 == 0) {
-            text("Choose two players to start!", width/2, 565);
+            text("Choose 2 players to start!", width/2, 565);
             char1();
             text("player1", 95, 485);
             tint(255,128);
@@ -142,7 +142,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 3 && player2 == 0) {
-            text("Choose two players to start!", width/2, 565);
+            text("Choose 2 players to start!", width/2, 565);
             char0();
             text("player1", 200, 485);
             tint(255,128);
@@ -151,7 +151,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 0 && player2 == 1) {
-            text("Choose two players to start!", width/2, 565);
+            text("Choose 2 players to start!", width/2, 565);
             char2();
             text("player2", 305, 482);
             tint(255,128);
@@ -160,7 +160,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 0 && player2 == 2) {
-            text("Choose two players to start!", width/2, 565);
+            text("Choose 2 players to start!", width/2, 565);
             char1();
             text("player2", 95, 485);
             tint(255,128);
@@ -169,7 +169,7 @@ public class StartPage{
             noTint();
             }
         else if (player1 == 0 && player2 == 3) {
-            text("Choose two players to start!", width/2, 565);
+            text("Choose 2 players to start!", width/2, 565);
             char0();
             text("player2", 200, 485);
             tint(255,128);
