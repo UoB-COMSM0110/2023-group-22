@@ -62,6 +62,11 @@ Overall, the early stages of design were crucial in helping us to refine our gam
   <figcaption>Class Diagram</figcaption>
 </figure>
 
+<figure>
+  <img src="static/doodle_jump_sequence_diagram.jpg" alt="sequence diagram" style="width:100%">
+  <figcaption>Sequence Diagram</figcaption>
+</figure>
+
 
 <!-- ### [Class Diagram](https://app.diagrams.net/#G1eO5WRYrhPcYVJps2LNeKAyVoR5l_IiGF)
 ![Class Diagram](static/DoodleJump_class_diagram_2.jpg) -->
