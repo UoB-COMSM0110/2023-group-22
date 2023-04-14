@@ -32,10 +32,22 @@ After deciding on Doodle Jump as our final game, we brainstormed possible twists
 Once we decided on creating a game based on Doodle Jump with three twists, we began the early stages of design. Our first step was to identify the core game mechanics and functionality needed for the game. We conducted research with paying particular attention to games with similar mechanics to Doodle Jump. This research helped us to identify the key game mechanics we needed to incorporate, such as jumping and avoiding obstacles.
 
 Next, we developed a use case diagram to help us visualize the core use cases and actors involved in the game. This diagram helped us to identify the primary use cases and actors, and how they interacted with one another. We included the use cases for the basic version of Doodle Jump, as well as the three twists we planned to add. We also identified the actors involved in the game, including the player, broken platforms and monsters.
-![Class Diagram](static/Basic_Doodle_use_case_diagram.png)
+<figure>
+  <img src="static/Basic_Doodle_use_case_diagram.png" alt="Base Game Use Case Diagram" style="width:100%">
+  <figcaption>Base Game Use Case Diagram</figcaption>
+</figure>
+
+<figure>
+  <img src="static/Basic_Doodle_use_case_diagram_twists.png" alt="Twist Use Case Diagram" style="width:100%">
+  <figcaption>Use Case Diagram with Twist</figcaption>
+</figure>
 
 After developing the use case diagram, we created a paper prototype of the game.
-![Paper Prototype](static/DoodleJump_prototype.gif)
+
+<figure>
+  <img src="static/DoodleJump_prototype.gif" alt="paper prototype" style="width:100%">
+  <figcaption>Paper Prototype</figcaption>
+</figure>
 
 This prototype helped us to refine our design ideas and iterate on the game mechanics. We experimented with different layouts, color schemes, and game mechanics to see what worked best. We also discuss and identify any potential issues or improvements. Through this process, we were able to make the necessary adjustments and refine our game design.
 
@@ -44,8 +56,15 @@ One of the key challenges we faced during the early stages of design was balanci
 Overall, the early stages of design were crucial in helping us to refine our game concept and identify the key features and functionality required for our game. By developing a use case diagram and a paper prototype, we were able to visualize the game mechanics and iterate on our design ideas. This process helped us to create a solid foundation for the development of our game.
 
 # Design
-### [Class Diagram](https://app.diagrams.net/#G1eO5WRYrhPcYVJps2LNeKAyVoR5l_IiGF)
-![Class Diagram](static/DoodleJump_class_diagram_2.jpg)
+
+<figure>
+  <img src="static/DoodleJump_class_diagram_2.jpg" alt="class diagram" style="width:100%">
+  <figcaption>Class Diagram</figcaption>
+</figure>
+
+
+<!-- ### [Class Diagram](https://app.diagrams.net/#G1eO5WRYrhPcYVJps2LNeKAyVoR5l_IiGF)
+![Class Diagram](static/DoodleJump_class_diagram_2.jpg) -->
 
 
 # Team Members
