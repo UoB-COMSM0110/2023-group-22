@@ -42,12 +42,14 @@ Next, we developed a use case diagram to help us visualize the core use cases an
   <figcaption>Use Case Diagram with Twist</figcaption>
 </figure>
 <br>
+<br>
 After developing the use case diagram, we created a paper prototype of the game.
 
 <figure>
   <img src="static/DoodleJump_prototype.gif" alt="paper prototype" style="width:100%">
   <figcaption>Paper Prototype</figcaption>
 </figure>
+<br>
 <br>
 This prototype helped us to refine our design ideas and iterate on the game mechanics. We experimented with different layouts, color schemes, and game mechanics to see what worked best. We also discuss and identify any potential issues or improvements. Through this process, we were able to make the necessary adjustments and refine our game design.
 
@@ -85,6 +87,7 @@ The Doodler is the main character of the game, and is designed to be easy to con
   <figcaption>Class Diagram</figcaption>
 </figure>
 <br>
+<br>
 To create a clear and organized system for Doodle Jump, we've designed a class diagram that includes different pages and windows as classes to help players navigate and understand the game.
 
 First, we have the Start Page class, which players see when they open the game. This class allows players to choose their character and provides access to two auxiliary windows: the Setting Window and the Help Window. The Setting Window allows players to adjust the number of players and difficulty level, while the Help Window provides guidance on how to play the game. These pages are designed to enhance user control and freedom.
@@ -102,6 +105,7 @@ Lastly, the End Page class appears only when the game is over. Here, players can
   <img src="static/doodle_jump_sequence_diagram.jpg" alt="sequence diagram" style="width:100%">
   <figcaption>Sequence Diagram</figcaption>
 </figure>
+<br>
 <br>
 Above is the sequence diagram for our game. The sequence diagram shows the interactions between the different components of the game, including the player, the platforms, the monsters, and the score system. First of all, the game generates various types of platforms randomly, including normal, fragile, broken, spring, and rocket platforms. Each platform provides different feedback to the doodler based on its characteristics.
 
