@@ -101,7 +101,7 @@ public class Platform{
       // stroke(0);
       // strokeWeight(1.2);
       // rect(this.x,this.y,this.width,this.height, 2);
-      image(yellowPlatform, this.x,this.y,this.width,this.height);
+      image(yellowPlatform, this.x,this.y,this.width * 1.5,this.height * 2.5);
     }
     else if (status == 3){
       //  fill (195, 180, 212);

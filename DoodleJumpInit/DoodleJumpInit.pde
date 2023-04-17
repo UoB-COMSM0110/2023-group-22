@@ -3,6 +3,7 @@ PImage pauseBackgroundImg;
 PImage pauseButton;
 PImage spike;
 PImage doodleFallWord;
+PImage purplePlatform;
 PFont font;
 int W = 400;
 int H = 600;
@@ -84,6 +85,7 @@ void setup(){
   pauseButton = loadImage("pause-button.png");
   spike = loadImage("top.png");
   doodleFallWord = loadImage("watchout.png");
+  purplePlatform = loadImage("Platform_purple.png");
 
   initialTime = millis();
   monsters = new ArrayList<>();
@@ -435,14 +437,15 @@ void draw(){
     textSize(30);
     textAlign(CENTER);
     text(score, width/2, doodler.get(0).y - 250);
+    image(purplePlatform, 20,doodler.get(0).y - 270, 60, 20);
     text("x", 90, doodler.get(0).y - 250);
     text(sosPlatformCount, 110, doodler.get(0).y - 250);
-    push();
-    fill (195, 180, 212);
-    stroke(0);
-    strokeWeight(1.2);
-    rect(25,doodler.get(0).y - 270,50,20, 2);
-    pop();
+    // push();
+    // fill (195, 180, 212);
+    // stroke(0);
+    // strokeWeight(1.2);
+    // rect(25,doodler.get(0).y - 270,50,20, 2);
+    // pop();
     pause.pauseButton(width-60, doodler.get(0).y - 280);
     pauseState = pause.pauseState;
     pop();
