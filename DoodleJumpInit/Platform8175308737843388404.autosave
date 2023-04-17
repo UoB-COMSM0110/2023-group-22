@@ -1,9 +1,6 @@
 public class Platform{
-
-  PImage normalPlatform = loadImage("Platform_normal.png");
-  PImage yellowPlatform = loadImage("platform2_fly_away.png");
-  PImage redPlatform = loadImage("Platform_red.png");
-  PImage purplePlatform = loadImage("Platform_purple.png");
+  
+  
   
   private float x;
   private float y;
@@ -85,30 +82,26 @@ public class Platform{
     
   public void draw(){
     if (status == 2){
-      //fill (229, 226, 194);
-      //stroke(0);
-      //strokeWeight(1.2);
-      //rect(this.x,this.y,this.width,this.height, 2);
-      image(normalPlatform, this.x,this.y,this.width,this.height);
+      fill (229, 226, 194);
+      stroke(0);
+      strokeWeight(1.2);
+      rect(this.x,this.y,this.width,this.height, 2);
     }else if (status == 0 && !disappear){
-      // fill(200, 0, 0); 
-      // stroke(0);
-      // strokeWeight(1.2);
-      // rect(this.x,this.y,this.width,this.height, 2);
-      image(redPlatform, this.x,this.y,this.width,this.height);
+      fill(200, 0, 0); 
+      stroke(0);
+      strokeWeight(1.2);
+      rect(this.x,this.y,this.width,this.height, 2);
     }else if (status == 1 && !disappear){
-      // fill(250, 200, 0); 
-      // stroke(0);
-      // strokeWeight(1.2);
-      // rect(this.x,this.y,this.width,this.height, 2);
-      image(yellowPlatform, this.x,this.y,this.width,this.height);
+      fill(250, 200, 0); 
+      stroke(0);
+      strokeWeight(1.2);
+      rect(this.x,this.y,this.width,this.height, 2);
     }
     else if (status == 3){
-      //  fill (195, 180, 212);
-      //  stroke(0);
-      //  strokeWeight(1.2);
-      //  rect(this.x,this.y,this.width,this.height, 2);
-      image(purplePlatform, this.x,this.y,this.width,this.height);
+      fill (195, 180, 212);
+      stroke(0);
+      strokeWeight(1.2);
+      rect(this.x,this.y,this.width,this.height, 2);
     }
   }
 }

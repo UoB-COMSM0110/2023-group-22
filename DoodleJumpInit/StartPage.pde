@@ -7,7 +7,7 @@ public class StartPage{
     PImage char2Img = loadImage("ninja_doodle_alternate.png");
     PImage title0Img = loadImage("0_Doodle.png");
     PImage title1Img = loadImage("1_Jump.png");
-    PImage startButtonImg;
+    PImage startButtonImg = loadImage("Start.png");
     private int W;
     private int H;
     private float imageWidth = 150;
@@ -49,18 +49,19 @@ public class StartPage{
         }
     
     private void startButton() {
-        push();
-        fill(250, 213, 207);
-        stroke(0);
-        strokeWeight(1.2);
-        rect(W * 0.36, H * 0.85, 115, 45, 10);
+        // push();
+        // fill(250, 213, 207);
+        // stroke(0);
+        // strokeWeight(1.2);
+        // rect(W * 0.36, H * 0.85, 115, 45, 10);
     
-        fill(80, 50, 0);
-        textFont(font);
-        textSize(25);
-        textAlign(CENTER, CENTER);
-        text("START", W * 0.505, H * 0.88);
-        pop();
+        // fill(80, 50, 0);
+        // textFont(font);
+        // textSize(25);
+        // textAlign(CENTER, CENTER);
+        // text("START", W * 0.505, H * 0.88);
+        // pop();
+        image(startButtonImg, W * 0.44, H * 0.85, 55 , 55);
     }
 
     private void startButton(boolean twoPlayers) {

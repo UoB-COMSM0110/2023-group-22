@@ -83,7 +83,7 @@ void setup(){
   pauseBackgroundImg = loadImage("black.jpg");
   pauseButton = loadImage("pause-button.png");
   spike = loadImage("top.png");
-  doodleFallWord = loadImage("watchout.jpg");
+  doodleFallWord = loadImage("watchout.png");
 
   initialTime = millis();
   monsters = new ArrayList<>();
@@ -223,7 +223,7 @@ void draw(){
     tint(255,200);
     image(pauseBackgroundImg,0,0);
     noTint();
-    image(doodleFallWord, 0, 100);
+    image(doodleFallWord, width/2 - 300, height/2 - 300, 600, 600);
     if (frameCount-downFrameStart>=45){
       if (gameState==1){
         gameState=2;
@@ -414,7 +414,8 @@ void draw(){
   else{
     //one player main game
     image(background_img, 0, 0);
-    if (setting.getDifficulty()==2 && score%100==0 && score!=downScore){
+    //TODO: changed point
+    if (setting.getDifficulty()==2 && score%20==0 && score!=downScore){
       countDownState = true;
       downFrameStart = frameCount;
       return;
