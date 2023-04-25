@@ -71,12 +71,12 @@ public class PauseWindow{
         // gameState=0;
         startPage.gameStart = false;
         gameState = 0;
-        int tmpDiff = setting.getDifficulty();
-        int tmpPlayers = setting.getPlayerNumber();
+        // int tmpDiff = setting.getDifficulty();
+        // int tmpPlayers = setting.getPlayerNumber();
         isGameOver = false;
         setup();
-        setting.setDifficulty(tmpDiff);
-        setting.setPlayerNumber(tmpPlayers);
+        // setting.setDifficulty(tmpDiff);
+        // setting.setPlayerNumber(tmpPlayers);
         loop();
         // this.pauseState=false;
         // doodler = new ArrayList<>();

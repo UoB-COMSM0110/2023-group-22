@@ -1,4 +1,7 @@
 PImage background_img;
+PImage background1_img;
+PImage background2_img;
+PImage background2Player_img;
 PImage pauseBackgroundImg;
 PImage pauseButton;
 PImage spike;
@@ -61,6 +64,8 @@ int winner;
 
 void settings(){
   size(W, H);
+  setting = new Settings();
+
 }
 
 void setup(){
@@ -79,7 +84,10 @@ void setup(){
   pause = new PauseWindow();
   gameOver = new GameOver();
 
-  background_img = loadImage("background.jpg");
+  background_img = loadImage("pxfuel2.jpg");
+  background1_img = loadImage("pxfuel_night.jpg");
+  background2_img = loadImage("halloween.jpeg");
+  background2Player_img = loadImage("pxfuel_rainbow.jpg");
   pauseBackgroundImg = loadImage("black.jpg");
   pauseButton = loadImage("pause-button.png");
   spike = loadImage("top.png");
@@ -115,7 +123,7 @@ void setup(){
   startPagePlatforms.add(new Platform(230,210,0));
 
   //settings
-  setting = new Settings();
+  // setting = new Settings();
   //instructions
   help = new Help();
 
@@ -136,11 +144,31 @@ void setup(){
 void draw(){
   if (gameState==0){
     pauseState = false;
-    image(background_img, 0, 0);
+    
+    // if (npc==0){
+    //   image(background_img, 0, 0);
+    // }
+    // else if (npc==1){
+    //   image(background1_img, 0, 0);
+    // }
+    // else if (npc==2){
+    //   image(background2_img, 0, 0);
+    // }
+    
     if (setting.getPlayerNumber() == 0){
+      if (npc==0){
+        image(background_img, 0, 0);
+      }
+      else if (npc==1){
+        image(background1_img, 0, 0);
+      }
+      else if (npc==2){
+        image(background2_img, 0, 0);
+      }
       startPage.playerNumber = 0;
       startPage.draw();
     }else if (setting.getPlayerNumber() == 1){
+      image(background2Player_img, 0, 0);
       startPage.playerNumber = 1;
       startPage.draw();
     }
@@ -219,7 +247,16 @@ void draw(){
     pauseState = pause.pauseState;
   }
   else if (countDownState){
-    image(background_img, 0, 0);
+    if (npc==0){
+      image(background_img, 0, 0);
+    }
+    else if (npc==1){
+      image(background1_img, 0, 0);
+    }
+    else if (npc==2){
+      image(background2_img, 0, 0);
+    }
+    // image(background_img, 0, 0);
     tint(255,200);
     image(pauseBackgroundImg,0,0);
     noTint();
@@ -247,7 +284,16 @@ void draw(){
   }
   //down stairs mode
   else if (gameState==2){
-    image(background_img, 0, 0);
+    if (npc==0){
+      image(background_img, 0, 0);
+    }
+    else if (npc==1){
+      image(background1_img, 0, 0);
+    }
+    else if (npc==2){
+      image(background2_img, 0, 0);
+    }
+    // image(background_img, 0, 0);
     image(spike,0,0,600,30);
     if (frameCount-downGameFrameStart>=1800){
       countDownState = true;
@@ -298,7 +344,16 @@ void draw(){
   }
   //two player mode
   else if (gameState == 3){
-    image(background_img, 0, 0);
+    // if (npc==0){
+    //   image(background_img, 0, 0);
+    // }
+    // else if (npc==1){
+    //   image(background1_img, 0, 0);
+    // }
+    // else if (npc==2){
+    //   image(background2_img, 0, 0);
+    // }
+    image(background2Player_img, 0, 0);
     pushMatrix();
     if (doodler.get(0).velocity > 10 || doodler.get(1).velocity > 10 || doodler.get(0).doodler_dissapear || doodler.get(1).doodler_dissapear) {
       noLoop();
@@ -413,7 +468,16 @@ void draw(){
   }
   else{
     //one player main game
-    image(background_img, 0, 0);
+    if (npc==0){
+      image(background_img, 0, 0);
+    }
+    else if (npc==1){
+      image(background1_img, 0, 0);
+    }
+    else if (npc==2){
+      image(background2_img, 0, 0);
+    }
+    // image(background_img, 0, 0);
     if (setting.getDifficulty()==2 && score%100==0 && score!=downScore){
       countDownState = true;
       downFrameStart = frameCount;
@@ -615,12 +679,12 @@ void mouseClicked(){
   if ((isGameOver) && (mouseX>=W*0.36) && (mouseX<= W*0.36 + 115) && (mouseY>= H*0.47) && (mouseY<= H*0.47 +45)){
     startPage.gameStart = false;
     gameState = 0;
-    int tmpDiff = setting.getDifficulty();
-    int tmpPlayers = setting.getPlayerNumber();
+    // int tmpDiff = setting.getDifficulty();
+    // int tmpPlayers = setting.getPlayerNumber();
     isGameOver = false;
     setup();
-    setting.setDifficulty(tmpDiff);
-    setting.setPlayerNumber(tmpPlayers);
+    // setting.setDifficulty(tmpDiff);
+    // setting.setPlayerNumber(tmpPlayers);
     loop();
   }
 }
