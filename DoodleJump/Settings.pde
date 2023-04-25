@@ -7,6 +7,9 @@ class Settings {
   private float difficultyHeightDevider = 2.71;
   private float playerHeightDevider = 2.18;
   private float saveHeightDevider = 1.69;
+  private int tmpLevel = 0;
+  private int tmpPlayerNumber = 0;
+  PImage crossImg = loadImage("crossbutton.png");
 
 
   private void difficulty() { 
@@ -17,7 +20,7 @@ class Settings {
         
     fill(80, 50, 0);
     textSize(24);
-    text(levels[level], width/2, height/difficultyHeightDevider +16);
+    text(levels[tmpLevel], width/2, height/difficultyHeightDevider +16);
 
     fill(229, 226, 194);
     stroke(0);
@@ -38,7 +41,7 @@ class Settings {
 
     fill(80, 50, 0);
     textSize(24);
-    text(playerNumbers[playerNumber], width/2, height/playerHeightDevider +16);
+    text(playerNumbers[tmpPlayerNumber], width/2, height/playerHeightDevider +16);
 
     fill(229, 226, 194);
     stroke(0);
@@ -53,13 +56,29 @@ class Settings {
   }
 
   private void saveButton(){
-    fill(229, 226, 194);
+    push();
+    fill(250, 213, 207);
     stroke(0);
     strokeWeight(1.2);
-    circle(width/2, height/saveHeightDevider, 40); 
+    rect(width/2-40, height/saveHeightDevider-20, 80, 40,20);
+
     fill(80, 50, 0);
-    textSize(30);
-    text("\u2713", width/2, height/saveHeightDevider-5);
+    textFont(font);
+    textSize(20);
+    text("SAVE", width/2, height/saveHeightDevider-3);
+    textAlign(CENTER, CENTER);
+    pop();
+
+
+
+
+    // fill(229, 226, 194);
+    // stroke(0);
+    // strokeWeight(1.2);
+    // circle(width/2, height/saveHeightDevider, 40); 
+    // fill(80, 50, 0);
+    // textSize(30);
+    // text("\u2713", width/2, height/saveHeightDevider-5);
   }
   
   void draw() {
@@ -67,7 +86,9 @@ class Settings {
     fill(200);
     stroke(0);
     strokeWeight(1.2);
-    rect(width/2-95, height/3, 200, 190, 5);
+    rect(width/2-95, height/3-20, 200, 190+20, 5);
+    // line(width/2-95, height/3-10, width/2-95 + 200, height/3-10);
+    image(crossImg,width/2-95+200-30, height/3-10,20,20);
 
     difficulty();
     players();
@@ -76,27 +97,35 @@ class Settings {
   
   void mouseClicked() {
     if (mouseX >= width/2-90 && mouseX <= width/2-70 && mouseY >= height/difficultyHeightDevider + 5 && mouseY <= height/difficultyHeightDevider + 40) {
-      if (level > 0){
-        level--;
+      if (tmpLevel > 0){
+        tmpLevel--;
       }
     }
     if (mouseX >= width/2 + 70 && mouseX <= width/2 + 90 && mouseY >= height/difficultyHeightDevider + 5 && mouseY <= height/difficultyHeightDevider + 40){
-      if (level < 2){
-        level++;
+      if (tmpLevel < 2){
+        tmpLevel++;
       }
     }
 
     if (mouseX >= width/2-90 && mouseX <= width/2-70 && mouseY >= height/playerHeightDevider + 5 && mouseY <= height/playerHeightDevider + 40) {
-      if (playerNumber == 1){
-        playerNumber--;
+      if (tmpPlayerNumber == 1){
+        tmpPlayerNumber--;
       }
     }
     if (mouseX >= width/2 + 70 && mouseX <= width/2 + 90 && mouseY >= height/playerHeightDevider + 5 && mouseY <= height/playerHeightDevider + 40){
-      if (playerNumber == 0){
-        playerNumber++;
+      if (tmpPlayerNumber == 0){
+        tmpPlayerNumber++;
       }
     }
-    if (mouseX >= width/2 - 40 && mouseX <= width/2 + 40 && mouseY >= height/saveHeightDevider - 40 && mouseY <= height/saveHeightDevider + 40){
+    //submit
+    if (mouseX >= width/2-40 && mouseX <= width/2 - 40+80 && mouseY >= height/saveHeightDevider-20 && mouseY <= height/saveHeightDevider-20+40){
+      level = tmpLevel;
+      playerNumber = tmpPlayerNumber;
+      settingState = false;
+    }
+    if (mouseX >= width/2-95+200-30 && mouseX <= width/2-95+200-30+20 && mouseY >= height/3-10 && mouseY <= height/3-10+20){
+      tmpLevel = level;
+      tmpPlayerNumber = playerNumber;
       settingState = false;
     }
   }

@@ -7,6 +7,7 @@ public class StartPage{
     PImage char2Img = loadImage("ninja_doodle_alternate.png");
     PImage title0Img = loadImage("0_Doodle.png");
     PImage title1Img = loadImage("1_Jump.png");
+    PImage helpImg = loadImage("helpbutton2.png");
     PImage startButtonImg;
     private int W;
     private int H;
@@ -33,7 +34,7 @@ public class StartPage{
         }
     
     private void settingIcon() {
-        image(settingIconImg,315, -10, 100, 100);
+        image(settingIconImg,340, 25, 40, 40);
         }
     
     private void char0() {
@@ -80,9 +81,10 @@ public class StartPage{
 
 
     private void helpButton(){ 
-        fill(0);
-        textSize(35);
-        text("\u24d8", 35, 33);
+        image(helpImg, 25, 25, 40, 40);
+        // fill(0);
+        // textSize(35);
+        // text("\u24d8", 35, 33);
     }
     
     private void chooseMe(){
@@ -280,10 +282,10 @@ public class StartPage{
             if ((mouseX >=  W * 0.36) && (mouseX<= W * 0.36 + 120) && (mouseY>= H * 0.85) && (mouseY<= H * 0.85 + 45)) {
                 gameStart = true;
                 }
-            if ((mouseX >= 315) && (mouseX<= 315 + 100) && (mouseY>= - 10) && (mouseY<= -10 + 100)) {
+            if ((mouseX >= 340) && (mouseX<= 340 + 25) && (mouseY>= 25) && (mouseY<= 25 + 40)) {
                 settingState = true;
                 }
-            if ((mouseX >= 35 - 20) && (mouseX<= 35 + 20) && (mouseY>= 33 - 20) && (mouseY<= 33 + 20)) {
+            if ((mouseX >= 25) && (mouseX<= 25 + 40) && (mouseY>= 25) && (mouseY<= 25 + 40)) {
                 helpState = true;
                 }
         }

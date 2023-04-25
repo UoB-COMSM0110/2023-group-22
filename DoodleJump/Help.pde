@@ -1,4 +1,6 @@
 class Help{
+    PImage crossImg = loadImage("crossbutton.png");
+
     private void window(){
         fill(200);
         stroke(80, 50, 0);
@@ -75,10 +77,11 @@ class Help{
     }
 
     private void closeButton(){ 
-        fill(80, 50, 0);
-        textSize(30);
-        textAlign(LEFT, TOP);
-        text("\u2715", width/2 + 125, height/4 - 37);
+        image(crossImg,width/2 + 125, height/4-20,20,20);
+        // fill(80, 50, 0);
+        // textSize(30);
+        // textAlign(LEFT, TOP);
+        // text("\u2715", width/2 + 125, height/4 - 37);
     }
 
     void draw() {
@@ -138,7 +141,7 @@ class Help{
     }
 
     void mouseClicked(){
-        if (mouseX >= width/2 + 130 - 15 && mouseX <= width/2 + 130 + 15 && mouseY >= height/4 - 20 - 15 && mouseY <= height/4 - 20 + 15){
+        if (mouseX >= width/2 + 125 && mouseX <= width/2 + 125 + 20 && mouseY >= height/4-20 && mouseY <= height/4 - 20 + 20){
             helpState = false;
         }
     }

@@ -64,18 +64,18 @@ public class Platform{
   public Platform(float x,float y,boolean down){
     this.x = x;
     this.y = y;
-    float rand = random(100);
-    if(prevBrokenPlatform==0 && rand >= 0 && rand < 10){
-      status = 0;
-      prevBrokenPlatform=1;
-    }
-    else if(rand >= 10 && rand < 25){
-      status = 1;
-      prevBrokenPlatform=0;
-    }else{
-      status = 2;
-      prevBrokenPlatform=0;
-    }
+    // float rand = random(100);
+    // if(prevBrokenPlatform==0 && rand >= 0 && rand < 10){
+    //   status = 0;
+    //   prevBrokenPlatform=1;
+    // }
+    // else if(rand >= 10 && rand < 25){
+    //   status = 1;
+    //   prevBrokenPlatform=0;
+    // }else{
+    status = 2;
+    // prevBrokenPlatform=0;
+    // }
   }
     
   public void draw(){

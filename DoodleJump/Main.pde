@@ -102,8 +102,8 @@ void setup(){
     if (Math.abs(H/2+100)-(H-(gap*i))<0.0001){
       continue;
     }
-    platforms.add(new Platform(random(W-60),H-(gap*i),true));
-    platforms_down.add(new Platform(random(W-60),H-(gap*i)));
+    platforms.add(new Platform(random(W-60),H-(gap*i)));
+    platforms_down.add(new Platform(random(W-60),H-(gap*i),true));
 
   }
 
@@ -224,7 +224,7 @@ void draw(){
     image(pauseBackgroundImg,0,0);
     noTint();
     image(doodleFallWord, 0, 100);
-    if (frameCount-downFrameStart>=45){
+    if (frameCount-downFrameStart>=60){
       if (gameState==1){
         gameState=2;
         moveSpeed += 2;
@@ -236,7 +236,7 @@ void draw(){
           if (Math.abs(H/2+100)-(H-(gap*i))<0.0001){
             continue;
           }
-          platforms_down.add(new Platform(random(W-60),H-(gap*i)));
+          platforms_down.add(new Platform(random(W-60),H-(gap*i),true));
         }
       }
       else{
@@ -263,7 +263,7 @@ void draw(){
     doodler_down.draw(npc);
     doodler_down.update(platforms_down,true);
     if (frameCount%15==0){
-      platforms_down.add(0,new Platform(random(W-60),(float) platforms_down.get(0).y+gap));
+      platforms_down.add(0,new Platform(random(W-60),(float) platforms_down.get(0).y+gap,true));
     }
     // System.out.println("====================================");
     for (Platform p:platforms_down){
