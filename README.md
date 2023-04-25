@@ -114,6 +114,36 @@ In addition to the different types of platforms, there are also empty areas wher
 
 If the player is good enough to reach a certain score, a gravity reverse is triggered, causing the player to go down instead of jumping to avoid touching the ceiling spike. If the doodler touches the ceiling spike, the game is over.
 
+# Process
+## Team roles
+First of all, in our team, Joyee serves as the main project manager while Shannon takes on the role of vice project manager. Both Joyee and Shannon, along with Henry and Tien, work as software developers, contributing their skills and expertise to the project. Meanwhile, Zefeng is responsible for game style design and evaluation, ensuring the game's aesthetics align with our vision and goals. We follow a streamlined and collaborative approach to software development, ensuring timely and high-quality results. Next, we will outline the essential tools and methods we use to optimize our process, communication, and project management throughout our software development journey.
+
+## Tools
+To achieve a smooth and organized project management system, our team decided to take advantage of various tools and methodologies that would cater to our specific needs. This multifaceted approach helped us streamline communication, allocate tasks efficiently, and maintain a high level of productivity throughout the project.
+<br>
+One of the key tools we employed was "Trello", a project management application that allowed us to record and track every task that needed to be done. Trello's user-friendly interface and organizational capabilities enabled us to create boards, lists, and cards to represent tasks and their respective deadlines. This way, every team member had a clear understanding of their responsibilities, and it also helped us monitor the overall progress of the project, making our development process more flexible and agile.
+<br>
+<figure>
+  <img src="static/Trello_Interface.png" alt="Trello Interface" style="width:100%">
+  <figcaption>Trello interface</figcaption>
+</figure>
+<br>
+<br>
+However, just having a visual representation of tasks was not enough. We also needed a reliable communication platform to facilitate discussions, share updates, and address any issues that arose during the project. For this purpose, we used Microsoft Teams and WhatsApp groups to stay in touch with each other. These tools allowed us to have real-time conversations, share files, and even conduct video conferences when necessary.
+<br>
+We understood that effective communication was essential to the success of the project, and we wanted to ensure that no one felt overwhelmed or left out. To further enhance communication efficiency, we divided our group into smaller subgroups based on specific features or areas of expertise. This way, each subgroup could focus on their designated tasks and collaborate more effectively, without getting bogged down by excessive information or irrelevant discussions.
+
+## How we work
+To maintain a sense of accountability and ensure that everyone was making progress, we would get in touch with each team member every one to two weeks to assess their progress, address any challenges they faced, and provide support as needed. These check-ins helped us identify potential bottlenecks and allowed us to proactively address any issues before they escalated.
+<br>
+Workload estimation played a significant role in our project management strategy. We used Poker planning, a consensus-based estimation technique, to determine the complexity of each task and assign story points accordingly. This method involved team members discussing and comparing their estimates, fostering open communication and collaborative decision-making. By assigning story points, we could better understand the effort required for each task and allocate resources more effectively.
+<br>
+With a clear understanding of the complexity of each task, team members could then gauge how many tasks they could realistically handle within two weeks based on their respective story points. We recognized, however, that personal issues might cause delays or unexpected challenges, so we planned for contingencies. Every two weeks, we held meetings to assess progress, discuss any obstacles encountered, and make any necessary adjustments to individual workloads.
+<br>
+This biweekly review allowed us to remain flexible and adapt to changing circumstances, ensuring that the team's overall productivity was not hindered by unforeseen issues. Moreover, these meetings also allowed team members to share their experiences, learn from each other, and celebrate milestones achieved.
+<br>
+Our comprehensive approach, which combined various tools, methodologies, and a strong emphasis on communication and collaboration, proved to be highly effective. We managed to complete the game development on time, thanks to the hard work and dedication of our team. This experience not only reinforced the importance of strategic project management but also taught us valuable lessons that we can apply to future projects.
+
 
 
 <!-- ### [Class Diagram](https://app.diagrams.net/#G1eO5WRYrhPcYVJps2LNeKAyVoR5l_IiGF)
