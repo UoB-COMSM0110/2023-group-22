@@ -43,7 +43,7 @@ public class StartPage{
             image(title2Img, W / 2 - 105, 60, 220, 125);
         }
         }else if (playerNumber == 1){
-
+            image(title3Img, W / 2 - 105, 60, 220, 130);
         }
         
          
