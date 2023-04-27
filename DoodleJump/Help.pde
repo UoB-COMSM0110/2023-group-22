@@ -18,7 +18,7 @@ class Help{
         fill(80, 50, 0);
         textSize(20);
         textAlign(LEFT, TOP);
-        text("Basic", width/2 - 100, height/4 + 20);
+        text("How to Play", width/2 - 130, height/4 + 20);
         textSize(10);
         text("* Click start to play", width/2 - 135, height/4 + 55);
         text("* Press left and right to", width/2 - 135, height/4 + 75);
@@ -35,12 +35,14 @@ class Help{
         fill(80, 50, 0);
         textSize(20);
         textAlign(LEFT, TOP);
-        text("Platform Color", width/2 + 8, height/4 + 20);
+        text("2 Player mode", width/2 + 8, height/4 + 20);
         textSize(10);
-        text("* Soft green: normal", width/2 + 15, height/4 + 55);
-        text("* Yellow: fragile", width/2 + 15, height/4 + 75);
-        text("* Red: broken", width/2 + 15, height/4 + 95);
-        text("* Purple: helping platform", width/2 + 15, height/4 + 115);
+        text("* Stay alive before your", width/2 + 15, height/4 + 55);
+        text("  opponent is out!", width/2 + 15, height/4 + 70);
+        text("* First Player: Press left", width/2 + 15, height/4 + 90);
+        text("  and right to control", width/2 + 15, height/4 + 105);
+        text("* Second Player: Press 'A'", width/2 + 15, height/4 + 125);
+        text("  and 'D' to control", width/2 + 15, height/4 + 140);
     }
 
     private void difficulty(){
@@ -49,7 +51,7 @@ class Help{
         fill(80, 50, 0);
         textSize(20);
         textAlign(LEFT, TOP);
-        text("Difficulty", width/2 - 125, height/4 + 190);
+        text("Difficulty", width/2 - 120, height/4 + 190);
         textSize(10);
         text("* Easy: Only platforms and", width/2 - 135, height/4 + 225);
         text("  equipments", width/2 - 135, height/4 + 238);
@@ -66,14 +68,14 @@ class Help{
         fill(80, 50, 0);
         textSize(20);
         textAlign(LEFT, TOP);
-        text("2-Player mode", width/2 + 8, height/4 + 190);
+        text("Other", width/2 + 45, height/4 + 190);
+        textSize(11);
+        text("Platform Colors:", width/2 + 15, height/4 + 225);
         textSize(10);
-        text("* Stay alive before your", width/2 + 15, height/4 + 225);
-        text("  opponent is out!", width/2 + 15, height/4 + 238);
-        text("* First Player: Press left", width/2 + 15, height/4 + 258);
-        text("  and right to control", width/2 + 15, height/4 + 271);
-        text("* Second Player: Press 'A'", width/2 + 15, height/4 + 291);
-        text("  and 'D' to control", width/2 + 15, height/4 + 304);
+        text("* Soft green: normal", width/2 + 15, height/4 + 245);
+        text("* Yellow: fragile", width/2 + 15, height/4 + 265);
+        text("* Red: broken", width/2 + 15, height/4 + 285);
+        text("* Purple: helping platform", width/2 + 15, height/4 + 305);
     }
 
     private void closeButton(){ 

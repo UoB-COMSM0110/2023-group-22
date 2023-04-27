@@ -5,8 +5,11 @@ public class StartPage{
     PImage char0Img = loadImage("doodle.png");
     PImage char1Img = loadImage("astronaut_doodle.png");
     PImage char2Img = loadImage("ninja_doodle_alternate.png");
-    PImage title0Img = loadImage("0_Doodle.png");
-    PImage title1Img = loadImage("1_Jump.png");
+    // PImage title0Img = loadImage("0_Doodle.png");
+    // PImage title1Img = loadImage("1_Jump.png");
+    PImage titleImg = loadImage("title.png");
+    PImage title2Img = loadImage("title2.png");
+    PImage title3Img = loadImage("title3.png");
     PImage helpImg = loadImage("helpbutton2.png");
     PImage startButtonImg;
     private int W;
@@ -29,8 +32,21 @@ public class StartPage{
     }
     
     private void title() {
-        image(title0Img,W / 2 - 175 / 2,60,175,47); 
-        image(title1Img,125,110,132,47);
+        if (playerNumber == 0){
+            if (currentChoice == 1){
+            image(titleImg, W / 2 - 105, 50, 220, 140);
+        }
+        else if (currentChoice == 2){
+            image(title3Img, W / 2 - 105, 60, 220, 130);
+        }
+        else if (currentChoice == 0){
+            image(title2Img, W / 2 - 105, 60, 220, 125);
+        }
+        }else if (playerNumber == 1){
+
+        }
+        
+         
         }
     
     private void settingIcon() {
