@@ -1,11 +1,12 @@
 # Introduction
 
 Our primary goal during the planning phase of our video game brief was to capture a modern, recognizable brand that was flexible and approachable to every kind of user. As a result, early discussions shifted away from more traditional forms of arcade gaming such as Pac-Man or Space Invaders. Instead, group ideas that were shortlisted sought to capture the instantly identifiable nostalgia of games that we, as video game players ourselves, grew up with. Our game finally coalesced into a platforming video game, providing a twist on the original iPhone game Doodle Jump. The platforming aspect of Doodle Jump provided the perfect combination of simple, easy-to-pick-up game mechanics as well as the ability to implement a diverse range of gameplay twists. In our game you control your ‘doodle’, a customizable player character whose main objective is to steadily climb higher through a randomly generated environment. While doing so, players will encounter several obstacles whose goal is to slow down or defeat the player. These obstacles include different types of platforms such as ghost ledges, which cause the player to fall straight through, or single-use platforms that disappear when stepped on. Obstacles also include active enemies who spawn at varying intervals throughout the map, attempting to end the current user’s game. At the player’s disposal are several powerful abilities or ‘equipment’ that encourage fast-moving platforming, such as spring mechanisms and jetpack boosts. What distinguishes our game from other implementations of platforming games and Doodle Jump itself is the introduction of core game-play twists. These include:
-	dynamic map manipulation by players that allows for exciting in-game problem solving
 
-	gravity inversion that shifts gameplay away from traditional platforming and towards a race-against-the-clock style
+1.	dynamic map manipulation by players that allows for exciting in-game problem solving
 
-	a competitive two-player version that pits users against each other in an ‘elimination-style’ twist on the Doodle Jump formula
+2.	gravity inversion that shifts gameplay away from traditional platforming and towards a race-against-the-clock style
+
+3.	a competitive two-player version that pits users against each other in an ‘elimination-style’ twist on the Doodle Jump formula
 
 # Requirements
 
