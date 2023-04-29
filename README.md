@@ -131,6 +131,76 @@ Having implemented a basic platforming method that represented the underlying fr
 ## Integration and UI
 Alongside our two-player game mode, our group endeavoured to develop and refine two other gameplay twists, which also included a reversed gravity mode and the ability for the user to directly manipulate the map layout. Laid out alongside our basic platforming framework, the final challenge required us to combine these disparate packages into one complete product. Important considerations throughout this process were the need to not only create tidy, easy-to-read code for us as developers but an equally accessible user interface for our players. While also remaining keenly aware of how we wanted to structure our game difficulty sections. Our gameplay twists, as well as features such as map enemies, significantly altered the difficulty level of a simple platformer. We, therefore, wanted to create an interface for our game that communicated our gameplay twists to the user, while also allowing for features to be added or removed for certain difficulty levels, all at the discretion of the player. The solution was to implement a layered interface that allowed users to both select single and multiplayer game modes, as well as adjust the difficulty of the map they faced. Subsequently, each incremental difficulty level would enable a new, more challenging gameplay twist.
 
+# Evaluation
+
+## Description of how code was tested
+In the development of our Doodle Jump game, we tested the code thoroughly by modifying functions within the code to output relevant information when the mouse cursor interacted with specific locations in the game. This information was logged in a file, allowing us to analyze the log file and identify valid and invalid operations.
+
+The game consists of three main screens: the start screen, the game screen, and the end screen. Each of these screens has various areas that require testing. On the start screen, we focused on five key areas: the help button in the top-left corner, the settings button in the top-right corner, and the three character selection buttons in the center. In the game screen, we considered the two gameplay modes—normal mode and downstairs mode—each with its specific constraints on the Doodle character's position. We also tested the placement of the SOS block, which should appear at a fixed position below the character. Additionally, we examined the pause button's location in the top-right corner to ensure it was easily accessible for the player during critical moments. Finally, on the end screen, we tested the go home button's position requirements.
+
+Our primary testing method was equivalence partitioning, a technique that divides input data into equivalent partitions, where each partition represents a range of input values that should produce the same output. This method enables efficient testing by identifying representative test cases for each partition, reducing the number of test cases required while maintaining test coverage.
+
+For example, in our start screen testing, we created the following table to summarize the valid and invalid conditions for the x and y coordinates of the key areas:
+
+And , Here is an excerpt from the table:
+
+### Start menu：
+
+| **Category**                  |       | **Condition**      |
+| ----------------------------- | ----- | ------------------ |
+| valid help button x           | HX_1  | 15 ≤ x ≤ 50        |
+| invalid help button x         | HX_2  | x < 15 or x > 50   |
+| valid help button y           | HY_1  | 14 ≤ y ≤ 53        |
+| invalid help button y         | HY_2  | y < 14 or y > 53   |
+| valid setting button x        | SX_1  | 315 ≤ x ≤ 400      |
+| invalid setting button x      | SX_2  | x < 315 or x > 400 |
+| valid setting button y        | SY_1  | 0 ≤ y ≤ 90         |
+| invalid setting button y      | SY_2  | y < 0 or y > 90    |
+| valid character selection y   | CSY_1 | 400 ≤ y ≤ 505      |
+| invalid character selection y | CSY_2 | y < 400 or y > 505 |
+| valid left character x        | LCX_1 | 17 ≤ x ≤ 141       |
+| invalid left character x      | LCX_2 | x < 17 or x > 141  |
+| valid middle character x      | MCX_1 | 142 ≤ x ≤ 232      |
+| invalid middle character x    | MCX_2 | x < 142 or x > 232 |
+| valid right character x       | RCX_1 | 233 ≤ x ≤ 400      |
+| invalid right character x     | RCX_2 | x < 233 or x > 400 |
+
+
+
+### Game mode：
+
+| **Category**                     |       | **Condition**        |
+| -------------------------------- | ----- | -------------------- |
+| valid doodle x (normal mode)     | DX_1  | 0 ≤ x ≤ 400          |
+| valid doodle y (normal mode)     | DY_1  | y ≥ 0                |
+| valid doodle x (Downstairs mode) | DX_2  | 0 ≤ x ≤ 400          |
+| valid doodle y (Downstairs mode) | DY_2  | y ≤ 0                |
+| invalid doodle x                 | DX_3  | x < 0 or x > 400     |
+| valid sos brick x                | SBX_1 | x = doodle's x value |
+| valid sos brick y                | SBY_1 | y > doodle's y value |
+| invalid sos brick x              | SBX_2 | x ≠ doodle's x value |
+| invalid sos brick y              | SBY_2 | y ≤ doodle's y value |
+| valid ordinary brick x           | OBX_1 | 0 ≤ x ≤ 400          |
+| valid ordinary brick y           | OBY_1 | 0 ≤ y ≤ 600          |
+| invalid ordinary brick x         | OBX_2 | x < 0 or x > 400     |
+| invalid ordinary brick y         | OBY_2 | y < 0 or y > 600     |
+| valid setting button x           | SX_1  | 340 ≤ x ≤ 370        |
+| invalid setting button x         | SX_2  | x < 340 or x > 370   |
+| valid setting button y           | SY_1  | 20 ≤ y ≤ 50          |
+| invalid setting button y         | SY_2  | y < 20 or y > 50     |
+
+
+
+### end menu：
+
+| **Category**                        |       | **Condition**      |
+| ----------------------------------- | ----- | ------------------ |
+| valid end interface home button x   | EHX_1 | 144 ≤ x ≤ 259      |
+| invalid end interface home button x | EHX_2 | x < 144 or x > 259 |
+| valid end interface home button y   | EHY_1 | 282 ≤ y ≤ 327      |
+| invalid end interface home button y | EHY_2 | y < 282 or y > 327 |
+
+By using equivalence partitioning testing in combination with other testing techniques, we ensured that our game functioned as intended, providing a smooth and enjoyable experience for the players.
 # Process
 ## Team roles
 First of all, in our team, Joyee serves as the main project manager while Shannon takes on the role of vice project manager. Both Joyee and Shannon, along with Henry and Tien, work as software developers, contributing their skills and expertise to the project. Meanwhile, Zefeng is responsible for game style design and evaluation, ensuring the game's aesthetics align with our vision and goals. We follow a streamlined and collaborative approach to software development, ensuring timely and high-quality results. Next, we will outline the essential tools and methods we use to optimize our process, communication, and project management throughout our software development journey.
@@ -186,3 +256,6 @@ Our comprehensive approach, which combined various tools, methodologies, and a s
 
 - Henry Brooking
 
+<img src="./static/Yu Tian.jpg" width="200" height=auto>
+
+- Yu Tian
