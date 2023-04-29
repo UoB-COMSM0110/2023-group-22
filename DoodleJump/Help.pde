@@ -21,8 +21,8 @@ class Help{
         text("1 Player mode", width/2 - 140, height/4 + 20);
         textSize(10);
         text("* Click start to play", width/2 - 135, height/4 + 55);
-        text("* Press left and right to", width/2 - 135, height/4 + 75);
-        text("  control your character", width/2 - 135, height/4 + 90);
+        text("* Press 'left' and 'right'", width/2 - 135, height/4 + 75);
+        text("  arrow keys to control", width/2 - 135, height/4 + 90);
         text("* Press 'Z' to spawn a ", width/2 - 135, height/4 + 110);
         text("  platform under doodler,", width/2 - 135, height/4 + 125);
         text("  you get 1 every 30 points", width/2 - 135, height/4 + 140);
@@ -39,10 +39,11 @@ class Help{
         textSize(10);
         text("* Stay alive before your", width/2 + 15, height/4 + 55);
         text("  opponent is out!", width/2 + 15, height/4 + 70);
-        text("* Player 1: Press left", width/2 + 15, height/4 + 90);
-        text("  and right to control", width/2 + 15, height/4 + 105);
-        text("* Player 2: Press 'A'", width/2 + 15, height/4 + 125);
-        text("  and 'D' to control", width/2 + 15, height/4 + 140);
+        text("* Player 1: Press 'left'", width/2 + 15, height/4 + 90);
+        text("  and 'right' arrow keys", width/2 + 15, height/4 + 105);
+        text("  to control", width/2 + 15, height/4 + 120);
+        text("* Player 2: Press 'A'", width/2 + 15, height/4 + 140);
+        text("  and 'D' to control", width/2 + 15, height/4 + 155);
     }
 
     private void difficulty(){

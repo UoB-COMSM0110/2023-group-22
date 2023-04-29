@@ -43,7 +43,7 @@ void draw(){
     text("You Scored "+ score, W/2, H * 0.3);
   }
   textSize(22);
-  text("Hit SPACE to play again", W/2, H * 0.36);
+  text("Hit SPACE bar to play again", W/2, H * 0.36);
   
   fill(229, 226, 194);
   stroke(0);
