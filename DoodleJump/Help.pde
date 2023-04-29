@@ -18,7 +18,7 @@ class Help{
         fill(80, 50, 0);
         textSize(20);
         textAlign(LEFT, TOP);
-        text("How to Play", width/2 - 130, height/4 + 20);
+        text("1 Player mode", width/2 - 140, height/4 + 20);
         textSize(10);
         text("* Click start to play", width/2 - 135, height/4 + 55);
         text("* Press left and right to", width/2 - 135, height/4 + 75);
@@ -39,9 +39,9 @@ class Help{
         textSize(10);
         text("* Stay alive before your", width/2 + 15, height/4 + 55);
         text("  opponent is out!", width/2 + 15, height/4 + 70);
-        text("* First Player: Press left", width/2 + 15, height/4 + 90);
+        text("* Player 1: Press left", width/2 + 15, height/4 + 90);
         text("  and right to control", width/2 + 15, height/4 + 105);
-        text("* Second Player: Press 'A'", width/2 + 15, height/4 + 125);
+        text("* Player 2: Press 'A'", width/2 + 15, height/4 + 125);
         text("  and 'D' to control", width/2 + 15, height/4 + 140);
     }
 
@@ -68,7 +68,7 @@ class Help{
         fill(80, 50, 0);
         textSize(20);
         textAlign(LEFT, TOP);
-        text("Other", width/2 + 45, height/4 + 190);
+        text("Game Element", width/2 + 10, height/4 + 190);
         textSize(11);
         text("Platform Colors:", width/2 + 15, height/4 + 225);
         textSize(10);
@@ -79,7 +79,12 @@ class Help{
     }
 
     private void closeButton(){ 
+        push();
+        fill(168, 79, 61);
+        textSize(15);
+        text("Note: Hover to ZOOM", width/2 - 140, height/4-25);
         image(crossImg,width/2 + 125, height/4-20,20,20);
+        pop();
         // fill(80, 50, 0);
         // textSize(30);
         // textAlign(LEFT, TOP);

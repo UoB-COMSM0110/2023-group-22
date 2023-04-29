@@ -603,6 +603,11 @@ void keyPressed(){
       }
     }
   }
+  if (keyCode==' ' && isGameOver == false){
+    if (gameState==1 || gameState==2 || gameState==3){
+      pause.pauseState = !pause.pauseState;
+    }
+  }
 
   // if (keyCode==ENTER){
   //   System.out.println("gameState "+gameState);
