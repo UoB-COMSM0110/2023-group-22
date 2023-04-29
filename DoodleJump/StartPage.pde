@@ -34,16 +34,16 @@ public class StartPage{
     private void title() {
         if (playerNumber == 0){
             if (currentChoice == 1){
-            image(titleImg, W / 2 - 105, 50, 220, 140);
+            image(titleImg, W / 2 - 115, 50, 240, 140);
         }
         else if (currentChoice == 2){
-            image(title3Img, W / 2 - 105, 60, 220, 130);
+            image(title3Img, W / 2 - 115, 60, 240, 130);
         }
         else if (currentChoice == 0){
-            image(title2Img, W / 2 - 105, 60, 220, 125);
+            image(title2Img, W / 2 - 115, 60, 240, 125);
         }
         }else if (playerNumber == 1){
-            image(title2Img, W / 2 - 105, 60, 220, 130);
+            image(title2Img, W / 2 - 110, 60, 240, 130);
         }
         
          
