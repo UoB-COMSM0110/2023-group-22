@@ -1,6 +1,6 @@
 # Introduction
 
-Our primary goal during the planning phase of our video game brief was to capture a modern, recognizable brand that was flexible and approachable to every kind of user. As a result, early discussions shifted away from more traditional forms of arcade gaming such as Pac-Man or Space Invaders. Instead, group ideas that were shortlisted sought to capture the instantly identifiable nostalgia of games that we, as video game players ourselves, grew up with. Our game finally coalesced into a platforming video game, providing a twist on the original iPhone game Doodle Jump. The platforming aspect of Doodle Jump provided the perfect combination of simple, easy-to-pick-up game mechanics as well as the ability to implement a diverse range of gameplay twists. In our game you control your ‘doodle’, a customizable player character whose main objective is to steadily climb higher through a randomly generated environment. While doing so, players will encounter several obstacles whose goal is to slow down or defeat the player. These obstacles include different types of platforms such as ghost ledges, which cause the player to fall straight through, or single-use platforms that disappear when stepped on. Obstacles also include active enemies who spawn at varying intervals throughout the map, attempting to end the current user’s game. At the player’s disposal are several powerful abilities or ‘equipment’ that encourage fast-moving platforming, such as spring mechanisms and jetpack boosts. What distinguishes our game from other implementations of platforming games and Doodle Jump itself is the introduction of core game-play twists. These include:
+Our primary goal during the planning phase of our video game brief was to capture a modern, recognizable brand that was flexible and approachable to every kind of user while adhering to specific constraints derived from user stories. As a result, early discussions shifted away from more traditional forms of arcade gaming such as Pac-Man or Space Invaders.Instead, group ideas that were shortlisted sought to capture the instantly identifiable nostalgia of games that we, as video game players ourselves, grew up with, and which also met the requirements outlined in the ideation process. Our game finally coalesced into a platforming video game, providing a twist on the original iPhone game Doodle Jump. The platforming aspect of Doodle Jump provided the perfect combination of simple, easy-to-pick-up game mechanics as well as the ability to implement a diverse range of gameplay twists. In our game you control your ‘doodle’, a customizable player character whose main objective is to steadily climb higher through a randomly generated environment. While doing so, players will encounter several obstacles whose goal is to slow down or defeat the player. These obstacles include different types of platforms such as ghost ledges, which cause the player to fall straight through, or single-use platforms that disappear when stepped on. Obstacles also include active enemies who spawn at varying intervals throughout the map, attempting to end the current user’s game. At the player’s disposal are several powerful abilities or ‘equipment’ that encourage fast-moving platforming, such as spring mechanisms and jetpack boosts. What distinguishes our game from other implementations of platforming games and Doodle Jump itself is the introduction of core game-play twists. These include:
 
 1.	dynamic map manipulation by players that allows for exciting in-game problem solving
 
@@ -132,58 +132,111 @@ Having implemented a basic platforming method that represented the underlying fr
 Alongside our two-player game mode, our group endeavoured to develop and refine two other gameplay twists, which also included a reversed gravity mode and the ability for the user to directly manipulate the map layout. Laid out alongside our basic platforming framework, the final challenge required us to combine these disparate packages into one complete product. Important considerations throughout this process were the need to not only create tidy, easy-to-read code for us as developers but an equally accessible user interface for our players. While also remaining keenly aware of how we wanted to structure our game difficulty sections. Our gameplay twists, as well as features such as map enemies, significantly altered the difficulty level of a simple platformer. We, therefore, wanted to create an interface for our game that communicated our gameplay twists to the user, while also allowing for features to be added or removed for certain difficulty levels, all at the discretion of the player. The solution was to implement a layered interface that allowed users to both select single and multiplayer game modes, as well as adjust the difficulty of the map they faced. Subsequently, each incremental difficulty level would enable a new, more challenging gameplay twist.
 
 # Evaluation
-## Think Aloud Evaluation:
-We set up six different tasks related to a game, including accessing the help page, adjusting the difficulty level, achieving a certain score, pausing the game, returning to the home page after game over, and engaging in a two-player competition.
-### Stage 1: Pre-Update Evaluation
-The initial evaluation highlighted some critical usability issues, such as a lack of clear instructions, difficulty level options, and an unintuitive pause mechanism. Players also expressed a desire for power-ups and bonus items, and improvements in the two-player mode to include different game modes.
-### Stage 2: First Update Evaluation
-After the first update, the evaluation showed that adding a platform under the doodler when the game started, preventing game over on spawn, was a significant improvement. Players also appreciated the addition of an instruction page and different difficulty levels. However, some minor usability issues remained, such as the lack of a more obvious button and more information on the game over screen.
-### Stage 3: Second Update Evaluation
-Following the second update, the evaluation indicated further improvements in the game's usability. Players found the Help page informative and well-organized, and they appreciated the varying difficulty levels. They noted the game's challenging nature and enjoyed the unique style, even though it occasionally made it difficult to see certain objects. The pause button and navigation to the Home screen after losing were deemed user-friendly. Finally, the two-player mode was seen as a fun addition that could benefit from clearer character tracking and improved controls.
-## Heuristic Evaluation:
-### Stage 1: Pre-Update Evaluation
-Before any updates, the heuristic evaluation by students identified several issues in the game, such as unclear system status, lack of user control and freedom, inadequate recognition rather than recall, insufficient error prevention, and limited flexibility and efficiency of use. Students suggested various possible solutions to address these issues, including clearer feedback, better instructions or tutorials, and customizable controls or interfaces.
-### Stage 2: First Update Evaluation
-After the first update, some issues were addressed, such as the game over on spawn problem and the addition of the instruction page and different difficulty levels. However, other usability issues remained, such as the lack of an obvious pause button and more information on the game over screen.
-### Stage 3: Second Update Evaluation
-Following the second update, the Heuristic Evaluation indicated significant improvements in the game's usability. Students noted that many of their previous concerns were addressed, including continuous broken platform issues, gravity reverse platform color inconsistencies, and extended transition times. Moreover, the game over screen could benefit from clearer visualizations for "space" and character differentiation in the two-player mode. Overall, the second update demonstrated considerable progress in addressing previously identified heuristic issues.
+Our team conducted a comprehensive evaluation process, incorporating both qualitative and quantitative evaluations, to assess and improve our game's usability and performance throughout its development. Instead of performing one qualitative and one quantitative evaluation, as per the original requirement, we decided to conduct two of each to gain more practical experience and in-depth understanding.
 
-## System Usability Scale & NASA Task Load Index:
-To assess the impact of the game updates on usability and workload, we conducted a series of Wilcoxon tests on the System Usability Scale (SUS) scores and the NASA Task Load Index (TLX) scores before and after each update.
-### Stage 1: Before updates:
-Before any updates were implemented, the game had certain usability issues and players experienced a higher workload. The initial SUS and NASA TLX scores reflected these problems.
-### Stage 2: After first update:
-Following the first update, a significant improvement in the SUS scores was observed, indicating that the implemented changes positively impacted the game's usability. In terms of the NASA TLX scores, the results showed a decrease in the perceived workload, suggesting that the game had become more accessible and less demanding for players after the first update.
-### Stage 3: After second update:
-After the second update, another Wilcoxon test was conducted to compare the SUS scores, resulting in a W-value of 1.5. This result further demonstrates that the game's usability has continued to improve with the second update. Similarly, the NASA TLX scores showed another decrease in the perceived workload, indicating that the game updates have made the game even more accessible and less demanding for players.
+### Qualitative Evaluation:
 
-Our game is analyzed through a three-stage evaluation process, including System Usability Scale & NASA TLX, Think Aloud Evaluation, and Heuristic Evaluation. Two updates significantly improved game usability and user experience by addressing issues such as unclear system status, user control, and error prevention. The updates also enhanced gameplay with the addition of an instruction page and different difficulty levels.
+We conducted Think Aloud Evaluations and Heuristic evaluations at three stages throughout the development process.
 
-The Think Aloud Evaluation revealed that users appreciated the informative Help page, challenging difficulty levels, and enjoyable 2-player mode, but suggested improvements for the free player inputs and score display. Heuristic Evaluation showed substantial progress in addressing heuristic issues, with only minor concerns remaining. Overall, the updates have created a more engaging, user-friendly, and accessible gaming experience.
+<strong>Stage 1</strong>:
 
-## Description of how code was tested
-In the development of our Doodle Jump game, we tested the code thoroughly by modifying functions within the code to output relevant information when the mouse cursor interacted with specific locations in the game. This information was logged in a file, allowing us to analyze the log file and identify valid and invalid operations.
+At this stage, we had our base game with a start page for choosing characters and a game over page. We set up two tasks for users to perform:
 
-The game consists of three main screens: the start screen, the game screen, and the end screen. Each of these screens has various areas that require testing. On the start screen, we focused on five key areas: the help button in the top-left corner, the settings button in the top-right corner, and the three character selection buttons in the center. In the game screen, we considered the two gameplay modes—normal mode and downstairs mode—each with its specific constraints on the Doodle character's position. We also tested the placement of the SOS block, which should appear at a fixed position below the character. Additionally, we examined the pause button's location in the top-right corner to ensure it was easily accessible for the player during critical moments. Finally, on the end screen, we tested the go home button's position requirements.
+1. Choose a character.
+2. Play the game until reaching a score of 100. 
+
+From the Think Aloud Evaluations, we identified the following issues:
+
+- Users were unsure how to choose a character, so we added a dialog with instructions.
+- Users found the game too easy, prompting us to add three difficulty levels.
+- Users struggled at the start of the game, so we added a platform under the doodler to provide enough time for users to react.
+
+The Heuristic Evaluation highlighted that the game violated the heuristic "Help and documentation," so we added a help page for detailed instructions.
+
+<strong>Stage 2</strong>:
+
+At this stage, we added different difficulty levels, twists, and made modifications based on the feedback from the first stage. We set up six different tasks related to the game, which are:
+1. Access the help page.
+2. Adjust the difficulty level.
+3. Achieve a certain score.
+4. Pause the game.
+5. Return to the home page after the game is over.
+6. Engage in a two-player competition.
+
+Based on the Think Aloud Evaluations, we addressed the following issues:
+- Continuous broken platforms causing the game to get stuck. We fixed this by avoiding the occurrence of two continuous platforms.
+- Gravity reverse platform inconsistency, which confused users. We changed to one color when in gravity reverse mode.
+- Help page exit button and setting page save button incompatible with Windows Operating System. We resolved this by changing to an image instead of using the special character.
+- Setting window lacked an exit button, so we added one to improve consistency.
+- Users often ignored the function of the spacebar to restart the game, so we capitalized the 'SPACE' word to highlight the function.
+- In two-player mode, users did not know who had won the game. We added the image of the sprite to make it clearer.
+- The instructions on the help page were not clear enough, so we made modifications based on user feedback.
+
+
+The Heuristic Evaluation in Stage 2 revealed the following issues:
+
+- The game still violated the heuristic "Help and documentation" as it lacked a description of the spring and jetpack features. We added these instructions to the help page.
+- An issue related to "Consistency and standards" was identified due to the non-standard save button on the settings page. We resolved this issue along with the compatibility issues mentioned above.
+- The lack of an exit button in the settings page violated the heuristic "User control and freedom."
+- An issue related to "Flexibility and efficiency of use" was raised, suggesting a key on the keyboard to function as a pause button. We added the 'space' bar to serve this purpose.
+
+<strong>Stage 3</strong>:
+
+The tasks at this stage were the same as the second stage. The Think Aloud Evaluations revealed the following issues:
+
+1. In 2 player mode, users were unsure who was playing as Player 1 and Player 2.
+2. In 2 player mode, users wanted to add a feature like gravity reverse.
+3. In 1 player mode, users wanted to know their previous score.
+
+The Heuristic Evaluation at this stage only revealed one issue related to the heuristic "Recognition rather than recall" since we did not have any prompt showing which sprite was Player 1 and which was Player 2. 
+
+Due to time constraints, we were unable to resolve all the issues identified in this stage, but we determined that these features were worth considering for future updates.
+
+###  Quantitative Evaluations:
+
+For the quantitative evaluations, we employed the System Usability Scale (SUS) and the NASA Task Load Index (TLX) to assess the workload and usability of different levels of difficulty in our game. To collect feedback efficiently, we created Google Forms and distributed them online.We successfully collected data from 12 respondents.
+
+By conducting a Wilcoxon signed-rank test, we found that there was a significant difference (W=1.5) between the scores of the "easy" and "hard" levels using SUS.
+
+#### System Usability Scale (SUS)
+
+| Participant | **Easy** | **Hard** |
+| ----------- | -------- | -------- |
+| 1           | 90       | 85       |
+| 2           | 90       | 67.5     |
+| 3           | 62.5     | 45       |
+| 4           | 82.5     | 80       |
+| 5           | 85       | 77.5     |
+| 6           | 95       | 80       |
+| 7           | 92.5     | 95       |
+| 8           | 95       | 62.5     |
+| 9           | 97.5     | 87.5     |
+| 10          | 80       | 57.5     |
+| 11          | 57.5     | 45       |
+| 12          | 92.5     | 85       |
+
+### How code was tested:
+
+In developing our Doodle Jump game, we thoroughly tested the code by modifying functions within the code to output relevant information when the mouse cursor interacted with specific locations in the game. This information was logged in a file, allowing us to analyze the log file and identify valid and invalid operations.
+
+The game consists of three main screens: the start screen, the game screen, and the end screen. Each of these screens has various areas that require testing. On the start screen, we focused on five key areas: the help button in the top-left corner, the settings button in the top-right corner, and the three character selection buttons in the center. In the game screen, we considered the two gameplay modes—normal mode and gravity reverse mode,each with its specific constraints on the Doodle character's position. We also tested the placement of the SOS/helping platform, which should appear at a fixed position below the character. Additionally, we examined the pause button's location in the top-right corner to ensure it was easily accessible for the player during critical moments. Finally, on the end screen, we tested the go home button's position requirements.
 
 Our primary testing method was equivalence partitioning, a technique that divides input data into equivalent partitions, where each partition represents a range of input values that should produce the same output. This method enables efficient testing by identifying representative test cases for each partition, reducing the number of test cases required while maintaining test coverage.
 
-For example, in our start screen testing, we created the following table to summarize the valid and invalid conditions for the x and y coordinates of the key areas:
+For example, in our start page testing, we created the following table to summarize the valid and invalid conditions for the x and y coordinates of the key areas:
 
-And , Here is an excerpt from the table:
-
-### Start menu：
+#### Start page：
 
 | **Category**                  |       | **Condition**      |
 | ----------------------------- | ----- | ------------------ |
-| valid help button x           | HX_1  | 15 ≤ x ≤ 50        |
-| invalid help button x         | HX_2  | x < 15 or x > 50   |
-| valid help button y           | HY_1  | 14 ≤ y ≤ 53        |
-| invalid help button y         | HY_2  | y < 14 or y > 53   |
-| valid setting button x        | SX_1  | 315 ≤ x ≤ 400      |
-| invalid setting button x      | SX_2  | x < 315 or x > 400 |
-| valid setting button y        | SY_1  | 0 ≤ y ≤ 90         |
-| invalid setting button y      | SY_2  | y < 0 or y > 90    |
+| valid help button x           | HX_1  | 25 ≤ x ≤ 65        |
+| invalid help button x         | HX_2  | x < 25 or x > 65   |
+| valid help button y           | HY_1  | 25 ≤ y ≤ 65        |
+| invalid help button y         | HY_2  | y < 25 or y > 65   |
+| valid setting button x        | SX_1  | 340 ≤ x ≤ 365      |
+| invalid setting button x      | SX_2  | x < 340 or x > 365 |
+| valid setting button y        | SY_1  | 25 ≤ y ≤ 65         |
+| invalid setting button y      | SY_2  | y < 25 or y > 65    |
 | valid character selection y   | CSY_1 | 400 ≤ y ≤ 505      |
 | invalid character selection y | CSY_2 | y < 400 or y > 505 |
 | valid left character x        | LCX_1 | 17 ≤ x ≤ 141       |
@@ -193,9 +246,7 @@ And , Here is an excerpt from the table:
 | valid right character x       | RCX_1 | 233 ≤ x ≤ 400      |
 | invalid right character x     | RCX_2 | x < 233 or x > 400 |
 
-
-
-### Game mode：
+#### In-Game：
 
 | **Category**                     |       | **Condition**        |
 | -------------------------------- | ----- | -------------------- |
@@ -205,21 +256,32 @@ And , Here is an excerpt from the table:
 | valid doodle y (Downstairs mode) | DY_2  | y ≤ 0                |
 | invalid doodle x                 | DX_3  | x < 0 or x > 400     |
 | valid sos brick x                | SBX_1 | x = doodle's x value |
-| valid sos brick y                | SBY_1 | y > doodle's y value |
+| valid sos brick y                | SBY_1 | y ≤ doodle's y value |
 | invalid sos brick x              | SBX_2 | x ≠ doodle's x value |
-| invalid sos brick y              | SBY_2 | y ≤ doodle's y value |
+| invalid sos brick y              | SBY_2 | y > doodle's y value |
 | valid ordinary brick x           | OBX_1 | 0 ≤ x ≤ 400          |
-| valid ordinary brick y           | OBY_1 | 0 ≤ y ≤ 600          |
+| valid ordinary brick y           | OBY_1 | y ≥ 300         |
 | invalid ordinary brick x         | OBX_2 | x < 0 or x > 400     |
-| invalid ordinary brick y         | OBY_2 | y < 0 or y > 600     |
-| valid setting button x           | SX_1  | 340 ≤ x ≤ 370        |
-| invalid setting button x         | SX_2  | x < 340 or x > 370   |
-| valid setting button y           | SY_1  | 20 ≤ y ≤ 50          |
-| invalid setting button y         | SY_2  | y < 20 or y > 50     |
+| invalid ordinary brick y         | OBY_2 | y < 300     |
+| valid pause button x             | SX_1  | 340 ≤ x ≤ 370        |
+| invalid pause button x           | SX_2  | x < 340 or x > 370   |
+| valid pause button y             | SY_1  | 20 ≤ y ≤ 50          |
+| invalid pause button y           | SY_2  | y < 20 or y > 50     |
+
+#### Pause Window：
+| **Category**                     |       | **Condition**        |
+| -------------------------------- | ----- | -------------------- |
+| valid continue button x             | CBX_1  | doodle's x-80 ≤ x ≤ doodle's x+80        |
+| invalid continue button x           | CBX_2  | x < doodle's x-80 or x > doodle's x+80   |
+| valid continue button y             | CBY_1  | doodle's y+30 ≤ y ≤ doodle's y+80          |
+| invalid continue button y           | CBY_2  | y < doodle's y+30 or y > doodle's y+80      |
+| valid exit button x                 | EX_1  | doodle's x-80 ≤ x ≤ doodle's x+80       |
+| invalid exit button x               | EX_2  | x < doodle's x-80 or x > doodle's x+80   |
+| valid exit button y                 | EY_1  | y < doodle's y+80 or y > doodle's y+160         |
+| invalid exit button y               | EY_2  | y < doodle's y+80 or y > doodle's y+160      |
 
 
-
-### end menu：
+#### end page：
 
 | **Category**                        |       | **Condition**      |
 | ----------------------------------- | ----- | ------------------ |
@@ -230,34 +292,41 @@ And , Here is an excerpt from the table:
 
 By using equivalence partitioning testing in combination with other testing techniques, we ensured that our game functioned as intended, providing a smooth and enjoyable experience for the players.
 # Process
-## Team roles
-First of all, in our team, Joyee serves as the main project manager while Shannon takes on the role of vice project manager. Both Joyee and Shannon, along with Henry and Tien, work as software developers, contributing their skills and expertise to the project. Meanwhile, Zefeng is responsible for game style design and evaluation, ensuring the game's aesthetics align with our vision and goals. We follow a streamlined and collaborative approach to software development, ensuring timely and high-quality results. Next, we will outline the essential tools and methods we use to optimize our process, communication, and project management throughout our software development journey.
+In developing our game, our goal was not only to create an enjoyable and engaging experience for players but also to thoroughly understand and apply the principles of good software engineering. To achieve this, our team embraced the Agile methodology and integrated its key principles into our workflow.
 
-## Tools
-To achieve a smooth and organized project management system, our team decided to take advantage of various tools and methodologies that would cater to our specific needs. This multifaceted approach helped us streamline communication, allocate tasks efficiently, and maintain a high level of productivity throughout the project.
-<br>
-One of the key tools we employed was "Trello", a project management application that allowed us to record and track every task that needed to be done. Trello's user-friendly interface and organizational capabilities enabled us to create boards, lists, and cards to represent tasks and their respective deadlines. This way, every team member had a clear understanding of their responsibilities, and it also helped us monitor the overall progress of the project, making our development process more flexible and agile.
-<br>
-<figure>
-  <img src="static/Trello_Interface.png" alt="Trello Interface" style="width:100%">
-  <figcaption>Trello interface</figcaption>
-</figure>
-<br>
-<br>
-However, just having a visual representation of tasks was not enough. We also needed a reliable communication platform to facilitate discussions, share updates, and address any issues that arose during the project. For this purpose, we used Microsoft Teams and WhatsApp groups to stay in touch with each other. These tools allowed us to have real-time conversations, share files, and even conduct video conferences when necessary.
-<br>
-We understood that effective communication was essential to the success of the project, and we wanted to ensure that no one felt overwhelmed or left out. To further enhance communication efficiency, we divided our group into smaller subgroups based on specific features or areas of expertise. This way, each subgroup could focus on their designated tasks and collaborate more effectively, without getting bogged down by excessive information or irrelevant discussions.
+Our team consisted of five members: Joyee, Shannon, Henry, Yu, and Luis. Each member took on specific roles and responsibilities to ensure a well-structured and efficient workflow:
 
-## How we work
-To maintain a sense of accountability and ensure that everyone was making progress, we would get in touch with each team member every one to two weeks to assess their progress, address any challenges they faced, and provide support as needed. These check-ins helped us identify potential bottlenecks and allowed us to proactively address any issues before they escalated.
-<br>
-Workload estimation played a significant role in our project management strategy. We used Poker planning, a consensus-based estimation technique, to determine the complexity of each task and assign story points accordingly. This method involved team members discussing and comparing their estimates, fostering open communication and collaborative decision-making. By assigning story points, we could better understand the effort required for each task and allocate resources more effectively.
-<br>
-With a clear understanding of the complexity of each task, team members could then gauge how many tasks they could realistically handle within two weeks based on their respective story points. We recognized, however, that personal issues might cause delays or unexpected challenges, so we planned for contingencies. Every two weeks, we held meetings to assess progress, discuss any obstacles encountered, and make any necessary adjustments to individual workloads.
-<br>
-This biweekly review allowed us to remain flexible and adapt to changing circumstances, ensuring that the team's overall productivity was not hindered by unforeseen issues. Moreover, these meetings also allowed team members to share their experiences, learn from each other, and celebrate milestones achieved.
-<br>
-Our comprehensive approach, which combined various tools, methodologies, and a strong emphasis on communication and collaboration, proved to be highly effective. We managed to complete the game development on time, thanks to the hard work and dedication of our team. This experience not only reinforced the importance of strategic project management but also taught us valuable lessons that we can apply to future projects.
+1. Joyee: Main project manager and lead     developer, overseeing the overall progress, integrating the work of other developers, and merging the code when a team member moved a task to "TO MERGE" on the Trello board.
+2. Shannon: Vice project manager and main developer, collaborating with Joyee in project management, sharing decision-making responsibilities, and contributing to development.
+3. Henry: Main developer and sprite designer, responsible for implementing game features and creating visual assets.
+4. Yu: Developer and tester, handling a smaller part of development and ensuring the quality of the final product.
+5. Luis: Game style and evaluation lead, focusing on the game's aesthetics, user experience, and performance assessment.
+
+Our Agile approach involved dividing the project into three life cycles, each representing a phase or a major milestone. Within each life cycle, we organized multiple sprints to iteratively develop features, fix bugs, and make improvements. For each sprint, we utilized planning poker during sprint planning meetings to estimate the effort required for the tasks in the upcoming sprint. This approach helped us maintain adaptability, respond to changes quickly, and foster a continuous improvement mindset.
+
+<!-- https://www.planningpoker.com/ -->
+
+
+During the project, we encountered situations where some team members did not manage to complete their assigned story points within a sprint. To address this issue, we adjusted our sprint planning and updated the burn chart to reflect the changes. This allowed us to maintain a realistic project timeline and allocate resources effectively, ensuring that the team could continue to make progress.
+
+<!-- burn chart -->
+
+We used Trello as our Kanban board to visualize and manage tasks, allowing us to monitor progress and make adjustments as needed. By incorporating planning poker in each sprint, we ensured a shared understanding of task complexity among team members, encouraged them to voice their opinions, and facilitated communication and collaboration.
+
+<!-- https://trello.com/b/ySbYvdQV/swe-22-doodle-jump -->
+
+After completing the planning poker, we assigned story points to each task according to the team member's capacity and the previous burn chart. This allowed us to balance the workload effectively and ensure that each team member was allocated tasks that matched their skills and availability. This practice also helped us monitor the team's progress and make adjustments as needed to stay on track.
+
+
+Although we did not hold daily stand-up meetings, our team stayed in constant communication through social media platforms like WhatsApp and Microsoft Teams. This allowed us to discuss any obstacles encountered, seek support from the team, and share updates on our progress. Our consistent communication ensured that everyone was aligned with the project goals and fostered a collaborative environment.
+
+To further facilitate collaboration and maintain an Agile mindset, we utilized pair programming sessions, which involved two developers working together on the same code. This practice not only improved the quality of our code but also allowed us to share knowledge and learn from each other.
+
+Throughout the project, we implemented regular feedback loops by conducting evaluations at each stage of the life cycles. This enabled us to continuously assess our game's quality and make necessary improvements based on user feedback and performance metrics. Our Agile approach emphasized the importance of incorporating user feedback, allowing us to create a game that is engaging and enjoyable for players.
+
+As a result of our Agile process, which included organizing our work into three life cycles with multiple sprints and utilizing planning poker in each sprint, our team was able to effectively manage tasks, address challenges, and adapt to changes. This, in turn, led to the successful development of our game while maintaining a strong focus on good software engineering practices.
+
+To sum up, our team's commitment to the Agile methodology, including planning poker and story point allocation, played a crucial role in the successful completion of our project. We learned the value of iterative development, continuous improvement, and open communication in managing a complex software development process. These lessons have not only contributed to our game's quality but have also shaped our understanding of effective software engineering practices, which will undoubtedly benefit us in future projects.
 
 
 
