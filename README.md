@@ -1,3 +1,30 @@
+## Table of Contents
+- [Introduction](#introduction)
+- [Requirements](#requirements)
+  - [Ideation process](#ideation-process)
+  - [Early stages design](#early-stages-design)
+- [Design](#design)
+  - [System Architecture](#system-architecture)
+  - [Class Diagram](#class-diagram)
+  - [Sequence Diagram](#sequence-diagram)
+- [Implementation](#implementation)
+  - [Challenge 1: Platforming Framework](#challenge-1-platforming-framework)
+  - [Challenge 2: Gameplay Twists](#challenge-2-gameplay-twists)
+  - [Challenge 3: Integration and UI](#challenge-3-integration-and-ui)
+- [Evaluation](#evaluation)
+    - [Qualitative Evaluation:](#qualitative-evaluation)
+    - [Quantitative Evaluations:](#quantitative-evaluations)
+      - [System Usability Scale (SUS)](#system-usability-scale-sus)
+      - [NASA Task Load Index (TLX)](#nasa-task-load-index-tlx)
+    - [How code was tested:](#how-code-was-tested)
+      - [Start page：](#start-page)
+      - [In-Game：](#in-game)
+      - [Pause Window：](#pause-window)
+      - [end page：](#end-page)
+- [Process](#process)
+- [Conclusion](#conclusion)
+- [Team Members](#team-members)
+
 # Introduction
 
 Our primary goal during the planning phase of our video game brief was to capture a modern, recognizable brand that was flexible and approachable to every kind of user while adhering to specific constraints derived from user stories. As a result, early discussions shifted away from more traditional forms of arcade gaming such as Pac-Man or Space Invaders.Instead, group ideas that were shortlisted sought to capture the instantly identifiable nostalgia of games that we, as video game players ourselves, grew up with, and which also met the requirements outlined in the ideation process. Our game finally coalesced into a platforming video game, providing a twist on the original iPhone game Doodle Jump. The platforming aspect of Doodle Jump provided the perfect combination of simple, easy-to-pick-up game mechanics as well as the ability to implement a diverse range of gameplay twists. In our game you control your ‘doodle’, a customizable player character whose main objective is to steadily climb higher through a randomly generated environment. While doing so, players will encounter several obstacles whose goal is to slow down or defeat the player. These obstacles include different types of platforms such as ghost ledges, which cause the player to fall straight through, or single-use platforms that disappear when stepped on. Obstacles also include active enemies who spawn at varying intervals throughout the map, attempting to end the current user’s game. At the player’s disposal are several powerful abilities or ‘equipment’ that encourage fast-moving platforming, such as spring mechanisms and jetpack boosts. What distinguishes our game from other implementations of platforming games and Doodle Jump itself is the introduction of core game-play twists. These include:
@@ -138,7 +165,7 @@ In addition to the two-player mode, we aimed to develop and refine two other gam
 To address these concerns, we designed a layered interface that enabled users to select between single and multiplayer modes and adjust map difficulty. Each incremental difficulty level would introduce a new, more challenging gameplay twist. This approach allowed us to communicate gameplay twists effectively and provide players with the flexibility to customize their experience according to their preferences and skill level.
 
 <figure>
-  <img src="static/level_difficulty.gif" alt="level_difficulty" style="width:40%">
+  <img src="static/level_difficulty.gif" alt="level_difficulty" style="width:50%">
   <figcaption>Level Difficulty Selection and One-Player and Two-Player Modes </figcaption>
 </figure>
 <br>
@@ -148,11 +175,11 @@ Furthermore, we invested considerable time in refining the visual design and lay
 
 <div style="display: flex; justify-content: space-around;">
   <figure>
-    <img src="static/design1.gif" alt="design1" style="width:70%;">
+    <img src="static/design1.gif" alt="design1" style="width:100%;">
     <figcaption>Design1</figcaption>
   </figure>
   <figure>
-    <img src="static/design2.gif" alt="design2" style="width:70%;">
+    <img src="static/design2.gif" alt="design2" style="width:100%;">
     <figcaption>Design2</figcaption>
   </figure>
 </div>
