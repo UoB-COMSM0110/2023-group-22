@@ -148,7 +148,7 @@ After the first update, some issues were addressed, such as the game over on spa
 ### Stage 3: Second Update Evaluation
 Following the second update, the Heuristic Evaluation indicated significant improvements in the game's usability. Students noted that many of their previous concerns were addressed, including continuous broken platform issues, gravity reverse platform color inconsistencies, and extended transition times. Moreover, the game over screen could benefit from clearer visualizations for "space" and character differentiation in the two-player mode. Overall, the second update demonstrated considerable progress in addressing previously identified heuristic issues.
 
-##System Usability Scale & NASA Task Load Index:
+## System Usability Scale & NASA Task Load Index:
 To assess the impact of the game updates on usability and workload, we conducted a series of Wilcoxon tests on the System Usability Scale (SUS) scores and the NASA Task Load Index (TLX) scores before and after each update.
 ### Stage 1: Before updates:
 Before any updates were implemented, the game had certain usability issues and players experienced a higher workload. The initial SUS and NASA TLX scores reflected these problems.
