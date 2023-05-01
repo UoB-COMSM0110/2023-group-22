@@ -194,9 +194,9 @@ Due to time constraints, we were unable to resolve all the issues identified in 
 
 ###  Quantitative Evaluations:
 
-For the quantitative evaluations, we employed the System Usability Scale (SUS) and the NASA Task Load Index (TLX) to assess the workload and usability of different levels of difficulty in our game. To collect feedback efficiently, we created Google Forms and distributed them online.We successfully collected data from 12 respondents.
+In our quantitative evaluation, we utilized the System Usability Scale (SUS) and the NASA Task Load Index (TLX) to assess the workload and usability of different levels of difficulty in our game. To efficiently gather feedback, we created Google Forms and distributed them online, successfully collecting data from 12 respondents.
 
-By conducting a Wilcoxon signed-rank test, we found that there was a significant difference (W=1.5) between the scores of the "easy" and "hard" levels using SUS.
+We conducted a Wilcoxon signed-rank test and discovered a significant difference between the scores of the "easy" and "hard" levels. The SUS yielded a W-value of 1.5, while the NASA TLX produced a W-value of 0. The individual scores for each question in the TLX test were 1.5, 2, 0, 0, 1.5, and 0. The most pronounced difference between the two difficulty levels was found in physical demand, followed by mental demand and effort.
 <!-- add NASA -->
 
 #### System Usability Scale (SUS)
@@ -215,6 +215,24 @@ By conducting a Wilcoxon signed-rank test, we found that there was a significant
 | 10          | 80       | 57.5     |
 | 11          | 57.5     | 45       |
 | 12          | 92.5     | 85       |
+
+#### NASA Task Load Index (TLX)
+
+| Participant | Easy         | Hard         |
+|-------------|--------------|--------------|
+| 1           | 30           | 60           |
+| 2           | 45           | 55           |
+| 3           | 36.66666667  | 73.33333333  |
+| 4           | 30           | 53.33333333  |
+| 5           | 15           | 43.33333333  |
+| 6           | 26.66666667  | 70           |
+| 7           | 13.33333333  | 40           |
+| 8           | 20           | 43.33333333  |
+| 9           | 26.66666667  | 56.66666667  |
+| 10          | 43.33333333  | 55           |
+| 11          | 48.33333333  | 51.66666667  |
+| 12          | 18.33333333  | 71.66666667  |
+
 
 ### How code was tested:
 
