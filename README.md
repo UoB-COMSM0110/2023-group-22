@@ -141,14 +141,24 @@ After the first update, the evaluation showed that adding a platform under the d
 ### Stage 3: Second Update Evaluation
 Following the second update, the evaluation indicated further improvements in the game's usability. Players found the Help page informative and well-organized, and they appreciated the varying difficulty levels. They noted the game's challenging nature and enjoyed the unique style, even though it occasionally made it difficult to see certain objects. The pause button and navigation to the Home screen after losing were deemed user-friendly. Finally, the two-player mode was seen as a fun addition that could benefit from clearer character tracking and improved controls.
 ## Heuristic Evaluation:
-### Stage 1: Pre-Update Heuristic Evaluation
+### Stage 1: Pre-Update Evaluation
 Before any updates, the heuristic evaluation by students identified several issues in the game, such as unclear system status, lack of user control and freedom, inadequate recognition rather than recall, insufficient error prevention, and limited flexibility and efficiency of use. Students suggested various possible solutions to address these issues, including clearer feedback, better instructions or tutorials, and customizable controls or interfaces.
-### Stage 2: First Update Heuristic Evaluation
+### Stage 2: First Update Evaluation
 After the first update, some issues were addressed, such as the game over on spawn problem and the addition of the instruction page and different difficulty levels. However, other usability issues remained, such as the lack of an obvious pause button and more information on the game over screen.
-### Stage 3: Second Update Heuristic Evaluation
+### Stage 3: Second Update Evaluation
 Following the second update, the Heuristic Evaluation indicated significant improvements in the game's usability. Students noted that many of their previous concerns were addressed, including continuous broken platform issues, gravity reverse platform color inconsistencies, and extended transition times. Moreover, the game over screen could benefit from clearer visualizations for "space" and character differentiation in the two-player mode. Overall, the second update demonstrated considerable progress in addressing previously identified heuristic issues.
 
+##System Usability Scale & NASA Task Load Index:
+To assess the impact of the game updates on usability and workload, we conducted a series of Wilcoxon tests on the System Usability Scale (SUS) scores and the NASA Task Load Index (TLX) scores before and after each update.
+### Stage 1: Before updates:
+Before any updates were implemented, the game had certain usability issues and players experienced a higher workload. The initial SUS and NASA TLX scores reflected these problems.
+### Stage 2: After first update:
+Following the first update, a significant improvement in the SUS scores was observed, indicating that the implemented changes positively impacted the game's usability. In terms of the NASA TLX scores, the results showed a decrease in the perceived workload, suggesting that the game had become more accessible and less demanding for players after the first update.
+### Stage 3: After second update:
+After the second update, another Wilcoxon test was conducted to compare the SUS scores, resulting in a W-value of 1.5. This result further demonstrates that the game's usability has continued to improve with the second update. Similarly, the NASA TLX scores showed another decrease in the perceived workload, indicating that the game updates have made the game even more accessible and less demanding for players.
+
 Our game is analyzed through a three-stage evaluation process, including System Usability Scale & NASA TLX, Think Aloud Evaluation, and Heuristic Evaluation. Two updates significantly improved game usability and user experience by addressing issues such as unclear system status, user control, and error prevention. The updates also enhanced gameplay with the addition of an instruction page and different difficulty levels.
+
 The Think Aloud Evaluation revealed that users appreciated the informative Help page, challenging difficulty levels, and enjoyable 2-player mode, but suggested improvements for the free player inputs and score display. Heuristic Evaluation showed substantial progress in addressing heuristic issues, with only minor concerns remaining. Overall, the updates have created a more engaging, user-friendly, and accessible gaming experience.
 
 ## Description of how code was tested
