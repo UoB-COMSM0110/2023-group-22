@@ -175,15 +175,18 @@ Furthermore, we invested considerable time in refining the visual design and lay
 
 <div style="display: flex; justify-content: space-around;">
   <figure>
-    <img src="static/design1.gif" alt="design1" style="width:100%;">
+    <img src="static/design1.gif" alt="design1" style="width:50%;">
     <figcaption>Design1</figcaption>
   </figure>
   <figure>
-    <img src="static/design2.gif" alt="design2" style="width:100%;">
+    <img src="static/design2.gif" alt="design2" style="width:50%;">
     <figcaption>Design2</figcaption>
   </figure>
 </div>
+<br>
+<br>
 
+<!-- add vote result -->
 
 
 
