@@ -138,13 +138,28 @@ In addition to the two-player mode, we aimed to develop and refine two other gam
 To address these concerns, we designed a layered interface that enabled users to select between single and multiplayer modes and adjust map difficulty. Each incremental difficulty level would introduce a new, more challenging gameplay twist. This approach allowed us to communicate gameplay twists effectively and provide players with the flexibility to customize their experience according to their preferences and skill level.
 
 <figure>
-  <img src="static/level_difficulty.gif" alt="level_difficulty" style="width:70%">
+  <img src="static/level_difficulty.gif" alt="level_difficulty" style="width:40%">
   <figcaption>Level Difficulty Selection and One-Player and Two-Player Modes </figcaption>
 </figure>
 <br>
 <br>
 
-Furthermore, we spent considerable time refining the visual design and layout of our user interface. This involved creating clear and concise menus, easily identifiable buttons and icons, and a visually appealing color scheme that remained consistent throughout the game. Our goal was to ensure that players could quickly understand and navigate the various options and settings available to them, without feeling overwhelmed or confused.
+Furthermore, we invested considerable time in refining the visual design and layout of our user interface. This process involved crafting clear and concise menus, easily identifiable buttons and icons, as well as a visually appealing color scheme and distinct platform patterns that remained consistent throughout the game. We developed two UI designs and held a vote, taking into consideration our primary goal: ensuring that players could quickly understand and navigate the various options and settings available to them, without feeling overwhelmed or confused. By selecting the most user-friendly design, we prioritized creating an enjoyable and seamless gaming experience for our players.
+
+<div style="display: flex; justify-content: space-around;">
+  <figure>
+    <img src="static/design1.gif" alt="design1" style="width:70%;">
+    <figcaption>Design1</figcaption>
+  </figure>
+  <figure>
+    <img src="static/design2.gif" alt="design2" style="width:70%;">
+    <figcaption>Design2</figcaption>
+  </figure>
+</div>
+
+
+
+
 
 # Evaluation
 Our team conducted a comprehensive evaluation process, incorporating both qualitative and quantitative evaluations, to assess and improve our game's usability and performance throughout its development. Instead of performing one qualitative and one quantitative evaluation, as per the original requirement, we decided to conduct two of each to gain more practical experience and in-depth understanding.
