@@ -122,14 +122,29 @@ If the player is good enough to reach a certain score, a gravity reverse is trig
 
 # Implementation
 
-## Platforming Framework
-Implementing the early platforming logic of the player character and the surrounding objects proved to be relatively straightforward in their design.  Writing our game in Processing allowed us to straightforwardly generate player characters, manipulate their velocity, and implement simple collision detection between the user and the surrounding platform. The first challenge that emerged in our game implementation was designing the nature of our randomly generated map, in particular, cycling through successfully navigated parts of the map. One problem that seemed to emerge among other project groups was the difficulty in translating the map and its obstacles to the movement of the user. Our game structure navigated these problems by ensuring that the platform entities (and in turn the equipment and monster entities) were all instantiated within the Doodler class. This allowed us to manipulate these objects in a way that responded to the current configuration of the player character. This also presented a novel solution to a secondary problem that immediately impacted platforming performance and memory allocation. When the map failed to adequately react to the movement of the player the large number of platform, equipment, and monster entities being spawned caused map generation errors, hardware lag, and eventual crashing. By successfully implementing a reactive map generation process, our software was able to identify when parts of the map had been successfully traversed and were therefore being rendered off-screen. In doing so we were able to purge navigated entities that no longer needed to be rendered ensuring a smooth, efficient game execution.
+## Challenge 1: Platforming Framework
+Implementing the early platforming logic of the player character and the surrounding objects proved to be relatively straightforward in their design.  Writing our game in Processing allowed us to straightforwardly generate player characters, manipulate their velocity, and implement simple collision detection between the user and the surrounding platform. The first challenge that emerged in our game implementation was designing the nature of our randomly generated map, in particular, cycling through successfully navigated parts of the map. 
 
-## Gameplay Twists
-Having implemented a basic platforming method that represented the underlying framework for the rest of our software, the next development challenge was the incorporation of the gameplay twist elements. Developing our two-player game mode presented several challenges, particularly in its integration with the base game model. The two-player method required tweaking how user inputs were registered, allowing for multiple key presses and directional changes among the two users. Creating this alternate game state for two players also required a careful rebalancing of equipment objects. Preliminary feedback recognised that powerful changes to a doodle’s velocity and map position, which caused games to end prematurely, threatened the fairness and enjoyment of the game mode. As a result, alterations were made to interactions with equipment to lessen their impact and the method behind map generation was altered slightly to favour whichever doodle was traversing fastest.
+One problem that seemed to emerge among other project groups was the difficulty in translating the map and its obstacles to the movement of the user. Our game structure navigated these problems by ensuring that the platform entities (and in turn the equipment and monster entities) were all instantiated within the Doodler class. This allowed us to manipulate these objects in a way that responded to the current configuration of the player character. This also presented a novel solution to a secondary problem that immediately impacted platforming performance and memory allocation. When the map failed to adequately react to the movement of the player the large number of platform, equipment, and monster entities being spawned caused map generation errors, hardware lag, and eventual crashing. By successfully implementing a reactive map generation process, our software was able to identify when parts of the map had been successfully traversed and were therefore being rendered off-screen. In doing so we were able to purge navigated entities that no longer needed to be rendered ensuring a smooth, efficient game execution.
 
-## Integration and UI
-Alongside our two-player game mode, our group endeavoured to develop and refine two other gameplay twists, which also included a reversed gravity mode and the ability for the user to directly manipulate the map layout. Laid out alongside our basic platforming framework, the final challenge required us to combine these disparate packages into one complete product. Important considerations throughout this process were the need to not only create tidy, easy-to-read code for us as developers but an equally accessible user interface for our players. While also remaining keenly aware of how we wanted to structure our game difficulty sections. Our gameplay twists, as well as features such as map enemies, significantly altered the difficulty level of a simple platformer. We, therefore, wanted to create an interface for our game that communicated our gameplay twists to the user, while also allowing for features to be added or removed for certain difficulty levels, all at the discretion of the player. The solution was to implement a layered interface that allowed users to both select single and multiplayer game modes, as well as adjust the difficulty of the map they faced. Subsequently, each incremental difficulty level would enable a new, more challenging gameplay twist.
+## Challenge 2: Gameplay Twists
+Having implemented a basic platforming method that represented the underlying framework for the rest of our software, the next development challenge was the incorporation of the gameplay twist elements. Developing our two-player game mode presented several challenges, particularly in its integration with the base game model.
+
+The two-player method required tweaking how user inputs were registered, allowing for multiple key presses and directional changes among the two users. Creating this alternate game state for two players also required a careful rebalancing of equipment objects. Preliminary feedback recognised that powerful changes to a doodle’s velocity and map position, which caused games to end prematurely, threatened the fairness and enjoyment of the game mode. As a result, alterations were made to interactions with equipment to lessen their impact and the method behind map generation was altered slightly to favour whichever doodle was traversing fastest.
+
+## Challenge 3: Integration and UI
+In addition to the two-player mode, we aimed to develop and refine two other gameplay twists: reversed gravity mode and user-controlled map layout. The final challenge involved integrating these separate components into a cohesive product. It was crucial to develop a clean and readable codebase for developers while ensuring an intuitive user interface for players. Another consideration was structuring the game difficulty to account for the impact of gameplay twists and map enemies on the overall challenge.
+
+To address these concerns, we designed a layered interface that enabled users to select between single and multiplayer modes and adjust map difficulty. Each incremental difficulty level would introduce a new, more challenging gameplay twist. This approach allowed us to communicate gameplay twists effectively and provide players with the flexibility to customize their experience according to their preferences and skill level.
+
+<figure>
+  <img src="static/level_difficulty.gif" alt="level_difficulty" style="width:70%">
+  <figcaption>Level Difficulty Selection and One-Player and Two-Player Modes </figcaption>
+</figure>
+<br>
+<br>
+
+Furthermore, we spent considerable time refining the visual design and layout of our user interface. This involved creating clear and concise menus, easily identifiable buttons and icons, and a visually appealing color scheme that remained consistent throughout the game. Our goal was to ensure that players could quickly understand and navigate the various options and settings available to them, without feeling overwhelmed or confused.
 
 # Evaluation
 Our team conducted a comprehensive evaluation process, incorporating both qualitative and quantitative evaluations, to assess and improve our game's usability and performance throughout its development. Instead of performing one qualitative and one quantitative evaluation, as per the original requirement, we decided to conduct two of each to gain more practical experience and in-depth understanding.
@@ -218,20 +233,20 @@ We conducted a Wilcoxon signed-rank test and discovered a significant difference
 
 #### NASA Task Load Index (TLX)
 
-| Participant | Easy         | Hard         |
+| Participant | **Easy**     | **Hard**         |
 |-------------|--------------|--------------|
-| 1           | 30           | 60           |
-| 2           | 45           | 55           |
-| 3           | 36.66666667  | 73.33333333  |
-| 4           | 30           | 53.33333333  |
-| 5           | 15           | 43.33333333  |
-| 6           | 26.66666667  | 70           |
-| 7           | 13.33333333  | 40           |
-| 8           | 20           | 43.33333333  |
-| 9           | 26.66666667  | 56.66666667  |
-| 10          | 43.33333333  | 55           |
-| 11          | 48.33333333  | 51.66666667  |
-| 12          | 18.33333333  | 71.66666667  |
+| 1           | 30       | 60       |
+| 2           | 45       | 55       |
+| 3           | 36.67    | 73.33    |
+| 4           | 30       | 53.33    |
+| 5           | 15       | 43.33    |
+| 6           | 26.67    | 70       |
+| 7           | 13.33    | 40       |
+| 8           | 20       | 43.33    |
+| 9           | 26.67    | 56.67    |
+| 10          | 43.33    | 55       |
+| 11          | 48.33    | 51.67    |
+| 12          | 18.33    | 71.67    |
 
 
 ### How code was tested:
