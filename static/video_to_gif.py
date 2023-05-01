@@ -4,9 +4,9 @@ import imageio
 import imutils
 
 if __name__ == '__main__':
-    step_size = 0.2 # secs
-    video_fp = 'Paper_Prototype.MOV'
-    gif_fp_dst = "DoodleJump_prototype.gif"
+    step_size = 0.01 # secs
+    video_fp = 'level_difficulty2.mov'
+    gif_fp_dst = "level_difficulty.gif"
     
     gifimgs = []
     cap = cv2.VideoCapture(video_fp)
@@ -18,8 +18,8 @@ if __name__ == '__main__':
         ret, frame = cap.read()
         if frame is None:
             break
-        frame = imutils.resize(frame, width=640)
-        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        # frame = imutils.resize(frame, width=640)
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
        
         gifimgs.append(frame[:, :, ::-1])
 
