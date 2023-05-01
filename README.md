@@ -27,13 +27,30 @@
 
 # Introduction
 
-Our primary goal during the planning phase of our video game brief was to capture a modern, recognizable brand that was flexible and approachable to every kind of user while adhering to specific constraints derived from user stories. As a result, early discussions shifted away from more traditional forms of arcade gaming such as Pac-Man or Space Invaders.Instead, group ideas that were shortlisted sought to capture the instantly identifiable nostalgia of games that we, as video game players ourselves, grew up with, and which also met the requirements outlined in the ideation process. Our game finally coalesced into a platforming video game, providing a twist on the original iPhone game Doodle Jump. The platforming aspect of Doodle Jump provided the perfect combination of simple, easy-to-pick-up game mechanics as well as the ability to implement a diverse range of gameplay twists. In our game you control your ‘doodle’, a customizable player character whose main objective is to steadily climb higher through a randomly generated environment. While doing so, players will encounter several obstacles whose goal is to slow down or defeat the player. These obstacles include different types of platforms such as ghost ledges, which cause the player to fall straight through, or single-use platforms that disappear when stepped on. Obstacles also include active enemies who spawn at varying intervals throughout the map, attempting to end the current user’s game. At the player’s disposal are several powerful abilities or ‘equipment’ that encourage fast-moving platforming, such as spring mechanisms and jetpack boosts. What distinguishes our game from other implementations of platforming games and Doodle Jump itself is the introduction of core game-play twists. These include:
+Our primary goal during the planning phase of our video game brief was to capture a modern, recognizable brand that was flexible and approachable to every kind of user while adhering to specific constraints derived from user stories. As a result, early discussions shifted away from more traditional forms of arcade gaming such as Pac-Man or Space Invaders.Instead, group ideas that were shortlisted sought to capture the instantly identifiable nostalgia of games that we, as video game players ourselves, grew up with, and which also met the requirements outlined in the ideation process.
+
+Our game finally coalesced into a platforming video game, providing a twist on the original iPhone game Doodle Jump. The platforming aspect of Doodle Jump provided the perfect combination of simple, easy-to-pick-up game mechanics as well as the ability to implement a diverse range of gameplay twists. In our game you control your ‘doodle’, a customizable player character whose main objective is to steadily climb higher through a randomly generated environment. While doing so, players will encounter several obstacles whose goal is to slow down or defeat the player. These obstacles include different types of platforms such as ghost ledges, which cause the player to fall straight through, or single-use platforms that disappear when stepped on. Obstacles also include active enemies who spawn at varying intervals throughout the map, attempting to end the current user’s game. At the player’s disposal are several powerful abilities or ‘equipment’ that encourage fast-moving platforming, such as spring mechanisms and jetpack boosts. What distinguishes our game from other implementations of platforming games and Doodle Jump itself is the introduction of core game-play twists. These include:
 
 1.	dynamic map manipulation by players that allows for exciting in-game problem solving
 
+<figure>
+  <img src="static/helping_platform.gif" alt="dynamic map manipulation" style="width:30%">
+  <figcaption>Demonstration of dynamic map manipulation</figcaption>
+</figure>
+
 2.	gravity inversion that shifts gameplay away from traditional platforming and towards a race-against-the-clock style
 
+<figure>
+  <img src="static/gravity_reverse.gif" alt="gravity inversion" style="width:30%">
+  <figcaption>Demonstration of gravity inversion</figcaption>
+</figure>
+
 3.	a competitive two-player version that pits users against each other in an ‘elimination-style’ twist on the Doodle Jump formula
+
+<figure>
+  <img src="static/two_player.gif" alt="competitive two-player mode" style="width:30%">
+  <figcaption>Demonstration of competitive two-player mode</figcaption>
+</figure>
 
 # Requirements
 
@@ -165,7 +182,7 @@ In addition to the two-player mode, we aimed to develop and refine two other gam
 To address these concerns, we designed a layered interface that enabled users to select between single and multiplayer modes and adjust map difficulty. Each incremental difficulty level would introduce a new, more challenging gameplay twist. This approach allowed us to communicate gameplay twists effectively and provide players with the flexibility to customize their experience according to their preferences and skill level.
 
 <figure>
-  <img src="static/level_difficulty.gif" alt="level_difficulty" style="width:50%">
+  <img src="static/level_difficulty.gif" alt="level_difficulty" style="width:30%">
   <figcaption>Level Difficulty Selection and One-Player and Two-Player Modes </figcaption>
 </figure>
 <br>
@@ -175,22 +192,16 @@ Furthermore, we invested considerable time in refining the visual design and lay
 
 <div style="display: flex; justify-content: space-around;">
   <figure>
-    <img src="static/design1.gif" alt="design1" style="width:50%;">
+    <img src="static/design1.gif" alt="design1" style="width:30%;">
     <figcaption>Design1</figcaption>
   </figure>
   <figure>
-    <img src="static/design2.gif" alt="design2" style="width:50%;">
+    <img src="static/design2.gif" alt="design2" style="width:30%;">
     <figcaption>Design2</figcaption>
   </figure>
 </div>
 <br>
-<br>
-
 <!-- add vote result -->
-
-
-
-
 # Evaluation
 Our team conducted a comprehensive evaluation process, incorporating both qualitative and quantitative evaluations, to assess and improve our game's usability and performance throughout its development. Instead of performing one qualitative and one quantitative evaluation, as per the original requirement, we decided to conduct two of each to gain more practical experience and in-depth understanding.
 
