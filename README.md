@@ -17,10 +17,10 @@
       - [System Usability Scale (SUS)](#system-usability-scale-sus)
       - [NASA Task Load Index (TLX)](#nasa-task-load-index-tlx)
     - [How code was tested:](#how-code-was-tested)
-      - [Start page：](#start-page)
-      - [In-Game：](#in-game)
-      - [Pause Window：](#pause-window)
-      - [end page：](#end-page)
+      - [Start page](#start-page)
+      - [In-Game](#in-game)
+      - [Pause Window](#pause-window)
+      - [end page](#end-page)
 - [Process](#process)
 - [Conclusion](#conclusion)
 - [Team Members](#team-members)
@@ -37,6 +37,8 @@ Our game finally coalesced into a platforming video game, providing a twist on t
   <img src="static/helping_platform.gif" alt="dynamic map manipulation" style="width:30%">
   <figcaption>Demonstration of dynamic map manipulation</figcaption>
 </figure>
+<br>
+<br>
 
 2.	gravity inversion that shifts gameplay away from traditional platforming and towards a race-against-the-clock style
 
@@ -44,6 +46,8 @@ Our game finally coalesced into a platforming video game, providing a twist on t
   <img src="static/gravity_reverse.gif" alt="gravity inversion" style="width:30%">
   <figcaption>Demonstration of gravity inversion</figcaption>
 </figure>
+<br>
+<br>
 
 3.	a competitive two-player version that pits users against each other in an ‘elimination-style’ twist on the Doodle Jump formula
 
@@ -51,6 +55,8 @@ Our game finally coalesced into a platforming video game, providing a twist on t
   <img src="static/two_player.gif" alt="competitive two-player mode" style="width:30%">
   <figcaption>Demonstration of competitive two-player mode</figcaption>
 </figure>
+<br>
+<br>
 
 # Requirements
 
@@ -75,7 +81,7 @@ we eliminated the two static game ideas and opted for a dynamic and reflex-based
 
 Next, we evaluated the remaining game ideas' technical feasibility and concluded that Doodle Jump was the most feasible game to develop. This was because the game has simple mechanics where the player only needs to jump from one platform to another, which does not require complex physics simulations or pathfinding algorithms like Temple Run or Flappy Bird. Doodle Jump also has a minimalist art style that doesn’t require detailed graphics or animations, which makes it easier for developers to create the necessary assets for the game. The game also only scrolls vertically, reducing the technical complexity of implementing scrolling.
 
-After deciding on Doodle Jump as our final game, we brainstormed possible twists to make the game more thrilling. Ultimately, we settled on three ideas: Helping Platform, Gravity Reverse, and Two-Player PK Mode.
+After deciding on Doodle Jump as our final game, we brainstormed possible twists to make the game more thrilling. Ultimately, we settled on three ideas: Helping Platform, Gravity Inversion, and Two-Player PK Mode.
 
 ## Early stages design
 
@@ -202,6 +208,7 @@ Furthermore, we invested considerable time in refining the visual design and lay
 </div>
 <br>
 <!-- add vote result -->
+
 # Evaluation
 Our team conducted a comprehensive evaluation process, incorporating both qualitative and quantitative evaluations, to assess and improve our game's usability and performance throughout its development. Instead of performing one qualitative and one quantitative evaluation, as per the original requirement, we decided to conduct two of each to gain more practical experience and in-depth understanding.
 
@@ -315,7 +322,7 @@ Our primary testing method was equivalence partitioning, a technique that divide
 
 For example, in our start page testing, we created the following table to summarize the valid and invalid conditions for the x and y coordinates of the key areas:
 
-#### Start page：
+#### Start page
 
 | **Category**                  |       | **Condition**      |
 | ----------------------------- | ----- | ------------------ |
@@ -336,7 +343,7 @@ For example, in our start page testing, we created the following table to summar
 | valid right character x       | RCX_1 | 233 ≤ x ≤ 400      |
 | invalid right character x     | RCX_2 | x < 233 or x > 400 |
 
-#### In-Game：
+#### In-Game
 
 | **Category**                     |       | **Condition**        |
 | -------------------------------- | ----- | -------------------- |
@@ -358,7 +365,8 @@ For example, in our start page testing, we created the following table to summar
 | valid pause button y             | SY_1  | 20 ≤ y ≤ 50          |
 | invalid pause button y           | SY_2  | y < 20 or y > 50     |
 
-#### Pause Window：
+#### Pause Window
+
 | **Category**                     |       | **Condition**        |
 | -------------------------------- | ----- | -------------------- |
 | valid continue button x             | CBX_1  | doodle's x-80 ≤ x ≤ doodle's x+80        |
@@ -371,7 +379,7 @@ For example, in our start page testing, we created the following table to summar
 | invalid exit button y               | EY_2  | y < doodle's y+80 or y > doodle's y+160      |
 
 
-#### end page：
+#### end page
 
 | **Category**                        |       | **Condition**      |
 | ----------------------------------- | ----- | ------------------ |
