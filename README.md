@@ -1,8 +1,8 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Requirements](#requirements)
-  - [Ideation process](#ideation-process)
-  - [Early stages design](#early-stages-design)
+  - [Ideation Process](#ideation-process)
+  - [Early Stages Design](#early-stages-design)
 - [Design](#design)
   - [System Architecture](#system-architecture)
   - [Class Diagram](#class-diagram)
@@ -12,15 +12,9 @@
   - [Challenge 2: Gameplay Twists](#challenge-2-gameplay-twists)
   - [Challenge 3: Integration and UI](#challenge-3-integration-and-ui)
 - [Evaluation](#evaluation)
-    - [Qualitative Evaluation:](#qualitative-evaluation)
+    - [Qualitative Evaluations:](#qualitative-evaluations)
     - [Quantitative Evaluations:](#quantitative-evaluations)
-      - [System Usability Scale (SUS)](#system-usability-scale-sus)
-      - [NASA Task Load Index (TLX)](#nasa-task-load-index-tlx)
     - [How code was tested:](#how-code-was-tested)
-      - [Start page](#start-page)
-      - [In-Game](#in-game)
-      - [Pause Window](#pause-window)
-      - [end page](#end-page)
 - [Process](#process)
 - [Conclusion](#conclusion)
 - [Team Members](#team-members)
@@ -60,7 +54,7 @@ Our game finally coalesced into a platforming video game, providing a twist on t
 
 # Requirements
 
-## Ideation process
+## Ideation Process
 During the ideation process, our team focused on brainstorming potential game ideas that met specific constraints to ensure that the game we create was feasible to develop, has a good user appeal, and adheres to specific constraints.
 
 To better understand what users may be interested in, we started by creating user stories. 
@@ -83,7 +77,7 @@ Next, we evaluated the remaining game ideas' technical feasibility and concluded
 
 After deciding on Doodle Jump as our final game, we brainstormed possible twists to make the game more thrilling. Ultimately, we settled on three ideas: Helping Platform, Gravity Inversion, and Two-Player PK Mode.
 
-## Early stages design
+## Early Stages Design
 
 Once we decided on creating a game based on Doodle Jump with three twists, we began the early stages of design. Our first step was to identify the core game mechanics and functionality needed for the game. We conducted research with paying particular attention to games with similar mechanics to Doodle Jump. This research helped us to identify the key game mechanics we needed to incorporate, such as jumping and avoiding obstacles.
 
@@ -212,7 +206,7 @@ Furthermore, we invested considerable time in refining the visual design and lay
 # Evaluation
 Our team conducted a comprehensive evaluation process, incorporating both qualitative and quantitative evaluations, to assess and improve our game's usability and performance throughout its development. Instead of performing one qualitative and one quantitative evaluation, as per the original requirement, we decided to conduct two of each to gain more practical experience and in-depth understanding.
 
-### Qualitative Evaluation:
+### Qualitative Evaluations:
 
 We conducted Think Aloud Evaluations and Heuristic evaluations at three stages throughout the development process.
 
@@ -277,7 +271,7 @@ In our quantitative evaluation, we utilized the System Usability Scale (SUS) and
 We conducted a Wilcoxon signed-rank test and discovered a significant difference between the scores of the "easy" and "hard" levels. The SUS yielded a W-value of 1.5, while the NASA TLX produced a W-value of 0. The individual scores for each question in the TLX test were 1.5, 2, 0, 0, 1.5, and 0. The most pronounced difference between the two difficulty levels was found in physical demand, followed by mental demand and effort.
 <!-- add NASA -->
 
-#### System Usability Scale (SUS)
+<strong> System Usability Scale (SUS) </strong>
 
 | Participant | **Easy** | **Hard** |
 | ----------- | -------- | -------- |
@@ -294,7 +288,7 @@ We conducted a Wilcoxon signed-rank test and discovered a significant difference
 | 11          | 57.5     | 45       |
 | 12          | 92.5     | 85       |
 
-#### NASA Task Load Index (TLX)
+<strong> NASA Task Load Index (TLX) </strong>
 
 | Participant | **Easy**     | **Hard**         |
 |-------------|--------------|--------------|
@@ -322,7 +316,7 @@ Our primary testing method was equivalence partitioning, a technique that divide
 
 For example, in our start page testing, we created the following table to summarize the valid and invalid conditions for the x and y coordinates of the key areas:
 
-#### Start page
+<strong> Start page </strong>
 
 | **Category**                  |       | **Condition**      |
 | ----------------------------- | ----- | ------------------ |
@@ -343,7 +337,7 @@ For example, in our start page testing, we created the following table to summar
 | valid right character x       | RCX_1 | 233 ≤ x ≤ 400      |
 | invalid right character x     | RCX_2 | x < 233 or x > 400 |
 
-#### In-Game
+<strong> In-Game </strong>
 
 | **Category**                     |       | **Condition**        |
 | -------------------------------- | ----- | -------------------- |
@@ -365,7 +359,7 @@ For example, in our start page testing, we created the following table to summar
 | valid pause button y             | SY_1  | 20 ≤ y ≤ 50          |
 | invalid pause button y           | SY_2  | y < 20 or y > 50     |
 
-#### Pause Window
+<strong> Pause Window </strong>
 
 | **Category**                     |       | **Condition**        |
 | -------------------------------- | ----- | -------------------- |
@@ -379,7 +373,7 @@ For example, in our start page testing, we created the following table to summar
 | invalid exit button y               | EY_2  | y < doodle's y+80 or y > doodle's y+160      |
 
 
-#### end page
+<strong> end page </strong>
 
 | **Category**                        |       | **Condition**      |
 | ----------------------------------- | ----- | ------------------ |
