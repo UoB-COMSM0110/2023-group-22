@@ -158,7 +158,7 @@ The Heuristic Evaluation highlighted that the game violated the heuristic "Help 
 At this stage, we added different difficulty levels, twists, and made modifications based on the feedback from the first stage. We set up six different tasks related to the game, which are:
 1. Access the help page.
 2. Adjust the difficulty level.
-3. Achieve a certain score.
+3. Achieve score of 150.
 4. Pause the game.
 5. Return to the home page after the game is over.
 6. Engage in a two-player competition.
@@ -197,6 +197,7 @@ Due to time constraints, we were unable to resolve all the issues identified in 
 For the quantitative evaluations, we employed the System Usability Scale (SUS) and the NASA Task Load Index (TLX) to assess the workload and usability of different levels of difficulty in our game. To collect feedback efficiently, we created Google Forms and distributed them online.We successfully collected data from 12 respondents.
 
 By conducting a Wilcoxon signed-rank test, we found that there was a significant difference (W=1.5) between the scores of the "easy" and "hard" levels using SUS.
+<!-- add NASA -->
 
 #### System Usability Scale (SUS)
 
@@ -291,12 +292,13 @@ For example, in our start page testing, we created the following table to summar
 | invalid end interface home button y | EHY_2 | y < 282 or y > 327 |
 
 By using equivalence partitioning testing in combination with other testing techniques, we ensured that our game functioned as intended, providing a smooth and enjoyable experience for the players.
+
 # Process
 In developing our game, our goal was not only to create an enjoyable and engaging experience for players but also to thoroughly understand and apply the principles of good software engineering. To achieve this, our team embraced the Agile methodology and integrated its key principles into our workflow.
 
 Our team consisted of five members: Joyee, Shannon, Henry, Yu, and Luis. Each member took on specific roles and responsibilities to ensure a well-structured and efficient workflow:
 
-1. Joyee: Main project manager and lead     developer, overseeing the overall progress, integrating the work of other developers, and merging the code when a team member moved a task to "TO MERGE" on the Trello board.
+1. Joyee: Main project manager and lead     developer, overseeing the overall progress, integrating the work of other developers, and merging the code when a team member moved a task to "To merge" on the Trello board.
 2. Shannon: Vice project manager and main developer, collaborating with Joyee in project management, sharing decision-making responsibilities, and contributing to development.
 3. Henry: Main developer and sprite designer, responsible for implementing game features and creating visual assets.
 4. Yu: Developer and tester, handling a smaller part of development and ensuring the quality of the final product.
@@ -304,7 +306,13 @@ Our team consisted of five members: Joyee, Shannon, Henry, Yu, and Luis. Each me
 
 Our Agile approach involved dividing the project into three life cycles, each representing a phase or a major milestone. Within each life cycle, we organized multiple sprints to iteratively develop features, fix bugs, and make improvements. For each sprint, we utilized planning poker during sprint planning meetings to estimate the effort required for the tasks in the upcoming sprint. This approach helped us maintain adaptability, respond to changes quickly, and foster a continuous improvement mindset.
 
-<!-- https://www.planningpoker.com/ -->
+<br>
+<figure>
+  <img src="static/Trello_Interface.png" alt="Trello Interface" style="width:100%">
+  <figcaption>Trello interface</figcaption>
+</figure>
+<br>
+<br>
 
 
 During the project, we encountered situations where some team members did not manage to complete their assigned story points within a sprint. To address this issue, we adjusted our sprint planning and updated the burn chart to reflect the changes. This allowed us to maintain a realistic project timeline and allocate resources effectively, ensuring that the team could continue to make progress.
@@ -313,20 +321,44 @@ During the project, we encountered situations where some team members did not ma
 
 We used Trello as our Kanban board to visualize and manage tasks, allowing us to monitor progress and make adjustments as needed. By incorporating planning poker in each sprint, we ensured a shared understanding of task complexity among team members, encouraged them to voice their opinions, and facilitated communication and collaboration.
 
-<!-- https://trello.com/b/ySbYvdQV/swe-22-doodle-jump -->
+<br>
+<figure>
+  <img src="static/Planning_Poker_Interface.png" alt="Planning Poker interface" style="width:100%">
+  <figcaption>Planning Poker interface</figcaption>
+</figure>
+<br>
+<br>
 
 After completing the planning poker, we assigned story points to each task according to the team member's capacity and the previous burn chart. This allowed us to balance the workload effectively and ensure that each team member was allocated tasks that matched their skills and availability. This practice also helped us monitor the team's progress and make adjustments as needed to stay on track.
 
 
 Although we did not hold daily stand-up meetings, our team stayed in constant communication through social media platforms like WhatsApp and Microsoft Teams. This allowed us to discuss any obstacles encountered, seek support from the team, and share updates on our progress. Our consistent communication ensured that everyone was aligned with the project goals and fostered a collaborative environment.
 
-To further facilitate collaboration and maintain an Agile mindset, we utilized pair programming sessions, which involved two developers working together on the same code. This practice not only improved the quality of our code but also allowed us to share knowledge and learn from each other.
+To further facilitate collaboration and maintain an Agile mindset, we utilized pair programming sessions, which involved two developers working together on the same code. For instance, the reverse gravity feature was developed jointly by Joyee and Shannon, with Joyee taking on the role of the helm while Shannon acted as the tactician. This practice not only improved the quality of our code but also allowed us to share knowledge and learn from each other.
 
 Throughout the project, we implemented regular feedback loops by conducting evaluations at each stage of the life cycles. This enabled us to continuously assess our game's quality and make necessary improvements based on user feedback and performance metrics. Our Agile approach emphasized the importance of incorporating user feedback, allowing us to create a game that is engaging and enjoyable for players.
 
 As a result of our Agile process, which included organizing our work into three life cycles with multiple sprints and utilizing planning poker in each sprint, our team was able to effectively manage tasks, address challenges, and adapt to changes. This, in turn, led to the successful development of our game while maintaining a strong focus on good software engineering practices.
 
 To sum up, our team's commitment to the Agile methodology, including planning poker and story point allocation, played a crucial role in the successful completion of our project. We learned the value of iterative development, continuous improvement, and open communication in managing a complex software development process. These lessons have not only contributed to our game's quality but have also shaped our understanding of effective software engineering practices, which will undoubtedly benefit us in future projects.
+
+# Conclusion
+In conclusion, the development of our Doodle Jump-inspired game presented numerous challenges and learning opportunities. Our project encompassed the creation of a comprehensive system architecture, incorporating various components such as the Game Manager, User Interface, and Game Elements. These components worked together to provide an engaging and seamless gaming experience.
+
+Throughout the development process, we focused on building a well-structured codebase. The use of system architecture, class diagrams, and sequence diagrams played a crucial role in achieving this goal. They offered clear organization and enhanced communication among team members, ensuring everyone shared a common understanding of the code's structure and interactions. This approach facilitated better planning, design, easier debugging, and improved scalability and maintainability.
+
+Adopting an Agile development approach enabled us to iteratively refine our game mechanics, user interface, and overall user experience. The Agile methodology allowed us to be flexible and responsive to feedback gathered from users, leading to continuous improvement throughout the project. We conducted evaluations and gathered user feedback, which played a critical role in guiding our development decisions and ensuring the game met the desired quality standards. This iterative evaluation process allowed us to identify and address potential issues early on, contributing to a more polished and enjoyable gaming experience.
+
+We encountered various challenges during development, including refining the gameplay experience and ensuring a smooth integration of multiple gameplay twists. To address these challenges, we developed creative solutions, such as adjusting equipment interactions for fairness in the two-player mode and creating a layered user interface that allowed for easy customization of game settings.
+
+This project provided valuable lessons in teamwork, project management, and game development. We learned the importance of clear communication and organization, as well as the value of incorporating user feedback into our design process. Our experience adopting Agile development practices also highlighted the advantages of iterative development and continuous improvement.
+
+Despite our progress, there is potential for further improvements and expansion. The game could benefit from enhanced visual and audio design, providing a more immersive experience for players. We could also explore the implementation of additional gameplay twists, mechanics, and challenges to keep the game fresh and engaging. Further user testing and feedback will be invaluable in refining the game and ensuring its appeal to players of all skill levels. Additionally, we could explore integrating online multiplayer functionality, allowing players to compete against each other from different locations.
+
+Overall, our Doodle Jump-inspired game project was a rewarding experience that taught us valuable skills and insights into software engineering, particularly in the context of game development. The challenges we faced and the lessons learned in the process have broadened our understanding of effective software design, project management, and teamwork. By reflecting on these experiences, we are better equipped to tackle future projects and create software solutions that are efficient, scalable, and maintainable.
+
+Applying the principles of software engineering to game development has demonstrated the importance of planning, organization, and communication in achieving a successful project outcome. As we continue to grow as software engineers, we will carry forward the lessons learned from this project, incorporating user feedback, adopting Agile development practices, and focusing on creating well-structured codebases. These experiences will enable us to deliver high-quality software products that not only meet the needs of users but also stand the test of time.
+
 
 
 
