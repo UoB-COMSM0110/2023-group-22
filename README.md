@@ -202,6 +202,7 @@ Furthermore, we invested considerable time in refining the visual design and lay
     <img src="static/design1.gif" alt="design1" style="width:30%;">
     <figcaption>Design1</figcaption>
   </figure>
+  <br/>
   <figure>
     <img src="static/design2.gif" alt="design2" style="width:30%;">
     <figcaption>Design2</figcaption>
