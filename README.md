@@ -1,4 +1,5 @@
 ## Table of Contents
+- [Team](#team)
 - [Introduction](#introduction)
 - [Requirements](#requirements)
   - [Ideation Process](#ideation-process)
@@ -12,12 +13,18 @@
   - [Challenge 2: Two-Player Mode](#challenge-2-two-player-mode)
   - [Challenge 3: Integration and UI](#challenge-3-integration-and-ui)
 - [Evaluation](#evaluation)
-    - [Qualitative Evaluations:](#qualitative-evaluations)
-    - [Quantitative Evaluations:](#quantitative-evaluations)
-    - [How code was tested:](#how-code-was-tested)
+    - [Qualitative Evaluations](#qualitative-evaluations)
+    - [Quantitative Evaluations](#quantitative-evaluations)
+    - [How code was tested](#how-code-was-tested)
 - [Process](#process)
 - [Conclusion](#conclusion)
-- [Team Members](#team-members)
+  
+# Team
+
+<figure>
+  <img src="static/Team_photo.jpg" alt="Team_photo" style="width:100%">
+  <figcaption>Team Photo</figcaption>
+</figure>
 
 # Introduction
 
@@ -59,17 +66,17 @@ During the ideation process, our team focused on brainstorming potential game id
 
 To better understand what users may be interested in, we started by creating user stories. 
 
-"As young student, I want a game that is easy to undestand and yet challenging to play during my break time."
+>"As young student, I want a game that is easy to undestand and yet challenging to play during my break time."
 
-"As a working professional, I want a game doesn't require internet connection, playable with one hand, quick, fun, and engaging game to play during commute."
+>"As a working professional, I want a game doesn't require internet connection, playable with one hand, quick, fun, and engaging game to play during commute."
 
 To adhere to these constraints, we generated five game ideas, including chess, checkers, flappy bird, temple run, and doodle jump. We then evaluated these ideas based on their features, technical feasibility, and potential appeal to users.
 
 We considered several features during our evaluation process, including whether the game was static or dynamic and whether it relied on strategy or reflexes. After careful consideration and by creating more user stories, 
 
-"As a single player, I want to be able to enjoy a game without relying on oher players."
+>"As a single player, I want to be able to enjoy a game without relying on oher players."
 
-"As a player, I want a game that are challenging and require different levels of skill and strategy to master."
+>"As a player, I want a game that are challenging and require different levels of skill and strategy to master."
 
 we eliminated the two static game ideas and opted for a dynamic and reflex-based game that we believed would be more appealing to users.
 
@@ -206,7 +213,7 @@ Furthermore, we invested considerable time in refining the visual design and lay
 # Evaluation
 Our team conducted a comprehensive evaluation process, incorporating both qualitative and quantitative evaluations, to assess and improve our game's usability and performance throughout its development. Instead of performing one qualitative and one quantitative evaluation, as per the original requirement, we decided to conduct two of each to gain more practical experience and in-depth understanding.
 
-### Qualitative Evaluations:
+### Qualitative Evaluations
 
 We conducted Think Aloud Evaluations and Heuristic evaluations at three stages throughout the development process.
 
@@ -264,16 +271,29 @@ The Heuristic Evaluation at this stage only revealed one issue related to the he
 
 Due to time constraints, we were unable to resolve all the issues identified in this stage, but we determined that these features were worth considering for future updates.
 
-###  Quantitative Evaluations:
+###  Quantitative Evaluations
 
-In our quantitative evaluation, we utilized the System Usability Scale (SUS) and the NASA Task Load Index (TLX) to assess the workload and usability of different levels of difficulty in our game. To efficiently gather feedback, we created Google Forms and distributed them online, successfully collecting data from 12 respondents.
+In our quantitative evaluation, we utilized the System Usability Scale (SUS) and the NASA Task Load Index (TLX) to assess the workload and usability of different levels of difficulty in our game. To efficiently gather feedback, we created <a href="https://docs.google.com/forms/d/1n--beeDPrN-xyo5WdQrB-BVJeVDlw9u0uaZuQQKLqfs/edit?sharingaction=ownershiptransfer&ts=6442a99c">Google Forms</a> and distributed them online, successfully collecting data from 12 respondents.
 
 We conducted a Wilcoxon signed-rank test and discovered a significant difference between the scores of the "easy" and "hard" levels. The SUS yielded a W-value of 1.5, while the NASA TLX produced a W-value of 0. The individual scores for each question in the TLX test were 1.5, 2, 0, 0, 1.5, and 0. The most pronounced difference between the two difficulty levels was found in physical demand, followed by mental demand and effort.
-<!-- add NASA -->
 
-<strong> System Usability Scale (SUS) </strong>
+<!-- raw data -->
 
-| Participant | **Easy** | **Hard** |
+<!-- <strong> System Usability Scale (SUS) </strong> -->
+
+  <figure>
+    <img src="static/NASA_TLX.png" alt="NASA Task Load Index (TLX)" style="width:70%;">
+    <figcaption>NASA Task Load Index (TLX)</figcaption>
+  </figure>
+<br>
+
+  <figure>
+    <img src="static/SUS.png" alt="System Usability Scale (SUS)" style="width:70%;">
+    <figcaption>System Usability Scale (SUS)</figcaption>
+  </figure>
+<br>
+
+<!-- | Participant | **Easy** | **Hard** |
 | ----------- | -------- | -------- |
 | 1           | 90       | 85       |
 | 2           | 90       | 67.5     |
@@ -286,9 +306,9 @@ We conducted a Wilcoxon signed-rank test and discovered a significant difference
 | 9           | 97.5     | 87.5     |
 | 10          | 80       | 57.5     |
 | 11          | 57.5     | 45       |
-| 12          | 92.5     | 85       |
+| 12          | 92.5     | 85       | -->
 
-<strong> NASA Task Load Index (TLX) </strong>
+<!-- <strong> NASA Task Load Index (TLX) </strong>
 
 | Participant | **Easy**     | **Hard**         |
 |-------------|--------------|--------------|
@@ -303,10 +323,10 @@ We conducted a Wilcoxon signed-rank test and discovered a significant difference
 | 9           | 26.67    | 56.67    |
 | 10          | 43.33    | 55       |
 | 11          | 48.33    | 51.67    |
-| 12          | 18.33    | 71.67    |
+| 12          | 18.33    | 71.67    | -->
 
 
-### How code was tested:
+### How code was tested
 
 In developing our Doodle Jump game, we thoroughly tested the code by modifying functions within the code to output relevant information when the mouse cursor interacted with specific locations in the game. This information was logged in a file, allowing us to analyze the log file and identify valid and invalid operations.
 
@@ -337,7 +357,7 @@ For example, in our start page testing, we created the following table to summar
 | valid right character x       | RCX_1 | 233 ≤ x ≤ 400      |
 | invalid right character x     | RCX_2 | x < 233 or x > 400 |
 
-<strong> In-Game </strong>
+<strong> Gameplay </strong>
 
 | **Category**                     |       | **Condition**        |
 | -------------------------------- | ----- | -------------------- |
@@ -457,17 +477,15 @@ Applying the principles of software engineering to game development has demonstr
 ![Class Diagram](static/DoodleJump_class_diagram_2.jpg) -->
 
 
-# Team Members
+<!-- # Team Members
 <img src="./static/Joyee_swe.JPG" width="200" height=auto>
 
 - Joyee Tan
 
-<!-- ![Shannon](Shannon_Lin.jpeg) -->
 <img src="./static/Shannon_Lin.jpeg" width="200" height=auto>
 
 - Shannon Lin
 
-<!-- ![Zefeng](Zefeng_Zhuang.jpg) -->
 <img src="./static/Zefeng_Zhuang.jpg" width="200" height=auto>
 
 - Zefeng Zhuang
@@ -478,4 +496,4 @@ Applying the principles of software engineering to game development has demonstr
 
 <img src="./static/Yu Tian.jpg" width="200" height=auto>
 
-- Yu Tian
+- Yu Tian -->
