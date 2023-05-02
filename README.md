@@ -224,13 +224,13 @@ At this stage, we had our base game with a start page for choosing characters an
 1. Choose a character.
 2. Play the game until reaching a score of 100. 
 
-From the Think Aloud Evaluations, we identified the following issues:
+From the Think Aloud Evaluations(<a href="static/evaluations/qualitative_evaluation/Think_Aloud/Stage-1">raw data</a>), we identified the following issues:
 
 - Users were unsure how to choose a character, so we added a dialog with instructions.
 - Users found the game too easy, prompting us to add three difficulty levels.
 - Users struggled at the start of the game, so we added a platform under the doodler to provide enough time for users to react.
 
-The Heuristic Evaluation highlighted that the game violated the heuristic "Help and documentation," so we added a help page for detailed instructions.
+The Heuristic Evaluation(<a href="static/evaluations/qualitative_evaluation/Heuristic/Stage-1">raw data</a>) highlighted that the game violated the heuristic "Help and documentation," so we added a help page for detailed instructions.
 
 <strong>Stage 2</strong>:
 
@@ -242,7 +242,7 @@ At this stage, we added different difficulty levels, twists, and made modificati
 5. Return to the home page after the game is over.
 6. Engage in a two-player competition.
 
-Based on the Think Aloud Evaluations, we addressed the following issues:
+Based on the Think Aloud Evaluations(<a href="static/evaluations/qualitative_evaluation/Think_Aloud/Stage-2">raw data</a>), we addressed the following issues:
 - Continuous broken platforms causing the game to get stuck. We fixed this by avoiding the occurrence of two continuous platforms.
 - Gravity reverse platform inconsistency, which confused users. We changed to one color when in gravity reverse mode.
 - Help page exit button and setting page save button incompatible with Windows Operating System. We resolved this by changing to an image instead of using the special character.
@@ -252,7 +252,7 @@ Based on the Think Aloud Evaluations, we addressed the following issues:
 - The instructions on the help page were not clear enough, so we made modifications based on user feedback.
 
 
-The Heuristic Evaluation in Stage 2 revealed the following issues:
+The Heuristic Evaluation in Stage 2(<a href="static/evaluations/qualitative_evaluation/Heuristic/Stage-2">raw data</a>) revealed the following issues:
 
 - The game still violated the heuristic "Help and documentation" as it lacked a description of the spring and jetpack features. We added these instructions to the help page.
 - An issue related to "Consistency and standards" was identified due to the non-standard save button on the settings page. We resolved this issue along with the compatibility issues mentioned above.
@@ -261,13 +261,13 @@ The Heuristic Evaluation in Stage 2 revealed the following issues:
 
 <strong>Stage 3</strong>:
 
-The tasks at this stage were the same as the second stage. The Think Aloud Evaluations revealed the following issues:
+The tasks at this stage were the same as the second stage. The Think Aloud Evaluations(<a href="static/evaluations/qualitative_evaluation/Think_Aloud/Stage-3">raw data</a>) revealed the following issues:
 
 1. In 2 player mode, users were unsure who was playing as Player 1 and Player 2.
 2. In 2 player mode, users wanted to add a feature like gravity reverse.
 3. In 1 player mode, users wanted to know their previous score.
 
-The Heuristic Evaluation at this stage only revealed one issue related to the heuristic "Recognition rather than recall" since we did not have any prompt showing which sprite was Player 1 and which was Player 2. 
+The Heuristic Evaluation(<a href="static/evaluations/qualitative_evaluation/Heuristic/Stage-3">raw data</a>) at this stage only revealed one issue related to the heuristic "Recognition rather than recall" since we did not have any prompt showing which sprite was Player 1 and which was Player 2. 
 
 Due to time constraints, we were unable to resolve all the issues identified in this stage, but we determined that these features were worth considering for future updates.
 
