@@ -283,13 +283,11 @@ We conducted a Wilcoxon signed-rank test and discovered a significant difference
 
   <figure>
     <img src="static/NASA_TLX.png" alt="NASA Task Load Index (TLX)" style="width:70%;">
-    <figcaption>NASA Task Load Index (TLX)</figcaption>
   </figure>
 <br>
 
   <figure>
     <img src="static/SUS.png" alt="System Usability Scale (SUS)" style="width:70%;">
-    <figcaption>System Usability Scale (SUS)</figcaption>
   </figure>
 <br>
 
