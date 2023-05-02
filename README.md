@@ -202,7 +202,8 @@ Furthermore, we invested considerable time in refining the visual design and lay
     <img src="static/design1.gif" alt="design1" style="width:30%;">
     <figcaption>Design1</figcaption>
   </figure>
-  <br>
+<br>
+<br>
   <figure>
     <img src="static/design2.gif" alt="design2" style="width:30%;">
     <figcaption>Design2</figcaption>
@@ -442,11 +443,13 @@ Please refer to the chart below for a visual representation of our adjusted velo
   <img src="static/burn_chart/4th_Sprint.png " alt="4th_Sprint" style="width:50%">
   <figcaption>4th Sprint Burn Chart</figcaption>
 </figure>
-<br>
-<br>
+<br/>
+<br/>
 By making these modifications, we were able to establish a more accurate project timeline and allocate resources more effectively. As a result, the team continued to make steady progress throughout the project, ensuring that our goals remained achievable and within reach.
-
+<br>
+<br>
 For a comprehensive overview of the burn charts and associated tasks, please access the raw data via the following link: <a href="static/burn_chart/Burn_Chart.numbers">static/burn_chart/Burn_Chart.numbers</a>.
+<br>
 <br>
 We used Trello as our Kanban board to visualize and manage tasks, allowing us to monitor progress and make adjustments as needed. By incorporating planning poker in each sprint, we ensured a shared understanding of task complexity among team members, encouraged them to voice their opinions, and facilitated communication and collaboration.
 
