@@ -70,19 +70,39 @@ To better understand what users may be interested in, we started by creating use
 
 >"As a working professional, I want a game doesn't require internet connection, playable with one hand, quick, fun, and engaging game to play during commute."
 
+>"As a college student, I want a game that can be played in short bursts, fitting it into my limited free time between classes."
+
+>"As a game designer, I want to create a game that offers a blend of classic and modern gameplay elements, appealing to a wide range of preferences and tastes."
+
 To adhere to these constraints, we generated five game ideas, including chess, checkers, flappy bird, temple run, and doodle jump. We then evaluated these ideas based on their features, technical feasibility, and potential appeal to users.
 
 We considered several features during our evaluation process, including whether the game was static or dynamic and whether it relied on strategy or reflexes. After careful consideration and by creating more user stories, 
 
->"As a single player, I want to be able to enjoy a game without relying on oher players."
+>"As a single player, I want to be able to enjoy a game without relying on other players."
 
 >"As a player, I want a game that are challenging and require different levels of skill and strategy to master."
+
+>"As a player, I want a game that introduces new mechanics as I progress, maintaining my interest and increasing the challenge."
+
+>"As a player, I want a game that responds to my actions in real-time, providing me with immediate feedback and a sense of immersion."
+
+>"As a player, I want a game that offers unpredictability and variety in gameplay, keeping me engaged and preventing boredom."
+
+>"As a player, I want a game that constantly evolves and presents new challenges, ensuring that the gameplay remains fresh and engaging over time."
 
 we eliminated the two static game ideas and opted for a dynamic and reflex-based game that we believed would be more appealing to users.
 
 Next, we evaluated the remaining game ideas' technical feasibility and concluded that Doodle Jump was the most feasible game to develop. This was because the game has simple mechanics where the player only needs to jump from one platform to another, which does not require complex physics simulations or pathfinding algorithms like Temple Run or Flappy Bird. Doodle Jump also has a minimalist art style that doesn’t require detailed graphics or animations, which makes it easier for developers to create the necessary assets for the game. The game also only scrolls vertically, reducing the technical complexity of implementing scrolling.
 
-After deciding on Doodle Jump as our final game, we brainstormed possible twists to make the game more thrilling. Ultimately, we settled on three ideas: Dynamic Map Manipulation also as known as Helping/SOS Platform, Gravity Inversion, and Two-Player PK Mode.
+After choosing Doodle Jump as our final game, we brainstormed possible twists to make it more thrilling. We settled on three ideas: Dynamic Map Manipulation (Helping/SOS Platform), Gravity Inversion, and Two-Player PK Mode.
+
+- Dynamic Map Manipulation (Helping/SOS Platform) introduces an interactive element, allowing players to adapt to changing environments and encouraging strategic thinking. It also provides agency and rewards quick decision-making, enhancing replayability.
+  
+- Gravity Inversion makes the game more challenging and unpredictable, requiring players to adjust their playstyle and reflexes. This twist also adds a unique gameplay mechanic that sets the game apart from others in the genre, appealing to players seeking fresh experiences.
+  
+- Two-Player PK (Player Kill) Mode adds variety and fosters social interaction and rivalry. PK mode encourages players to refine their skills and strategies, competing for high scores or head-to-head battles.
+  
+These three twists enhance the overall gameplay experience by adding depth, challenge, and variety, making the game more thrilling, engaging, and appealing to a broader audience.
 
 ## Early Stages Design
 
