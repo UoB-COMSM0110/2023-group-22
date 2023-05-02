@@ -103,7 +103,7 @@ Next, we developed a use case diagram to help us visualize the core use cases an
 After developing the use case diagram, we created a paper prototype of the game.
 
 <figure>
-  <img src="static/DoodleJump_prototype.gif" alt="paper prototype" style="width:50%">
+  <img src="static/DoodleJump_prototype.gif" alt="paper prototype" style="width:30%">
   <figcaption>Paper Prototype</figcaption>
 </figure>
 <br>
@@ -123,38 +123,79 @@ The game’s architecture consists of three main components: the Game Manager, U
 <br>
 Our "main" file acts as a Game Manager. The Game Manager is responsible for managing the overall game flow, including updating the game state, generating new game elements, and handling user input. It plays a crucial role in ensuring that the game runs smoothly and responds to user actions in a timely and appropriate manner.
 
-For user input, we decided to use the left and right arrow keys as the main moving keys, as they are more intuitive than other options. Additionally, the 'z' key can be used to spawn a helping platform under the Doodler, and the 'space' key can be used to restart the game when it's game over. These user inputs are carefully chosen to provide a seamless and enjoyable gaming experience.
+For user input in single-player mode, we opted for the left and right arrow keys as the primary movement controls, as they are more intuitive than alternative options. In two-player mode, we chose the 'A' and 'D' keys for the second player's movement. This decision was made to maintain a comfortable hand position for both players, with the left hand controlling the first player using arrow keys, and the right hand controlling the second player using 'A' and 'D' keys. Additionally, the 'Z' key can be used to create a helping platform beneath the Doodler. The 'space' key serves two purposes: pausing the game during gameplay and restarting the game when it is over. These inputs were carefully selected to ensure a seamless and enjoyable gaming experience.
 
 <strong>User Interface</strong>
 <br>
-We have five classes as our user interface components: start page, setting window, help window, pause window, and end page. The User Interface is designed to be easy to use and visually appealing, providing a seamless and enjoyable gaming experience for the user.
+We have five classes as our user interface components: start page, setting window, help window, pause window, and game over page. The User Interface is designed to be user-friendly and visually appealing, providing a seamless and enjoyable gaming experience for the user.
 
-While acting as game manager, the "main" also plays a role in rendering the main game screen, which displays the player's score, as well as buttons for pausing the game. The start page consists of a help window button and a setting window button at the left and right top corner, respectively. It displays the game's title, choices of character, and a start button. The help window provides instructions for users to understand the game, while users can choose the difficulty level and switch to 2-player mode in the setting window. In the end page, the final score is shown in single player mode, whereas in two-player mode, the winner is shown.
+While acting as game manager, the "main" also plays a role in rendering the main game screen, which displays the player's score, as well as buttons for pausing the game. The start page consists of a help window button and a setting window button at the left and right top corner, respectively. It displays the game's title, choices of character, and a start button. The help window provides instructions for users to understand the game, while users can choose the difficulty level and switch to 2-player mode in the setting window. In the game over page, the final score is shown in single player mode, whereas in two-player mode, the winner is shown.
 
 <strong>Game Elements</strong>
 <br>
-The Game Elements component includes all of the game objects, such as Doodler, monsters, and platforms. Each of these game elements is implemented as a separate class, with its own set of properties and methods. These elements are carefully designed to be visually appealing and challenging, providing a fun and engaging gaming experience for the user.
+The Game Elements component includes all of the game objects, such as Doodler, monsters, and platforms. Each of these game elements is implemented as a separate class, with its own set of properties and methods. These elements have been meticulously designed to be visually engaging and challenging, ensuring a fun and captivating gaming experience.
 
-The Doodler is the main character of the game, and is designed to be easy to control and visually appealing. The monsters and platforms provide a challenging obstacle for the Doodler to overcome, adding an element of excitement and difficulty to the game.
+The Doodler is the main character of the game, designed to be easy to control and visually appealing. The monsters pose a challenge for the Doodler to avoid, while the platforms offer various opportunities to jump higher, adding elements of excitement and difficulty to the game.
 
 ## Class Diagram
 
 <figure>
-  <img src="static/DoodleJump_class_diagram_2.jpg" alt="class diagram" style="width:100%">
+  <img src="static/DoodleJump_class_diagram_3.jpg" alt="class diagram" style="width:100%">
   <figcaption>Class Diagram</figcaption>
 </figure>
 <br>
 <br>
-To create a clear and organized system for Doodle Jump, we've designed a class diagram that includes different pages and windows as classes to help players navigate and understand the game.
 
-First, we have the Start Page class, which players see when they open the game. This class allows players to choose their character and provides access to two auxiliary windows: the Setting Window and the Help Window. The Setting Window allows players to adjust the number of players and the difficulty level, while the Help Window provides guidance on how to play the game. These pages are designed to enhance user control and freedom.
+To create a clear and organized system for Doodle Jump, we've designed a class diagram that includes different pages and windows as classes, facilitating an easy-to-navigate and understandable game experience for players.
 
-During gameplay, there are four important classes: Doodle, Platform, Equipment, and Monster. The objective is to help the Doodle jump as high as possible, while avoiding falling off the screen or colliding with monsters. Equipments can help the Doodle jump higher and gain points more efficiently, but can also lead to collisions with monsters. To implement these features, we've designed three interactions: Doodle & Platform, Doodle & Equipment, and Doodle & Monster.
+<strong>Before Game Start:</strong>
 
-When the Doodle touches a platform, it can jump to a specific level. When it touches equipment, it can jump higher, but must avoid colliding with monsters. In addition, three twists have been incorporated to change the gameplay slightly. The first twist is the Two-Player Mode, where players try to jump higher than each other, while avoiding monsters. The second twist is the Gravity Reverse Mode, where the objective is to move down the stairs without jumping on platforms, while avoiding spikes on the ceiling. Finally, the Helping Platform Mechanism allows players to generate a platform just below the Doodle under specific conditions, to save it from falling off the screen.
+<strong>Start Page Class:</strong> Upon launching the game, players are presented with the Start Page, which allows them to select their character and access two additional windows: the Setting Window and the Help Window.
 
-Lastly, the End Page class appears only when the game is over. Here, players can choose to start a new game or exit the game. Additionally, a Pause Window will appear if the player pauses the game, informing them of their paused status. By organizing the game into different windows and pages, we've created a clear and intuitive system for players to navigate and understand Doodle Jump.
+<strong>Setting Window Class:</strong> In this window, players can adjust the game's difficulty level (easy, medium, or hard) based on their skill level or personal preference. Additionally, they have the option to switch to a two-player mode.
 
+<strong>Help Window Class:</strong> The Help Window offers comprehensive instructions for players, detailing the controls for both single-player and two-player modes, an explanation of the game's various difficulty levels, and information about the functions represented by different colored platforms.
+
+<strong>Gameplay:</strong>
+
+<strong>Doodler Class:</strong> Represents the main character, whose objective is to jump as high as possible without falling off the screen or encountering monsters.
+
+<strong>Platform Class:</strong> Consists of various platforms that aid the Doodler in reaching greater heights. The Platform randomly generates three types of platforms:
+
+- <strong>Broken Platform:</strong> When the Doodler interacts with this platform, it will drop and the Doodler won't jump higher.
+
+- <strong>Fragile Platform:</strong> The Doodler can jump on this platform only once before it disappears.
+
+- <strong>Equipment Platform:</strong> A platform that contains equipment from the Equipment Class to enhance the Doodler's abilities.
+When the Doodler touches a platform, excluding the broken platform, it can jump to a specific level.
+
+<strong>Equipment Class:</strong> Includes items that can help the Doodler jump higher and gain points more efficiently, but may also increase the risk of colliding with monsters.
+
+<strong>Monster Class:</strong> Comprises various creatures that the Doodler must avoid in order to prevent losing the game.
+
+<strong>Pause Window Class:</strong> When the player pauses the game, this window appears, informing them of their paused status. In the Pause Window, players can choose to either continue the game or exit to the Start Page.
+
+To effectively implement these features, we designed three primary interactions within the game:
+
+- <strong>Doodler & Platform:</strong> The Doodler interacts with platforms to jump higher.
+
+- <strong>Doodler & Equipment:</strong> The Doodler utilizes equipment to enhance jumping abilities and point acquisition, while avoiding monsters.
+
+- <strong>Doodler & Monster:</strong> The Doodler must avoid monsters to prevent game loss.
+
+In addition to these core elements, three twists are incorporated:
+
+- <strong>Two-Player Mode:</strong> In this mode, players compete against each other, trying to jump higher while avoiding monsters.
+
+- <strong>Gravity Reverse Mode:</strong> In this mode, the objective shifts to moving downwards without jumping on platforms, while avoiding spikes on the ceiling.
+
+- <strong>Helping Platform Mechanism:</strong> This feature allows players to generate a platform just below the Doodler under specific conditions, preventing the character from falling off the screen.
+
+<strong>Game Loss:</strong>
+
+<strong>Game Over Page Class:</strong> This page appears when the game is over, providing players with the option to either start a new game or exit.
+
+Through this well-structured organization of distinct windows and pages, we have ensured that the Doodler Jump experience is both clear and intuitive for players.
 
 ## Sequence Diagram
 
@@ -226,13 +267,13 @@ At this stage, we had our base game with a start page for choosing characters an
 1. Choose a character.
 2. Play the game until reaching a score of 100. 
 
-From the Think Aloud Evaluations(<a href="static/evaluations/qualitative_evaluation/Think_Aloud/Stage-1">raw data</a>), we identified the following issues:
+From the Think Aloud Evaluations(<a href="static/evaluations/qualitative_evaluation/Think_Aloud/Stage-1.pages">raw data</a>), we identified the following issues:
 
 - Users were unsure how to choose a character, so we added a dialog with instructions.
 - Users found the game too easy, prompting us to add three difficulty levels.
 - Users struggled at the start of the game, so we added a platform under the doodler to provide enough time for users to react.
 
-The Heuristic Evaluation(<a href="static/evaluations/qualitative_evaluation/Heuristic/Stage-1">raw data</a>) highlighted that the game violated the heuristic "Help and documentation," so we added a help page for detailed instructions.
+The Heuristic Evaluation(<a href="static/evaluations/qualitative_evaluation/Heuristic/Stage-1.pages">raw data</a>) highlighted that the game violated the heuristic "Help and documentation," so we added a help page for detailed instructions.
 
 <strong>Stage 2</strong>:
 
@@ -244,7 +285,7 @@ At this stage, we added different difficulty levels, twists, and made modificati
 5. Return to the home page after the game is over.
 6. Engage in a two-player competition.
 
-Based on the Think Aloud Evaluations(<a href="static/evaluations/qualitative_evaluation/Think_Aloud/Stage-2">raw data</a>), we addressed the following issues:
+Based on the Think Aloud Evaluations(<a href="static/evaluations/qualitative_evaluation/Think_Aloud/Stage-2.pages">raw data</a>), we addressed the following issues:
 - Continuous broken platforms causing the game to get stuck. We fixed this by avoiding the occurrence of two continuous platforms.
 - Gravity reverse platform inconsistency, which confused users. We changed to one color when in gravity reverse mode.
 - Help page exit button and setting page save button incompatible with Windows Operating System. We resolved this by changing to an image instead of using the special character.
@@ -254,7 +295,7 @@ Based on the Think Aloud Evaluations(<a href="static/evaluations/qualitative_eva
 - The instructions on the help page were not clear enough, so we made modifications based on user feedback.
 
 
-The Heuristic Evaluation in Stage 2(<a href="static/evaluations/qualitative_evaluation/Heuristic/Stage-2">raw data</a>) revealed the following issues:
+The Heuristic Evaluation in Stage 2(<a href="static/evaluations/qualitative_evaluation/Heuristic/Stage-2.pages">raw data</a>) revealed the following issues:
 
 - The game still violated the heuristic "Help and documentation" as it lacked a description of the spring and jetpack features. We added these instructions to the help page.
 - An issue related to "Consistency and standards" was identified due to the non-standard save button on the settings page. We resolved this issue along with the compatibility issues mentioned above.
@@ -263,13 +304,13 @@ The Heuristic Evaluation in Stage 2(<a href="static/evaluations/qualitative_eval
 
 <strong>Stage 3</strong>:
 
-The tasks at this stage were the same as the second stage. The Think Aloud Evaluations(<a href="static/evaluations/qualitative_evaluation/Think_Aloud/Stage-3">raw data</a>) revealed the following issues:
+The tasks at this stage were the same as the second stage. The Think Aloud Evaluations(<a href="static/evaluations/qualitative_evaluation/Think_Aloud/Stage-3.pages">raw data</a>) revealed the following issues:
 
 1. In 2 player mode, users were unsure who was playing as Player 1 and Player 2.
 2. In 2 player mode, users wanted to add a feature like gravity reverse.
 3. In 1 player mode, users wanted to know their previous score.
 
-The Heuristic Evaluation(<a href="static/evaluations/qualitative_evaluation/Heuristic/Stage-3">raw data</a>) at this stage only revealed one issue related to the heuristic "Recognition rather than recall" since we did not have any prompt showing which sprite was Player 1 and which was Player 2. 
+The Heuristic Evaluation(<a href="static/evaluations/qualitative_evaluation/Heuristic/Stage-3.pages">raw data</a>) at this stage only revealed one issue related to the heuristic "Recognition rather than recall" since we did not have any prompt showing which sprite was Player 1 and which was Player 2. 
 
 Due to time constraints, we were unable to resolve all the issues identified in this stage, but we determined that these features were worth considering for future updates.
 
