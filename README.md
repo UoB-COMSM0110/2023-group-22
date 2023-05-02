@@ -9,7 +9,7 @@
   - [Sequence Diagram](#sequence-diagram)
 - [Implementation](#implementation)
   - [Challenge 1: Platforming Framework](#challenge-1-platforming-framework)
-  - [Challenge 2: Gameplay Twists](#challenge-2-gameplay-twists)
+  - [Challenge 2: Two-Player Mode](#challenge-2-two-player-mode)
   - [Challenge 3: Integration and UI](#challenge-3-integration-and-ui)
 - [Evaluation](#evaluation)
     - [Qualitative Evaluations:](#qualitative-evaluations)
@@ -71,7 +71,7 @@ We considered several features during our evaluation process, including whether 
 
 "As a player, I want a game that are challenging and require different levels of skill and strategy to master."
 
-we eliminated the two static game ideas and opted for a dynamic and reflex-based game as we believed they are more appealing to users.
+we eliminated the two static game ideas and opted for a dynamic and reflex-based game that we believed would be more appealing to users.
 
 Next, we evaluated the remaining game ideas' technical feasibility and concluded that Doodle Jump was the most feasible game to develop. This was because the game has simple mechanics where the player only needs to jump from one platform to another, which does not require complex physics simulations or pathfinding algorithms like Temple Run or Flappy Bird. Doodle Jump also has a minimalist art style that doesn’t require detailed graphics or animations, which makes it easier for developers to create the necessary assets for the game. The game also only scrolls vertically, reducing the technical complexity of implementing scrolling.
 
@@ -101,11 +101,11 @@ After developing the use case diagram, we created a paper prototype of the game.
 </figure>
 <br>
 <br>
-This prototype helped us to refine our design ideas and iterate on the game mechanics. We experimented with different layouts, color schemes, and game mechanics to see what worked best. We also discuss and identify any potential issues or improvements. Through this process, we were able to make the necessary adjustments and refine our game design.
+This prototype helped us to refine our design ideas and potential game mechanics. We experimented with different layouts, color schemes, and gameplay options to see what worked best. We also discussed and identified any potential issues or improvements. Through this process, we were able to make the necessary adjustments and refine our game design.
 
 One of the key challenges we faced during the early stages of design was balancing the difficulty level of the game. We wanted the game to be challenging enough to keep players engaged, but not so difficult that it would frustrate them. We experimented with different platforms, monsters, and gameplay mechanics to find the right balance.
 
-Overall, the early stages of design were crucial in helping us to refine our game concept and identify the key features and functionality required for our game. By developing a use case diagram and a paper prototype, we were able to visualize the game mechanics and iterate on our design ideas. This process helped us to create a solid foundation for the development of our game.
+Overall, the early stages of design were crucial in helping us polish our game concept and identify the key features and functionality required for our game. By developing a use case diagram and a paper prototype, we were able to visualize the necessary game mechanics and implement our design ideas. This process helped us to create a solid foundation for the development of our game.
 
 # Design
 
@@ -122,7 +122,7 @@ For user input, we decided to use the left and right arrow keys as the main movi
 <br>
 We have five classes as our user interface components: start page, setting window, help window, pause window, and end page. The User Interface is designed to be easy to use and visually appealing, providing a seamless and enjoyable gaming experience for the user.
 
-While acting as game manager, the "main" also plays a role in rendering the main game screen, which displays the player's score, as well as buttons for pausing the game. The start page consists of a help window button and a setting window button at the left and right top corner, respectively. It displays the game's title, choices of character, and a start button. The help window provides instructions for users to understand the game, while users can choose level difficulty and switch to 2-player mode in the setting window. In the end page, the final score is shown in single player mode, whereas in two-player mode, the winner is shown.
+While acting as game manager, the "main" also plays a role in rendering the main game screen, which displays the player's score, as well as buttons for pausing the game. The start page consists of a help window button and a setting window button at the left and right top corner, respectively. It displays the game's title, choices of character, and a start button. The help window provides instructions for users to understand the game, while users can choose the difficulty level and switch to 2-player mode in the setting window. In the end page, the final score is shown in single player mode, whereas in two-player mode, the winner is shown.
 
 <strong>Game Elements</strong>
 <br>
@@ -140,7 +140,7 @@ The Doodler is the main character of the game, and is designed to be easy to con
 <br>
 To create a clear and organized system for Doodle Jump, we've designed a class diagram that includes different pages and windows as classes to help players navigate and understand the game.
 
-First, we have the Start Page class, which players see when they open the game. This class allows players to choose their character and provides access to two auxiliary windows: the Setting Window and the Help Window. The Setting Window allows players to adjust the number of players and difficulty level, while the Help Window provides guidance on how to play the game. These pages are designed to enhance user control and freedom.
+First, we have the Start Page class, which players see when they open the game. This class allows players to choose their character and provides access to two auxiliary windows: the Setting Window and the Help Window. The Setting Window allows players to adjust the number of players and the difficulty level, while the Help Window provides guidance on how to play the game. These pages are designed to enhance user control and freedom.
 
 During gameplay, there are four important classes: Doodle, Platform, Equipment, and Monster. The objective is to help the Doodle jump as high as possible, while avoiding falling off the screen or colliding with monsters. Equipments can help the Doodle jump higher and gain points more efficiently, but can also lead to collisions with monsters. To implement these features, we've designed three interactions: Doodle & Platform, Doodle & Equipment, and Doodle & Monster.
 
@@ -162,7 +162,7 @@ Above is the sequence diagram for our game. The sequence diagram shows the inter
 When the player moves the doodler to the left or right, the doodler can land on a platform, and the platform will provide feedback to the doodler. The normal platform and fragile platform both return the "jump" feedback, but the fragile platform will disappear at the same time. On the other hand, the broken platform will not provide any feedback but disappear when the doodler interacts with it. The spring platform and rocket platform provide different types of jumps. The spring platform helps the doodler to jump higher, while the rocket reduces gravity, allowing the doodler to fly.
 In addition to the different types of platforms, there are also empty areas where there are no platforms for the doodler to land on. When this happens, the game constantly checks whether the doodler is out of the window. If the doodler is out of the window, the game is over. Furthermore, monsters will appear at random times, intervals, and places. If the doodler touches a monster, the game is also over.
 
-If the player is good enough to reach a certain score, a gravity reverse is triggered, causing the player to go down instead of jumping to avoid touching the ceiling spike. If the doodler touches the ceiling spike, the game is over.
+If the player is good enough to reach a certain score, a gravity reverse is triggered, causing the player to go downwards instead of jumping to avoid touching the ceiling spike. If the doodler touches the ceiling spike, the game is over.
 
 # Implementation
 
@@ -171,7 +171,7 @@ Implementing the early platforming logic of the player character and the surroun
 
 One problem that seemed to emerge among other project groups was the difficulty in translating the map and its obstacles to the movement of the user. Our game structure navigated these problems by ensuring that the platform entities (and in turn the equipment and monster entities) were all instantiated within the Doodler class. This allowed us to manipulate these objects in a way that responded to the current configuration of the player character. This also presented a novel solution to a secondary problem that immediately impacted platforming performance and memory allocation. When the map failed to adequately react to the movement of the player the large number of platform, equipment, and monster entities being spawned caused map generation errors, hardware lag, and eventual crashing. By successfully implementing a reactive map generation process, our software was able to identify when parts of the map had been successfully traversed and were therefore being rendered off-screen. In doing so we were able to purge navigated entities that no longer needed to be rendered ensuring a smooth, efficient game execution.
 
-## Challenge 2: Gameplay Twists
+## Challenge 2: Two-Player Mode
 Having implemented a basic platforming method that represented the underlying framework for the rest of our software, the next development challenge was the incorporation of the gameplay twist elements. Developing our two-player game mode presented several challenges, particularly in its integration with the base game model.
 
 The two-player method required tweaking how user inputs were registered, allowing for multiple key presses and directional changes among the two users. Creating this alternate game state for two players also required a careful rebalancing of equipment objects. Preliminary feedback recognised that powerful changes to a doodle’s velocity and map position, which caused games to end prematurely, threatened the fairness and enjoyment of the game mode. As a result, alterations were made to interactions with equipment to lessen their impact and the method behind map generation was altered slightly to favour whichever doodle was traversing fastest.
@@ -425,7 +425,7 @@ After completing the planning poker, we assigned story points to each task accor
 
 Although we did not hold daily stand-up meetings, our team stayed in constant communication through social media platforms like WhatsApp and Microsoft Teams. This allowed us to discuss any obstacles encountered, seek support from the team, and share updates on our progress. Our consistent communication ensured that everyone was aligned with the project goals and fostered a collaborative environment.
 
-To further facilitate collaboration and maintain an Agile mindset, we utilized pair programming sessions, which involved two developers working together on the same code. For instance, the reverse gravity feature was developed jointly by Joyee and Shannon, with Joyee taking on the role of the helm while Shannon acted as the tactician. This practice not only improved the quality of our code but also allowed us to share knowledge and learn from each other.
+To further facilitate collaboration and maintain an Agile mindset, we utilized pair programming sessions which involved two developers working together on the same code. For instance, the reverse gravity feature was developed jointly by Joyee and Shannon, with Joyee taking on the role of the helm while Shannon acted as the tactician. This practice not only improved the quality of our code but also allowed us to share knowledge and learn from each other.
 
 Throughout the project, we implemented regular feedback loops by conducting evaluations at each stage of the life cycles. This enabled us to continuously assess our game's quality and make necessary improvements based on user feedback and performance metrics. Our Agile approach emphasized the importance of incorporating user feedback, allowing us to create a game that is engaging and enjoyable for players.
 
@@ -436,7 +436,7 @@ To sum up, our team's commitment to the Agile methodology, including planning po
 # Conclusion
 In conclusion, the development of our Doodle Jump-inspired game presented numerous challenges and learning opportunities. Our project encompassed the creation of a comprehensive system architecture, incorporating various components such as the Game Manager, User Interface, and Game Elements. These components worked together to provide an engaging and seamless gaming experience.
 
-Throughout the development process, we focused on building a well-structured codebase. The use of system architecture, class diagrams, and sequence diagrams played a crucial role in achieving this goal. They offered clear organization and enhanced communication among team members, ensuring everyone shared a common understanding of the code's structure and interactions. This approach facilitated better planning, design, easier debugging, and improved scalability and maintainability.
+Throughout the development process, we focused on building a well-structured codebase. The use of system architecture, class diagrams, and sequence diagrams played a crucial role in achieving this goal. They offered clear organization and nurtured communication among team members, ensuring everyone shared a common understanding of the code's structure and interactions. This approach facilitated better planning, design, easier debugging, and improved scalability and maintainability.
 
 Adopting an Agile development approach enabled us to iteratively refine our game mechanics, user interface, and overall user experience. The Agile methodology allowed us to be flexible and responsive to feedback gathered from users, leading to continuous improvement throughout the project. We conducted evaluations and gathered user feedback, which played a critical role in guiding our development decisions and ensuring the game met the desired quality standards. This iterative evaluation process allowed us to identify and address potential issues early on, contributing to a more polished and enjoyable gaming experience.
 
