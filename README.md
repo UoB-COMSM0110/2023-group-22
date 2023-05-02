@@ -103,7 +103,7 @@ Next, we developed a use case diagram to help us visualize the core use cases an
 After developing the use case diagram, we created a paper prototype of the game.
 
 <figure>
-  <img src="static/DoodleJump_prototype.gif" alt="paper prototype" style="width:100%">
+  <img src="static/DoodleJump_prototype.gif" alt="paper prototype" style="width:50%">
   <figcaption>Paper Prototype</figcaption>
 </figure>
 <br>
@@ -202,6 +202,7 @@ Furthermore, we invested considerable time in refining the visual design and lay
     <img src="static/design1.gif" alt="design1" style="width:30%;">
     <figcaption>Design1</figcaption>
   </figure>
+  <br>
   <figure>
     <img src="static/design2.gif" alt="design2" style="width:30%;">
     <figcaption>Design2</figcaption>
@@ -415,21 +416,46 @@ Our team consisted of five members: Joyee, Shannon, Henry, Yu, and Luis. Each me
 
 Our Agile approach involved dividing the project into three life cycles, each representing a phase or a major milestone. Within each life cycle, we organized multiple sprints to iteratively develop features, fix bugs, and make improvements. For each sprint, we utilized planning poker during sprint planning meetings to estimate the effort required for the tasks in the upcoming sprint. This approach helped us maintain adaptability, respond to changes quickly, and foster a continuous improvement mindset.
 
+Throughout the project, we encountered situations where certain team members were unable to complete their assigned story points within a sprint. In order to tackle this challenge, we refined our sprint planning process and updated the burn chart accordingly.
+
+During the first sprint, we established a velocity that we assumed could be maintained in the second sprint. However, this assumption proved to be inaccurate, as the team's actual performance in the second sprint fell short of our expectations. Consequently, we decided to lower the velocity for the third sprint.
+In contrast, the last sprint took place during Easter week, prompting us to increase the velocity to account for the boost in productivity.
+
+Please refer to the chart below for a visual representation of our adjusted velocity:
+<br>
+<figure>
+  <img src="static/burn_chart/1st_Sprint.png" alt="1st_Sprint" style="width:50%">
+  <figcaption>1st Sprint Burn Chart</figcaption>
+</figure>
+<br>
+<figure>
+  <img src="static/burn_chart/2nd_Sprint.png " alt="2nd_Sprint" style="width:50%">
+  <figcaption>2nd Sprint Burn Chart</figcaption>
+</figure>
+<br>
+<figure>
+  <img src="static/burn_chart/3rd_Sprint.png " alt="3rd_Sprint" style="width:50%">
+  <figcaption>3rd Sprint Burn Chart</figcaption>
+</figure>
+<br>
+<figure>
+  <img src="static/burn_chart/4th_Sprint.png " alt="4th_Sprint" style="width:50%">
+  <figcaption>4th Sprint Burn Chart</figcaption>
+</figure>
+<br>
+<br>
+By making these modifications, we were able to establish a more accurate project timeline and allocate resources more effectively. As a result, the team continued to make steady progress throughout the project, ensuring that our goals remained achievable and within reach.
+
+For a comprehensive overview of the burn charts and associated tasks, please access the raw data via the following link: <a href="static/burn_chart/Burn_Chart.numbers">static/burn_chart/Burn_Chart.numbers</a>.
+<br>
+We used Trello as our Kanban board to visualize and manage tasks, allowing us to monitor progress and make adjustments as needed. By incorporating planning poker in each sprint, we ensured a shared understanding of task complexity among team members, encouraged them to voice their opinions, and facilitated communication and collaboration.
+
 <br>
 <figure>
   <img src="static/Trello_Interface.png" alt="Trello Interface" style="width:100%">
   <figcaption>Trello interface</figcaption>
 </figure>
 <br>
-<br>
-
-
-During the project, we encountered situations where some team members did not manage to complete their assigned story points within a sprint. To address this issue, we adjusted our sprint planning and updated the burn chart to reflect the changes. This allowed us to maintain a realistic project timeline and allocate resources effectively, ensuring that the team could continue to make progress.
-
-<!-- burn chart -->
-
-We used Trello as our Kanban board to visualize and manage tasks, allowing us to monitor progress and make adjustments as needed. By incorporating planning poker in each sprint, we ensured a shared understanding of task complexity among team members, encouraged them to voice their opinions, and facilitated communication and collaboration.
-
 <br>
 <figure>
   <img src="static/Planning_Poker_Interface.png" alt="Planning Poker interface" style="width:100%">
@@ -438,8 +464,7 @@ We used Trello as our Kanban board to visualize and manage tasks, allowing us to
 <br>
 <br>
 
-After completing the planning poker, we assigned story points to each task according to the team member's capacity and the previous burn chart. This allowed us to balance the workload effectively and ensure that each team member was allocated tasks that matched their skills and availability. This practice also helped us monitor the team's progress and make adjustments as needed to stay on track.
-
+After completing the planning poker, we allocated story points to each team member based on their capacity, skills, and availability, as well as the insights gained from the previous burn chart. This allowed us to balance the workload effectively and ensure that each team member was allocated tasks that matched their skills and availability. This practice also helped us monitor the team's progress and make adjustments as needed to stay on track.
 
 Although we did not hold daily stand-up meetings, our team stayed in constant communication through social media platforms like WhatsApp and Microsoft Teams. This allowed us to discuss any obstacles encountered, seek support from the team, and share updates on our progress. Our consistent communication ensured that everyone was aligned with the project goals and fostered a collaborative environment.
 
