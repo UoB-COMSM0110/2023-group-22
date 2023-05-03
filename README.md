@@ -62,7 +62,7 @@ Our game finally coalesced into a platforming video game, providing a twist on t
 # Requirements
 
 ## Ideation Process
-During the ideation process, our team focused on brainstorming potential game ideas that met specific constraints to ensure that the game we create was feasible to develop, has a good user appeal, and adheres to specific constraints.
+During the ideation process, our team focused on brainstorming potential game ideas that met specific constraints to ensure that the game we created was feasible to develop, had good user appeal, and adhered to specific constraints.
 
 To better understand what users may be interested in, we started by creating user stories. 
 
@@ -92,11 +92,11 @@ We considered several features during our evaluation process, including whether 
 
 we eliminated the two static game ideas and opted for a dynamic and reflex-based game that we believed would be more appealing to users.
 
-Next, we evaluated the remaining game ideas' technical feasibility and concluded that Doodle Jump was the most feasible game to develop. This was because the game has simple mechanics where the player only needs to jump from one platform to another, which does not require complex physics simulations or pathfinding algorithms like Temple Run or Flappy Bird. Doodle Jump also has a minimalist art style that doesn’t require detailed graphics or animations, which makes it easier for developers to create the necessary assets for the game. The game also only scrolls vertically, reducing the technical complexity of implementing scrolling.
+Next, we evaluated the remaining game ideas' technical feasibility and concluded that Doodle Jump was the most feasible game to develop. This is because of its simple mechanics where the player only needs to jump from one platform to another, which does not require complex physics simulations or pathfinding algorithms like Temple Run or Flappy Bird. Doodle Jump also has a minimalist art style that doesn’t require detailed graphics or animations, which makes it easier for developers to create the necessary assets for the game. The game also only scrolls vertically, reducing the technical complexity of implementing scrolling.
 
-After choosing Doodle Jump as our final game, we brainstormed possible twists to make it more thrilling. We settled on three ideas: Dynamic Map Manipulation (Helping/SOS Platform), Gravity Inversion, and Two-Player PK Mode.
+After choosing Doodle Jump as our final game, we brainstormed possible twists to make it more engaging. We settled on three ideas: Dynamic Map Manipulation (Helping/SOS Platform), Gravity Inversion, and Two-Player PK Mode.
 
-- Dynamic Map Manipulation (Helping/SOS Platform) introduces an interactive element, allowing players to adapt to changing environments and encouraging strategic thinking. It also provides agency and rewards quick decision-making, enhancing replayability.
+- Dynamic Map Manipulation (Helping/SOS Platform) introduces an interactive element, allowing players to adapt to changing environments and encouraging strategic thinking. It also provides agency and rewards quick decision-making, enhancing overall replayability.
   
 - Gravity Inversion makes the game more challenging and unpredictable, requiring players to adjust their playstyle and reflexes. This twist also adds a unique gameplay mechanic that sets the game apart from others in the genre, appealing to players seeking fresh experiences.
   
