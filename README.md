@@ -168,7 +168,7 @@ The Doodler is the main character of the game, designed to be easy to control an
 
 To create a clear and organized system for Doodle Jump, we've designed a class diagram that includes different pages and windows as classes, facilitating an easy-to-navigate and understandable game experience for players.
 
-<strong>Before Game Start:</strong>
+<strong><u>Before Game Start</u></strong>
 
 <strong>Start Page Class:</strong> Upon launching the game, players are presented with the Start Page, which allows them to select their character and access two additional windows: the Setting Window and the Help Window.
 
@@ -176,7 +176,7 @@ To create a clear and organized system for Doodle Jump, we've designed a class d
 
 <strong>Help Window Class:</strong> The Help Window offers comprehensive instructions for players, detailing the controls for both single-player and two-player modes, an explanation of the game's various difficulty levels, and information about the functions represented by different colored platforms.
 
-<strong>Gameplay:</strong>
+<strong><u>Gameplay</u></strong>
 
 <strong>Doodler Class:</strong> Represents the main character, whose objective is to jump as high as possible without falling off the screen or encountering monsters.
 
@@ -211,7 +211,7 @@ In addition to these core elements, three twists are incorporated:
 
 - <strong>Helping Platform Mechanism:</strong> This feature allows players to generate a platform just below the Doodler under specific conditions, preventing the character from falling off the screen.
 
-<strong>Game Loss:</strong>
+<strong><u>Game Loss</u></strong>
 
 <strong>Game Over Page Class:</strong> This page appears when the game is over, providing players with the option to either start a new game or exit.
 
