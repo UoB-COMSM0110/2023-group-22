@@ -258,7 +258,11 @@ To address these concerns, we designed a layered interface that enabled users to
 
 Furthermore, we invested considerable time in refining the visual design and layout of our user interface. This process involved crafting clear and concise menus, easily identifiable buttons and icons, as well as a visually appealing color scheme and distinct platform patterns that remained consistent throughout the game. We developed two UI designs and held a vote, taking into consideration our primary goal: ensuring that players could quickly understand and navigate the various options and settings available to them, without feeling overwhelmed or confused. By selecting the most user-friendly design, we prioritized creating an enjoyable and seamless gaming experience for our players.
 
-<div style="display: flex; justify-content: space-around;">
+| Design 1                        | |Design 2                      | 
+| --------------------------      |-|------------------------------| 
+| <img src="static/design1.gif" width="auto" height="400"> | |<img src="static/design2.gif" width="auto" height="400"> |
+
+<!-- <div style="display: flex; justify-content: space-around;">
   <figure>
     <img src="static/design1.gif" alt="design1" style="width:30%;">
     <figcaption>Design1</figcaption>
@@ -270,7 +274,7 @@ Furthermore, we invested considerable time in refining the visual design and lay
     <figcaption>Design2</figcaption>
   </figure>
 </div>
-<br>
+<br> -->
 <!-- add vote result -->
 
 # Evaluation
