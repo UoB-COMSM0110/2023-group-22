@@ -170,50 +170,50 @@ To create a clear and organized system for Doodle Jump, we've designed a class d
 
 <strong><u>Before Game Start</u></strong>
 
-<strong>Start Page Class:</strong> Upon launching the game, players are presented with the Start Page, which allows them to select their character and access two additional windows: the Setting Window and the Help Window.
+<em>Start Page Class:</em> Upon launching the game, players are presented with the Start Page, which allows them to select their character and access two additional windows: the Setting Window and the Help Window.
 
-<strong>Setting Window Class:</strong> In this window, players can adjust the game's difficulty level (easy, medium, or hard) based on their skill level or personal preference. Additionally, they have the option to switch to a two-player mode.
+<em>Setting Window Class:</em> In this window, players can adjust the game's difficulty level (easy, medium, or hard) based on their skill level or personal preference. Additionally, they have the option to switch to a two-player mode.
 
-<strong>Help Window Class:</strong> The Help Window offers comprehensive instructions for players, detailing the controls for both single-player and two-player modes, an explanation of the game's various difficulty levels, and information about the functions represented by different colored platforms.
+<em>Help Window Class:</em> The Help Window offers comprehensive instructions for players, detailing the controls for both single-player and two-player modes, an explanation of the game's various difficulty levels, and information about the functions represented by different colored platforms.
 
 <strong><u>Gameplay</u></strong>
 
-<strong>Doodler Class:</strong> Represents the main character, whose objective is to jump as high as possible without falling off the screen or encountering monsters.
+<em>Doodler Class:</em> Represents the main character, whose objective is to jump as high as possible without falling off the screen or encountering monsters.
 
-<strong>Platform Class:</strong> Consists of various platforms that aid the Doodler in reaching greater heights. The Platform randomly generates three types of platforms:
+<em>Platform Class:</em> Consists of various platforms that aid the Doodler in reaching greater heights. The Platform randomly generates three types of platforms:
 
-- <strong>Broken Platform:</strong> When the Doodler interacts with this platform, it will drop and the Doodler won't jump higher.
+- Broken Platform: When the Doodler interacts with this platform, it will drop and the Doodler won't jump higher.
 
-- <strong>Fragile Platform:</strong> The Doodler can jump on this platform only once before it disappears.
+- Fragile Platform: The Doodler can jump on this platform only once before it disappears.
 
-- <strong>Equipment Platform:</strong> A platform that contains equipment from the Equipment Class to enhance the Doodler's abilities.
+- Equipment Platform: A platform that contains equipment from the Equipment Class to enhance the Doodler's abilities.
 When the Doodler touches a platform, excluding the broken platform, it can jump to a specific level.
 
-<strong>Equipment Class:</strong> Includes items that can help the Doodler jump higher and gain points more efficiently, but may also increase the risk of colliding with monsters.
+<em>Equipment Class:</em> Includes items that can help the Doodler jump higher and gain points more efficiently, but may also increase the risk of colliding with monsters.
 
-<strong>Monster Class:</strong> Comprises various creatures that the Doodler must avoid in order to prevent losing the game.
+<em>Monster Class:</em> Comprises various creatures that the Doodler must avoid in order to prevent losing the game.
 
-<strong>Pause Window Class:</strong> When the player pauses the game, this window appears, informing them of their paused status. In the Pause Window, players can choose to either continue the game or exit to the Start Page.
+<em>Pause Window Class:</em> When the player pauses the game, this window appears, informing them of their paused status. In the Pause Window, players can choose to either continue the game or exit to the Start Page.
 
 To effectively implement these features, we designed three primary interactions within the game:
 
-- <strong>Doodler & Platform:</strong> The Doodler interacts with platforms to jump higher.
+- Doodler & Platform: The Doodler interacts with platforms to jump higher.
 
-- <strong>Doodler & Equipment:</strong> The Doodler utilizes equipment to enhance jumping abilities and point acquisition, while avoiding monsters.
+- Doodler & Equipment: The Doodler utilizes equipment to enhance jumping abilities and point acquisition, while avoiding monsters.
 
-- <strong>Doodler & Monster:</strong> The Doodler must avoid monsters to prevent game loss.
+- Doodler & Monster: The Doodler must avoid monsters to prevent game loss.
 
 In addition to these core elements, three twists are incorporated:
 
-- <strong>Two-Player Mode:</strong> In this mode, players compete against each other, trying to jump higher while avoiding monsters.
+- Two-Player Mode: In this mode, players compete against each other, trying to jump higher while avoiding monsters.
 
-- <strong>Gravity Reverse Mode:</strong> In this mode, the objective shifts to moving downwards without jumping on platforms, while avoiding spikes on the ceiling.
+- Gravity Reverse Mode: In this mode, the objective shifts to moving downwards without jumping on platforms, while avoiding spikes on the ceiling.
 
-- <strong>Helping Platform Mechanism:</strong> This feature allows players to generate a platform just below the Doodler under specific conditions, preventing the character from falling off the screen.
+- Helping Platform Mechanism: This feature allows players to generate a platform just below the Doodler under specific conditions, preventing the character from falling off the screen.
 
 <strong><u>Game Loss</u></strong>
 
-<strong>Game Over Page Class:</strong> This page appears when the game is over, providing players with the option to either start a new game or exit.
+<em>Game Over Page Class:</em> This page appears when the game is over, providing players with the option to either start a new game or exit.
 
 Through this well-structured organization of distinct windows and pages, we have ensured that the Doodler Jump experience is both clear and intuitive for players.
 
@@ -487,22 +487,22 @@ Please refer to the chart below for a visual representation of our adjusted velo
 <br>
 <figure>
   <img src="static/burn_chart/1st_Sprint.png" alt="1st_Sprint" style="width:50%">
-  <figcaption>1st Sprint Burn Chart</figcaption>
+  <figcaption>1st Sprint Burn Chart: The team's initial velocity during the first sprint. This chart served as a baseline for subsequent sprints.</figcaption>
 </figure>
 <br>
 <figure>
   <img src="static/burn_chart/2nd_Sprint.png " alt="2nd_Sprint" style="width:50%">
-  <figcaption>2nd Sprint Burn Chart</figcaption>
+  <figcaption>2nd Sprint Burn Chart: The team's actual performance fell short of expectations in the second sprint.</figcaption>
 </figure>
 <br>
 <figure>
   <img src="static/burn_chart/3rd_Sprint.png " alt="3rd_Sprint" style="width:50%">
-  <figcaption>3rd Sprint Burn Chart</figcaption>
+  <figcaption>3rd Sprint Burn Chart: The team lowered the velocity for the third sprint to improve performance.</figcaption>
 </figure>
 <br>
 <figure>
   <img src="static/burn_chart/4th_Sprint.png " alt="4th_Sprint" style="width:50%">
-  <figcaption>4th Sprint Burn Chart</figcaption>
+  <figcaption>4th Sprint Burn Chart: The team increased the velocity for the fourth sprint due to a boost in productivity during Easter week.</figcaption>
 </figure>
 <br/>
 <br/>
