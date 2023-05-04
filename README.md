@@ -516,7 +516,17 @@ After completing the planning poker, we allocated story points to each team memb
 
 Although we did not hold daily stand-up meetings, our team stayed in constant communication through social media platforms like WhatsApp and Microsoft Teams. This allowed us to discuss any obstacles encountered, seek support from the team, and share updates on our progress. Our consistent communication ensured that everyone was aligned with the project goals and fostered a collaborative environment.
 
-To further facilitate collaboration and maintain an Agile mindset, we utilized pair programming sessions which involved two developers working together on the same code. For instance, the reverse gravity feature was developed jointly by Joyee and Shannon, with Joyee taking on the role of the helm while Shannon acted as the tactician. This practice not only improved the quality of our code but also allowed us to share knowledge and learn from each other.
+To further facilitate collaboration and maintain an Agile mindset, we utilized pair programming sessions, which involved two developers working together on the same code. For instance, the reverse gravity feature was developed jointly by Joyee and Shannon, with Joyee taking on the role of the helm while Shannon acted as the tactician. This practice not only improved the quality of our code but also allowed us to share knowledge and learn from each other.
+
+Complementing this approach, our team made extensive use of Git's branch and merge features to distinguish between individual members' code versions. Each team member developed new features on their personal branches, and Joyee was responsible for integrating them into the 'develop' branch. Once thorough testing was completed, the 'develop' branch was merged into the 'master' branch, ensuring it contained only working components. The accompanying diagram clearly demonstrates that each team member had their own branch, further empowering them to contribute to the repository independently.
+
+<br>
+<figure>
+  <img src="static/gitgraph.png" alt="git graph" style="width:100%">
+  <figcaption>Git Graph</figcaption>
+</figure>
+<br>
+<br>
 
 Throughout the project, we implemented regular feedback loops by conducting evaluations at each stage of the life cycles. This enabled us to continuously assess our game's quality and make necessary improvements based on user feedback and performance metrics. Our Agile approach emphasized the importance of incorporating user feedback, allowing us to create a game that is engaging and enjoyable for players.
 
