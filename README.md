@@ -45,7 +45,7 @@ Our game finally coalesced into a platforming video game, providing a twist on t
 1.	dynamic map manipulation by players that allows for exciting in-game problem solving
 
 <figure>
-  <img src="static/helping_platform.gif" alt="dynamic map manipulation" style="width:30%">
+  <img src="static/introduction/helping_platform.gif" alt="dynamic map manipulation" style="width:30%">
   <figcaption>Demonstration of dynamic map manipulation</figcaption>
 </figure>
 <br>
@@ -54,7 +54,7 @@ Our game finally coalesced into a platforming video game, providing a twist on t
 2.	gravity inversion that shifts gameplay away from traditional platforming and towards a race-against-the-clock style
 
 <figure>
-  <img src="static/gravity_reverse.gif" alt="gravity inversion" style="width:30%">
+  <img src="static/introduction/gravity_reverse.gif" alt="gravity inversion" style="width:30%">
   <figcaption>Demonstration of gravity inversion</figcaption>
 </figure>
 <br>
@@ -63,7 +63,7 @@ Our game finally coalesced into a platforming video game, providing a twist on t
 3.	a competitive two-player version that pits users against each other in an ‘elimination-style’ twist on the Doodle Jump formula
 
 <figure>
-  <img src="static/two_player.gif" alt="competitive two-player mode" style="width:30%">
+  <img src="static/introduction/two_player.gif" alt="competitive two-player mode" style="width:30%">
   <figcaption>Demonstration of competitive two-player mode</figcaption>
 </figure>
 <br>
@@ -120,12 +120,12 @@ Once we decided on creating a game based on Doodle Jump with three twists, we be
 
 Next, we developed a use case diagram to help us visualize the core use cases and actors involved in the game. This diagram helped us to identify the primary use cases and actors, and how they interacted with one another. We included the use cases for the basic version of Doodle Jump, as well as the three twists we planned to add. We also identified the actors involved in the game, including the player, broken platforms and monsters.
 <figure>
-  <img src="static/Basic_Doodle_use_case_diagram.png" alt="Base Game Use Case Diagram" style="width:100%">
+  <img src="static/diagrams/use_case/Basic_Doodle_use_case_diagram.png" alt="Base Game Use Case Diagram" style="width:100%">
   <figcaption>Base Game Use Case Diagram</figcaption>
 </figure>
 
 <figure>
-  <img src="static/Basic_Doodle_use_case_diagram_twists.png" alt="Twist Use Case Diagram" style="width:100%">
+  <img src="static/diagrams/use_case/Basic_Doodle_use_case_diagram_twists.png" alt="Twist Use Case Diagram" style="width:100%">
   <figcaption>Use Case Diagram with Twist</figcaption>
 </figure>
 <br>
@@ -133,7 +133,7 @@ Next, we developed a use case diagram to help us visualize the core use cases an
 After developing the use case diagram, we created a paper prototype of the game.
 
 <figure>
-  <img src="static/DoodleJump_prototype.gif" alt="paper prototype" style="width:30%">
+  <img src="static/paper_prototype/DoodleJump_prototype.gif" alt="paper prototype" style="width:30%">
   <figcaption>Paper Prototype</figcaption>
 </figure>
 <br>
@@ -170,7 +170,7 @@ The Doodler is the main character of the game, designed to be easy to control an
 ## Class Diagram
 
 <figure>
-  <img src="static/DoodleJump_class_diagram_3.jpg" alt="class diagram" style="width:100%">
+  <img src="static/diagrams/class_diagram/DoodleJump_class_diagram_3.jpg" alt="class diagram" style="width:100%">
   <figcaption>Class Diagram</figcaption>
 </figure>
 <br>
@@ -230,7 +230,7 @@ Through this well-structured organization of distinct windows and pages, we have
 ## Sequence Diagram
 
 <figure>
-  <img src="static/doodle_jump_sequence_diagram.jpg" alt="sequence diagram" style="width:100%">
+  <img src="static/diagrams/sequence_diagram/doodle_jump_sequence_diagram.jpg" alt="sequence diagram" style="width:100%">
   <figcaption>Sequence Diagram</figcaption>
 </figure>
 <br>
@@ -249,7 +249,7 @@ Implementing the early platforming logic of the player character and the surroun
 
 One problem that seemed to emerge among other project groups was the difficulty in translating the map and its obstacles to the movement of the user. Please see the demonstration below.
 <figure>
-  <img src="static/Platforming_framework.gif" alt="Platforming_framework challenges" style="width:30%">
+  <img src="static/challenges/Platforming_framework.gif" alt="Platforming_framework challenges" style="width:30%">
   <figcaption> Demonstration of Platforming Framework Challenge </figcaption>
 </figure>
 <br>
@@ -264,7 +264,7 @@ The two-player method required tweaking how user inputs were registered, allowin
 We also encountered a challenge while generating a helping platform in our game. Initially, when we tried to create a platform by pressing the Z key, multiple platforms were appearing on the map. It took us a considerable amount of time to identify the root cause of this issue. Eventually, we discovered that the problem was arising due to the ArrayList used to store the platform. To overcome this challenge, we replaced the new platform in the correct position within the ArrayList, which resolved the issue.
 
 <figure>
-  <img src="static/game_twist.gif" alt="helping platform challenges" style="width:70%">
+  <img src="static/challenges/game_twist.gif" alt="helping platform challenges" style="width:70%">
   <figcaption>Demonstration of Helping platform challenge. The platforms circled in red represent the unusually generated platforms </figcaption>
 </figure>
 <br>
@@ -276,7 +276,7 @@ In addition to the two-player mode, we aimed to develop and refine two other gam
 To address these concerns, we designed a layered interface that enabled users to select between single and multiplayer modes and adjust map difficulty. Each incremental difficulty level would introduce a new, more challenging gameplay twist. This approach allowed us to communicate gameplay twists effectively and provide players with the flexibility to customize their experience according to their preferences and skill level.
 
 <figure>
-  <img src="static/level_difficulty.gif" alt="level_difficulty" style="width:30%">
+  <img src="static/challenges/level_difficulty.gif" alt="level_difficulty" style="width:30%">
   <figcaption>Level Difficulty Selection and One-Player and Two-Player Modes </figcaption>
 </figure>
 <br>
@@ -286,7 +286,7 @@ Furthermore, we invested considerable time in refining the visual design and lay
 
 | Design 1                        | |Design 2                      | 
 | --------------------------      |-|------------------------------| 
-| <img src="static/design1.gif" width="auto" height="400"> | |<img src="static/design2.gif" width="auto" height="400"> |
+| <img src="static/challenges/design1.gif" width="auto" height="400"> | |<img src="static/challenges/design2.gif" width="auto" height="400"> |
 
 After a thorough evaluation and voting process, we chose Design 1 for our user interface. The key factor behind this choice was the distinct platform patterns in Design 1. Although Design 2 employed a creative and visually appealing approach by using Chinese calligraphy to represent different types of platforms, it ultimately proved to be less user-friendly. Players found it difficult to distinguish between the various fonts and corresponding platforms, which hindered the overall gameplay experience. 
 
@@ -362,12 +362,12 @@ We conducted a Wilcoxon signed-rank test and discovered a significant difference
 <!-- <strong> System Usability Scale (SUS) </strong> -->
 
   <figure>
-    <img src="static/NASA_TLX.png" alt="NASA Task Load Index (TLX)" style="width:70%;">
+    <img src="static/evaluations/quantitative_evaluation/NASA_TLX.png" alt="NASA Task Load Index (TLX)" style="width:70%;">
   </figure>
 <br>
 
   <figure>
-    <img src="static/SUS.png" alt="System Usability Scale (SUS)" style="width:70%;">
+    <img src="static/evaluations/quantitative_evaluation/SUS.png" alt="System Usability Scale (SUS)" style="width:70%;">
   </figure>
 <br>
 
@@ -500,13 +500,13 @@ We used Trello as our Kanban board to visualize and manage tasks, allowing us to
 
 <br>
 <figure>
-  <img src="static/Trello_Interface.png" alt="Trello Interface" style="width:100%">
+  <img src="static/process_tools/Trello_Interface.png" alt="Trello Interface" style="width:100%">
   <figcaption>Trello interface</figcaption>
 </figure>
 <br>
 <br>
 <figure>
-  <img src="static/Planning_Poker_Interface.png" alt="Planning Poker interface" style="width:100%">
+  <img src="static/process_tools/Planning_Poker_Interface.png" alt="Planning Poker interface" style="width:100%">
   <figcaption>Planning Poker interface</figcaption>
 </figure>
 <br>
@@ -522,7 +522,7 @@ Complementing this approach, our team made extensive use of Git's branch and mer
 
 <br>
 <figure>
-  <img src="static/gitgraph.png" alt="git graph" style="width:100%">
+  <img src="static/process_tools/gitgraph.png" alt="git graph" style="width:100%">
   <figcaption>Git Graph</figcaption>
 </figure>
 <br>
@@ -556,40 +556,14 @@ Please see <a href="DoodleJump/Documentation.md">Documentation</a>
 
 # Individual Contribution table
 
-| Name            | Role                                        | Individual Weight  |
-|------------     |---------------------------------------------|--------------------|
-| Joyee           | Main project manager and lead developer     |                   |
-| Shannon         | Vice project manager and main developer     |                   |
-| Henry           | Main developer and sprite designer          |                   |
-| Yu Tian         | Developer and tester                        |                   |
-| ZeFeng(Luiz)    | Game style and evaluation lead              |                   |
+| Name            | Role                                        | Individual Weight |
+|------------     |---------------------------------------------|-------------------|
+| Joyee           | Main project manager and lead developer     |       1.4         |
+| Shannon         | Vice project manager and main developer     |       1.2         |
+| Henry           | Main developer and sprite designer          |       1           |
+| Yu Tian         | Developer and tester                        |       0.7         |
+| ZeFeng(Luiz)    | Game style and evaluation lead              |       0.7         |
 
 
 [Back To Top](#table-of-contents)
 
-
-
-<!-- ### [Class Diagram](https://app.diagrams.net/#G1eO5WRYrhPcYVJps2LNeKAyVoR5l_IiGF)
-![Class Diagram](static/DoodleJump_class_diagram_2.jpg) -->
-
-
-<!-- # Team Members
-<img src="./static/Joyee_swe.JPG" width="200" height=auto>
-
-- Joyee Tan
-
-<img src="./static/Shannon_Lin.jpeg" width="200" height=auto>
-
-- Shannon Lin
-
-<img src="./static/Zefeng_Zhuang.jpg" width="200" height=auto>
-
-- Zefeng Zhuang
-
-<img src="./static/Henry.jpg" width="200" height=auto>
-
-- Henry Brooking
-
-<img src="./static/Yu Tian.jpg" width="200" height=auto>
-
-- Yu Tian -->
