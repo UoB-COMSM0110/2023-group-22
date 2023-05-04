@@ -36,6 +36,38 @@
   <figcaption>Team Photo</figcaption>
 </figure>
 
+<table align="center">
+  <thead>
+    <tr>
+      <th style="text-align:center">Name</th>
+      <th style="text-align:center">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center">Joyee</td>
+      <td style="text-align:center"><a href="mailto:ly22312@bristol.ac.uk">ly22312@bristol.ac.uk</a></td>
+    </tr>
+    <tr>
+      <td style="text-align:center">Shannon</td>
+      <td style="text-align:center"><a href="mailto:rc22103@bristol.ac.uk">rc22103@bristol.ac.uk</a></td>
+    </tr>
+    <tr>
+      <td style="text-align:center">Henry</td>
+      <td style="text-align:center"><a href="mailto:wf19483@bristol.ac.uk">wf19483@bristol.ac.uk</a></td>
+    </tr>
+    <tr>
+      <td style="text-align:center">Yu Tian</td>
+      <td style="text-align:center"><a href="mailto:fg22142@bristol.ac.uk">fg22142@bristol.ac.ukk</a></td>
+    </tr>
+    <tr>
+      <td style="text-align:center">ZeFeng(Luiz)</td>
+      <td style="text-align:center"><a href="mailto:bi22332@bristol.ac.uk">bi22332@bristol.ac.uk</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
 # Introduction
 
 Our primary goal during the planning phase of our video game brief was to capture a modern, recognizable brand that was flexible and approachable to every kind of user while adhering to specific constraints derived from user stories. As a result, early discussions shifted away from more traditional forms of arcade gaming such as Pac-Man or Space Invaders.Instead, group ideas that were shortlisted sought to capture the instantly identifiable nostalgia of games that we, as video game players ourselves, grew up with, and which also met the requirements outlined in the ideation process.
