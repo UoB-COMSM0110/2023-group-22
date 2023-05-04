@@ -33,7 +33,6 @@
 
 <figure>
   <img src="static/Team_photo.jpg" alt="Team_photo" style="width:100%">
-  <figcaption>Team Photo</figcaption>
 </figure>
 
 <table align="center">
