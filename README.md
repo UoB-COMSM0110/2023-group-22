@@ -27,7 +27,7 @@
 - [Process](#process)
 - [Conclusion](#conclusion)
 - [Documentation of code](#documentation-of-code)
-- [Individual Contribution table](#individual-contribution-table)
+- [Individual Contribution Table](#individual-contribution-table)
 
 # Team
 
@@ -317,7 +317,7 @@ Furthermore, we invested considerable time in refining the visual design and lay
 
 | Design 1                        | |Design 2                      | 
 | --------------------------      |-|------------------------------| 
-| <img src="static/challenges/design1.gif" width="auto" height="400"> | |<img src="static/challenges/design2.gif" width="auto" height="400"> |
+| <img src="static/challenges/design1.gif" width="auto" height="30%"> | |<img src="static/challenges/design2.gif" width="auto" height="30%"> |
 
 After a thorough evaluation and voting process, we chose Design 1 for our user interface. The key factor behind this choice was the distinct platform patterns in Design 1. Although Design 2 employed a creative and visually appealing approach by using Chinese calligraphy to represent different types of platforms, it ultimately proved to be less user-friendly. Players found it difficult to distinguish between the various fonts and corresponding platforms, which hindered the overall gameplay experience. 
 
@@ -387,10 +387,6 @@ Due to time constraints, we were unable to resolve all the issues identified in 
 In our quantitative evaluation, we utilized the System Usability Scale (SUS) and the NASA Task Load Index (TLX) to assess the workload and usability of different levels of difficulty in our game. To efficiently gather feedback, we created <a href="https://docs.google.com/forms/d/1n--beeDPrN-xyo5WdQrB-BVJeVDlw9u0uaZuQQKLqfs/edit?sharingaction=ownershiptransfer&ts=6442a99c">Google Forms</a> and distributed them online, successfully collecting data from 12 respondents.
 
 We conducted a Wilcoxon signed-rank test and discovered a significant difference between the scores of the "easy" and "hard" levels. The SUS yielded a W-value of 1.5, while the NASA TLX produced a W-value of 0. The individual scores for each question in the TLX test were 1.5, 2, 0, 0, 1.5, and 0. The most pronounced difference between the two difficulty levels was found in physical demand, followed by mental demand and effort. The raw data for the NASA and SUS can be found at the following link: <a href="static/evaluations/quantitative_evaluation">static/evaluations/quantitative_evaluation</a>.
-
-<!-- raw data -->
-
-<!-- <strong> System Usability Scale (SUS) </strong> -->
 
   <figure>
     <img src="static/evaluations/quantitative_evaluation/NASA_TLX.png" alt="NASA Task Load Index (TLX)" style="width:70%;">
@@ -585,15 +581,15 @@ Applying the principles of software engineering to game development has demonstr
 # Documentation of code
 Please see <a href="DoodleJump/Documentation.md">Documentation</a>
 
-# Individual Contribution table
+# Individual Contribution Table
 
 | Name            | Role                                        | Individual Weight |
 |------------     |---------------------------------------------|-------------------|
-| Joyee           | Main project manager and lead developer     |       1.4         |
-| Shannon         | Vice project manager and main developer     |       1.2         |
+| Joyee           | Main project manager and lead developer     |       1.25        |
+| Shannon         | Vice project manager and main developer     |       1.15        |
 | Henry           | Main developer and sprite designer          |       1           |
-| Yu Tian         | Developer and tester                        |       0.7         |
-| ZeFeng(Luiz)    | Game style and evaluation lead              |       0.7         |
+| Yu Tian         | Developer and tester                        |       0.8         |
+| ZeFeng(Luiz)    | Game style and evaluation lead              |       0.8         |
 
 
 [Back To Top](#table-of-contents)
