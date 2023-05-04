@@ -1,3 +1,5 @@
+<a href="https://youtu.be/Je_vAi2sIdM">Click here to see our video</a>
+
 ## Table of Contents
 - [Team](#team)
 - [Introduction](#introduction)
@@ -18,7 +20,9 @@
     - [How code was tested](#how-code-was-tested)
 - [Process](#process)
 - [Conclusion](#conclusion)
-  
+- [Documentation of code](#documentation-of-code)
+- [Individual Contribution table](#individual-contribution-table)
+
 # Team
 
 <figure>
@@ -278,20 +282,7 @@ Furthermore, we invested considerable time in refining the visual design and lay
 | --------------------------      |-|------------------------------| 
 | <img src="static/design1.gif" width="auto" height="400"> | |<img src="static/design2.gif" width="auto" height="400"> |
 
-<!-- <div style="display: flex; justify-content: space-around;">
-  <figure>
-    <img src="static/design1.gif" alt="design1" style="width:30%;">
-    <figcaption>Design1</figcaption>
-  </figure>
-<br>
-<br>
-  <figure>
-    <img src="static/design2.gif" alt="design2" style="width:30%;">
-    <figcaption>Design2</figcaption>
-  </figure>
-</div>
-<br> -->
-<!-- add vote result -->
+After a thorough evaluation and voting process, we chose Design 1 for our user interface. The key factor behind this choice was the distinct platform patterns in Design 1. Although Design 2 employed a creative and visually appealing approach by using Chinese calligraphy to represent different types of platforms, it ultimately proved to be less user-friendly. Players found it difficult to distinguish between the various fonts and corresponding platforms, which hindered the overall gameplay experience. 
 
 # Evaluation
 Our team conducted a comprehensive evaluation process, incorporating both qualitative and quantitative evaluations, to assess and improve our game's usability and performance throughout its development. Instead of performing one qualitative and one quantitative evaluation, as per the original requirement, we decided to conduct two of each to gain more practical experience and in-depth understanding.
@@ -373,39 +364,6 @@ We conducted a Wilcoxon signed-rank test and discovered a significant difference
     <img src="static/SUS.png" alt="System Usability Scale (SUS)" style="width:70%;">
   </figure>
 <br>
-
-<!-- | Participant | **Easy** | **Hard** |
-| ----------- | -------- | -------- |
-| 1           | 90       | 85       |
-| 2           | 90       | 67.5     |
-| 3           | 62.5     | 45       |
-| 4           | 82.5     | 80       |
-| 5           | 85       | 77.5     |
-| 6           | 95       | 80       |
-| 7           | 92.5     | 95       |
-| 8           | 95       | 62.5     |
-| 9           | 97.5     | 87.5     |
-| 10          | 80       | 57.5     |
-| 11          | 57.5     | 45       |
-| 12          | 92.5     | 85       | -->
-
-<!-- <strong> NASA Task Load Index (TLX) </strong>
-
-| Participant | **Easy**     | **Hard**         |
-|-------------|--------------|--------------|
-| 1           | 30       | 60       |
-| 2           | 45       | 55       |
-| 3           | 36.67    | 73.33    |
-| 4           | 30       | 53.33    |
-| 5           | 15       | 43.33    |
-| 6           | 26.67    | 70       |
-| 7           | 13.33    | 40       |
-| 8           | 20       | 43.33    |
-| 9           | 26.67    | 56.67    |
-| 10          | 43.33    | 55       |
-| 11          | 48.33    | 51.67    |
-| 12          | 18.33    | 71.67    | -->
-
 
 ### How code was tested
 
@@ -490,7 +448,7 @@ In developing our game, our goal was not only to create an enjoyable and engagin
 
 Our team consisted of five members: Joyee, Shannon, Henry, Yu, and Luis. Each member took on specific roles and responsibilities to ensure a well-structured and efficient workflow:
 
-1. Joyee: Main project manager and lead     developer, overseeing the overall progress, integrating the work of other developers, and merging the code when a team member moved a task to "To merge" on the Trello board.
+1. Joyee: Main project manager and lead developer, overseeing the overall progress, integrating the work of other developers, and merging the code when a team member moved a task to "To merge" on the Trello board.
 2. Shannon: Vice project manager and main developer, collaborating with Joyee in project management, sharing decision-making responsibilities, and contributing to development.
 3. Henry: Main developer and sprite designer, responsible for implementing game features and creating visual assets.
 4. Yu: Developer and tester, handling a smaller part of development and ensuring the quality of the final product.
@@ -577,6 +535,21 @@ Overall, our Doodle Jump-inspired game project was a rewarding experience that t
 
 Applying the principles of software engineering to game development has demonstrated the importance of planning, organization, and communication in achieving a successful project outcome. As we continue to grow as software engineers, we will carry forward the lessons learned from this project, incorporating user feedback, adopting Agile development practices, and focusing on creating well-structured codebases. These experiences will enable us to deliver high-quality software products that not only meet the needs of users but also stand the test of time.
 
+# Documentation of code
+Please see <a href="DoodleJump/Documentation.md">Documentation</a>
+
+# Individual Contribution table
+
+| Name            | Role                                        | Individual Weight  |
+|------------     |---------------------------------------------|--------------------|
+| Joyee           | Main project manager and lead developer     |                   |
+| Shannon         | Vice project manager and main developer     |                   |
+| Henry           | Main developer and sprite designer          |                   |
+| Yu Tian         | Developer and tester                        |                   |
+| ZeFeng(Luiz)    | Game style and evaluation lead              |                   |
+
+
+[Back To Top](#table-of-contents)
 
 
 
