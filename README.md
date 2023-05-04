@@ -1,4 +1,10 @@
-<a href="https://youtu.be/Je_vAi2sIdM">Click here to see our video</a>
+<p align="center">
+  <a href="https://youtu.be/Je_vAi2sIdM">
+  <img src="static/header.jpg" alt="header.jpg" style="width:100%"/>
+    <br>
+    <em>click here to see our video</em>
+  </a>
+</p>
 
 ## Table of Contents
 - [Team](#team)
