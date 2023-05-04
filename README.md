@@ -60,7 +60,7 @@
       <td style="text-align:center"><a href="mailto:fg22142@bristol.ac.uk">fg22142@bristol.ac.ukk</a></td>
     </tr>
     <tr>
-      <td style="text-align:center">ZeFeng(Luiz)</td>
+      <td style="text-align:center">ZeFeng(Luis)</td>
       <td style="text-align:center"><a href="mailto:bi22332@bristol.ac.uk">bi22332@bristol.ac.uk</a></td>
     </tr>
   </tbody>
@@ -589,7 +589,7 @@ Please see <a href="DoodleJump/Documentation.md">Documentation</a>
 | Shannon         | Vice project manager and main developer     |       1.15        |
 | Henry           | Main developer and sprite designer          |       1           |
 | Yu Tian         | Developer and tester                        |       0.8         |
-| ZeFeng(Luiz)    | Game style and evaluation lead              |       0.8         |
+| ZeFeng(Luis)    | Game style and evaluation lead              |       0.8         |
 
 
 [Back To Top](#table-of-contents)
